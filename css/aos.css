@@ -1,0 +1,132 @@
+.warscroll{
+	border:1mm solid;
+	width:20cm;
+	margin-bottom: 20px;
+	/*position: relative;*/
+}
+.chars{
+	/*position: relative;*/
+	/*float:left;*/
+	/*width:100%;*/
+	min-height: 1.2cm;
+	margin-bottom: 1mm;
+	/*height: 1.5cm;*/
+}
+.name{
+	padding-left: 3mm;
+	position: relative;
+	border:1mm solid Gray;
+	border-color: Gray;
+	width: 7.04cm;
+	float:left;
+	height: 1.16cm;
+	line-height: 1cm;
+}
+.stats{
+	margin: 0px;
+	position: relative;
+	/*border:1mm solid red;*/
+	/*border-color: Beige;*/
+	width:2.5cm;
+	float:left;
+	height: 1cm;
+	text-align: center;
+}
+.statsheader{
+	border:1mm solid Gray;
+	border-bottom-width: 0.5mm;
+	background-color: black;
+	color: Linen;
+}
+.statstext{
+	border-top-width: 0.5mm;
+	border:1mm solid Gray;
+}
+
+.weapon{
+	border-top:1mm solid Gray;
+	min-height: 1.2cm;
+	margin-bottom: 1mm;
+}
+.weapon-name{
+	padding-left: 3mm;
+	position: relative;
+	border:1mm solid Gray;
+	width: 3cm;
+	float:left;
+	height: 1.16cm;
+	line-height: 1cm;
+}
+.weapon-stats{
+	margin: 0px;
+	position: relative;
+	width:2.5cm;
+	float:left;
+	height: 1cm;
+	text-align: center;
+}
+.weapon-stats-header{
+	border:1mm solid Gray;
+	border-bottom-width: 0.5mm;
+	background-color: black;
+	color: Linen;
+}
+.weapon-stats-text{
+	border-top-width: 0.5mm;
+	border:1mm solid Gray;
+}
+
+
+
+.abilities{
+	width:100%;
+	font-size: 10pt;
+	/*border-top:1mm solid Cyan;*/
+	/*margin-bottom: 2mm;*/
+	/*min-height: 1cm;*/
+	/*height: 5cm;*/
+}
+.header{
+	/*width:100%;*/
+	background-color: Gainsboro;
+	padding-left: 3mm;
+	height: 0.5cm;
+	text-align: left;
+	border-top:1mm solid Black;
+	
+}
+.ability{
+	border-top:1mm solid Gray;
+	width:100%;
+	min-height: 1cm;
+}
+.abilityheader{
+	padding-left: 3mm;
+	/*position: relative;*/
+	border-right:1mm solid Gray;
+	width:3cm;
+	min-height: 1cm;
+	float:left;
+	/*min-height: 1cm;*/
+	line-height: 1cm;
+}
+.abilitytext{
+	padding-left: 1mm;
+	padding-top: 1mm;
+	/*border:1mm solid green;*/
+	width:16.5cm;
+	/*min-height: 1cm;*/
+	float:left;
+	/*height: 1cm;*/
+}
+
+
+
+.keywords{
+	/*position: relative;*/
+	/*float:left;*/
+	border-top:1mm solid Gray;
+	padding-left: 3mm;
+	/*width:18cm;*/
+	min-height: 0.6cm;
+}
