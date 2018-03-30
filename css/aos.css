@@ -2,131 +2,194 @@
 	border:1mm solid;
 	width:20cm;
 	margin-bottom: 20px;
-	/*position: relative;*/
+	font-size: 10pt;
+	background-color: black;
+	page-break-inside:avoid;
 }
 .chars{
-	/*position: relative;*/
-	/*float:left;*/
-	/*width:100%;*/
-	min-height: 1.2cm;
-	margin-bottom: 1mm;
-	/*height: 1.5cm;*/
-}
-.name{
-	padding-left: 3mm;
-	position: relative;
-	border:1mm solid Gray;
-	border-color: Gray;
-	width: 7.04cm;
-	float:left;
-	height: 1.16cm;
-	line-height: 1cm;
-}
-.stats{
-	margin: 0px;
-	position: relative;
-	/*border:1mm solid red;*/
-	/*border-color: Beige;*/
-	width:2.5cm;
-	float:left;
-	height: 1cm;
-	text-align: center;
-}
-.statsheader{
-	border:1mm solid Gray;
-	border-bottom-width: 0.5mm;
-	background-color: black;
-	color: Linen;
-}
-.statstext{
-	border-top-width: 0.5mm;
-	border:1mm solid Gray;
+	min-height: 1cm;
+	    margin-bottom: 2mm;
+	    background-color: black;
 }
 
+			.name{
+				padding-left: 3mm;
+				position: relative;
+				border: solid black;
+				width: 7.14cm;
+				float: left;
+				line-height: 11mm;
+				border-width: 0mm 0.5mm 1mm 0.5mm;
+				/*background-color: Linen;*/
+				font-size: 12pt;
+			}
+			.stats{
+				margin: 0px;
+				position: relative;
+				width:2.5cm;
+				float:left;
+				height: 1cm;
+				text-align: center;
+			}
+			.statsheader{
+				border:solid black;
+				border-bottom-width: 0.5mm;
+				background-color: black;
+				color: Linen;
+				border-width: 1mm 0.5mm 1mm 0.5mm;
+			}
+			.statstext{
+				border-top-width: 0.5mm;
+				border:solid black;
+				border-width: 1mm 0.5mm 1mm 0.5mm;
+				/*background-color: Linen;*/
+			}
+
 .weapon{
-	border-top:1mm solid Gray;
-	min-height: 1.2cm;
-	margin-bottom: 1mm;
+	/*border-top:1mm solid Gray;*/
+	min-height: 0.5cm;
+	/*margin-bottom: 1mm;*/
 }
-.weapon-name{
-	padding-left: 3mm;
-	position: relative;
-	border:1mm solid Gray;
-	width: 3cm;
-	float:left;
-	height: 1.16cm;
-	line-height: 1cm;
+.weapon2{
+
+	min-height: 0.5cm;
+	/*margin-bottom: 1mm;*/
+
 }
-.weapon-stats{
+
+.weapon-stats-header,.weapon-stats-text{
 	margin: 0px;
 	position: relative;
 	width:2.5cm;
 	float:left;
-	height: 1cm;
 	text-align: center;
+	border:solid Gray;
+	/*border-width: 1mm 0.5mm 1mm 0.5mm;*/
+	border-width: 0.5mm;
+
 }
-.weapon-stats-header{
-	border:1mm solid Gray;
-	border-bottom-width: 0.5mm;
-	background-color: black;
-	color: Linen;
+
+.weapon-name,.weapon-type{
+	padding-left: 3mm;
+	position: relative;
+	border:solid black;
+	/*width: 3.5cm;*/
+	width: 4.7cm;
+	float:left;
+	border-right-width: 0.5mm;
+	border-width: 0.5mm;
 }
-.weapon-stats-text{
-	border-top-width: 0.5mm;
-	border:1mm solid Gray;
-}
+			.weapon-name{
+				border-color: gray;
+				/*background-color: Linen;*/
+			}
+			.weapon-type{
+				background-color: Gainsboro;
+				/*border-right-width: 0.5mm;*/
+			}
+			.weapon-stats-text{
+				/*border-top-width: 1mm;*/
+				border-color: gray;
+				/*background-color: Linen;*/
+				float:none;
+			}
+			.weapon-stats{
+				/*border-top:1mm solid Gray;*/
+				min-height: 0.5cm;
+				/*margin-bottom: 1mm;*/
+				background-color: black;
+				/*color: Linen;*/
+				font-size: 10pt;
+			}
+
+			.weapon-stats-header{
+				/*border-bottom-width: 0.5mm;*/
+				background-color: Gainsboro;
+				/*color: Linen;*/
+				text-transform: uppercase;
+				float:none;
+			}
 
 
 
 .abilities{
 	width:100%;
 	font-size: 10pt;
-	/*border-top:1mm solid Cyan;*/
-	/*margin-bottom: 2mm;*/
-	/*min-height: 1cm;*/
-	/*height: 5cm;*/
+	min-height: 0.5cm;
+	/*background-color: Linen;*/
 }
 .header{
-	/*width:100%;*/
 	background-color: Gainsboro;
 	padding-left: 3mm;
 	height: 0.5cm;
 	text-align: left;
 	border-top:1mm solid Black;
+	text-transform: uppercase;
 	
 }
-.ability{
-	border-top:1mm solid Gray;
-	width:100%;
-	min-height: 1cm;
+			.ability{
+				border-top:1mm solid Gray;
+				width:100%;
+				min-height: 1cm;
+			}
+/*			.abilityheader{
+				padding-left: 3mm;
+				border-right:1mm solid Gray;
+				width:3cm;
+				min-height: 1cm;
+				float:left;
+				line-height: 1cm;
+				text-transform: uppercase;
+			}*/
+			.abilityheader{
+				padding-left: 3mm;
+				border-right:0.5mm solid Gray;
+				border-top:0.5mm solid Gray;
+				width:3.5cm;
+				min-height: 1cm;
+				/*float:left;*/
+				line-height: 1cm;
+				text-transform: uppercase;
+			}
+			.abilitytext{
+				padding-left: 3mm;
+				padding-top: 1mm;
+				border-top:0.5mm solid Gray;
+				/*width:16.5cm;*/
+				/*float:left;*/
+			}
+.spell-header-name,.spell-header{
+	background-color: Gainsboro;
+	text-transform: uppercase;
+	border-right:0.5mm solid Gray;
+	border-top:0.5mm solid Gray;
 }
-.abilityheader{
+.spell-header-name,.spell-name{
+	width:3.5cm;
 	padding-left: 3mm;
-	/*position: relative;*/
-	border-right:1mm solid Gray;
-	width:3cm;
-	min-height: 1cm;
-	float:left;
-	/*min-height: 1cm;*/
-	line-height: 1cm;
 }
-.abilitytext{
-	padding-left: 1mm;
-	padding-top: 1mm;
-	/*border:1mm solid green;*/
-	width:16.5cm;
-	/*min-height: 1cm;*/
-	float:left;
-	/*height: 1cm;*/
+.spell-header{
+	text-align: center;
+	padding-left: 3mm;
+	padding-right: 3mm;
 }
 
+.spell-name,.spell-text{
+	/*background-color: Linen;*/
+	padding-left: 3mm;
+	border-right:0.5mm solid Gray;
+	border-top:0.5mm solid Gray;
+}
 
 
 .keywords{
-	/*position: relative;*/
-	/*float:left;*/
-	border-top:1mm solid Gray;
+	/*background-color: Linen;*/
+	border-top:0.5mm solid Gray;
 	padding-left: 3mm;
-	/*width:18cm;*/
 	min-height: 0.6cm;
+	line-height: 0.6cm;
 }
+
+
+.name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords{background-color: Linen;}
+.name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords{background-color: white;}
