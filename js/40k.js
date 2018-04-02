@@ -121,7 +121,7 @@ The eye of XI-Lexum"	AGRIPINAA model only. At the start of each of your Shooting
 */
 
 //Dark Angels
-var units = {
+var units1 = {
 	interrogatorchaplain : {
 		name:'Interrogator Chaplain',
 		role:'HQ',
@@ -296,7 +296,7 @@ var units = {
 		save:'2+',
 		invulsave:'3+',
 		powerpoints:'13',
-		points:'227',
+		points:'250',
 		weapon : {
 			'Flail of the Unforgiven' : {
 				range:'Melee',
@@ -304,7 +304,7 @@ var units = {
 				strength:'+2',
 				ap:'-3',
 				damage:'2',
-				ability:'?',
+				ability:'Excess damage from this weapon is not lost; instead, keep allocating damage to another model in the target unit until either all the damage has been allocated or the target unit is destroyed.',
 			},
 			'Mace of Absolution' : {
 				range:'Melee',
@@ -312,7 +312,7 @@ var units = {
 				strength:'x2',
 				ap:'-2',
 				damage:'3',
-				ability:'?',
+				ability:'-',
 			},
 		},
 		abilities : {
@@ -324,7 +324,7 @@ var units = {
 			},
 		factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS, DEATHWING',
 		keywords:'INFANTRY, TERMINATOR, DEATHWING KNIGHTS',
-		},
+	},
 	companyveterans : {
 		name:'Company Veterans',
 		role:'Elites',
@@ -381,14 +381,6 @@ var units = {
 				damage:'D3',
 				ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
 			},
-			// 'Chain fist' : {
-			// 	range:'Melee',
-			// 	type:'Melee',
-			// 	strength:'x2',
-			// 	ap:'-4',
-			// 	damage:'2',
-			// 	ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
-			// },
 			'Flamer' : {
 				range:'8',
 				type:'Assault D6',
@@ -397,22 +389,22 @@ var units = {
 				damage:'1',
 				ability:'This weapon automatically hits its target.',
 			},
-			// 'Frag grenade' : {
-			// 	range:'6',
-			// 	type:'Grenade D6',
-			// 	strength:'3',
-			// 	ap:'0',
-			// 	damage:'1',
-			// 	ability:'-',
-			// },
-			// 'Krak grenade' : {
-			// 	range:'6',
-			// 	type:'Grenade 1',
-			// 	strength:'6',
-			// 	ap:'-1',
-			// 	damage:'D3',
-			// 	ability:'-',
-			// },
+			'Frag grenade' : {
+				range:'6',
+				type:'Grenade D6',
+				strength:'3',
+				ap:'0',
+				damage:'1',
+				ability:'-',
+			},
+			'Krak grenade' : {
+				range:'6',
+				type:'Grenade 1',
+				strength:'6',
+				ap:'-1',
+				damage:'D3',
+				ability:'-',
+			},
 			'Bolt pistol' : {
 				range:'12',
 				type:'Pistol 1',
@@ -502,6 +494,22 @@ var units = {
 				damage:'1',
 				ability:'This weapon automatically hits its target.',
 			},
+			'Storm bolter' : {
+				range:'24',
+				type:'Rapid fire 2',
+				strength:'4',
+				ap:'0',
+				damage:'1',
+				ability:'-',
+			},
+			'Multi-melta' : {
+				range:'24',
+				type:'Heavy 1',
+				strength:'8',
+				ap:'-4',
+				damage:'D6',
+				ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
+			},
 			'Heavy plasma cannon (Standard)' : {
 				range:'36',
 				type:'Heavy D3',
@@ -566,7 +574,7 @@ var units = {
 		save:'2+',
 		invulsave:'-',
 		powerpoints:'16',
-		points:'',
+		points:'266',
 		weapon : {
 			'Basic melee' : {
 				range:'Melee',
@@ -630,7 +638,7 @@ var units = {
 }
 
 //Fallen
-var units = {
+var units2 = {
 	cypher : {
 		name:'Cypher',
 		role:'HQ',
@@ -927,14 +935,14 @@ var units = {
 			'Battering Onslaught' : 'Add 1 to this model\'s Attacks characteristic if it is equiped with two melee weapons.',
 			'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6 it explodes, and each unit within 3" suffers D3 mortal wounds.',
 			},
-		factionkeywords : 'CHAOS, <MARK OF CHAOS>, HERETIC ASTARTES, <LEGION>',
+		factionkeywords : 'CHAOS, MARK OF CHAOS, HERETIC ASTARTES, LEGION',
 		keywords:'VEHICLE, HELLBRUTE',
 	},
 }
 
 
 //SKITARII
-var units = {
+var units3 = {
 	techpriestdominus : {
 		name:'TECH-PRIEST DOMINUS',
 		role:'HQ',
@@ -1677,12 +1685,17 @@ var units = {
 	},
 }
 
+var unitarr = ['interrogatorchaplain','deathwingterminators','deathwingknights','companyveterans','venerabledreadnought','landraidercrusader']
+// var unitarr = ['cypher','fallen','hellbrute']
+// var unitarr = ['techpriestdominus','techpriestenginseer','skitariirangers','skitariivanguard','onagerdunecrawler','knightwarden']
+
+
 function getUnit(unitname){
 	// console.log(units[unitname])
-	return units[unitname]
+	return units1[unitname]
 }
 
-var unitarr = ['techpriestdominus','techpriestenginseer','skitariirangers','skitariivanguard','onagerdunecrawler','knightwarden']
+
 console.log(unitarr.length)
 
 $('body').prepend($('<div />',{id:'page'}))
