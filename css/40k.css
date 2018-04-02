@@ -8,19 +8,19 @@
 }
 .chars{
 	min-height: 1cm;
-	    margin-bottom: 2mm;
+	    /*margin-bottom: 2mm;*/
 	    background-color: black;
 }
 
 			.name{
 				padding-left: 3mm;
-				position: relative;
-				border: solid black;
-				width: 7.14cm;
-				float: left;
-				line-height: 11mm;
-				border-width: 0mm 0.5mm 1mm 0.5mm;
-				/*background-color: Linen;*/
+				/* position: relative; */
+				/* border: solid black; */
+				/* width: 7.14cm; */
+				/* float: left; */
+				line-height: 10mm;
+				/* border-width: 0mm 0.5mm 1mm 0.5mm; */
+				/* background-color: Linen; */
 				font-size: 12pt;
 			}
 			.stats{
@@ -60,7 +60,7 @@
 .weapon-stats-header,.weapon-stats-text{
 	margin: 0px;
 	position: relative;
-	width:2.5cm;
+	width:1.5cm;
 	float:left;
 	text-align: center;
 	border:solid Gray;
@@ -74,8 +74,8 @@
 	position: relative;
 	border:solid black;
 	/*width: 3.5cm;*/
-	width: 4.7cm;
-	float:left;
+	width: 3cm;
+	/*float:left;*/
 	border-right-width: 0.5mm;
 	border-width: 0.5mm;
 }
@@ -85,6 +85,7 @@
 			}
 			.weapon-type{
 				background-color: Gainsboro;
+				text-transform: uppercase;
 				/*border-right-width: 0.5mm;*/
 			}
 			.weapon-stats-text{
@@ -92,6 +93,9 @@
 				border-color: gray;
 				/*background-color: Linen;*/
 				float:none;
+			}
+			.weapon-stats-ability{
+				width: 9cm;
 			}
 			.weapon-stats{
 				/*border-top:1mm solid Gray;*/
@@ -118,6 +122,17 @@
 	min-height: 0.5cm;
 	/*background-color: Linen;*/
 }
+.table-header{
+	padding-left: 3mm;
+	text-align: left;
+	text-transform: uppercase;
+	background-color: Gainsboro;
+}
+
+.topborder{
+	border-top:1mm solid Black;
+}
+
 .header{
 	background-color: Gainsboro;
 	padding-left: 3mm;
@@ -180,7 +195,10 @@
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 }
-
+.keywords-header{
+	background-color: Gainsboro;
+	text-transform: uppercase;
+}
 
 .keywords{
 	/*background-color: Linen;*/
