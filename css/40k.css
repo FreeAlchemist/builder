@@ -198,3 +198,61 @@ Gainsboro
 Whitesmoke
 White
 */
+#detachments{
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	background-color: Linen;
+	border:1px solid Black;
+}
+
+#detachment td{
+	border:1px solid gray;
+	border-top:3px solid black;
+	text-align: center;
+	height: 40px;
+	width: 110px;
+}
+
+.detachment{
+	
+}
+.cp{
+	
+}
+.hq{
+	
+}
+.troops{
+	
+}
+.elites{
+	
+}
+.fast{
+	
+}
+.heavy{
+	
+}
+.flyers{
+	
+}
+.dedicated{
+	
+}
+.low{
+	
+}
+.fortification{
+	
+}
+.passive{
+	background-color: DimGray;
+}
+.aux{
+	background-color: Beige;
+}
+.required{
+	background-color: Coral;
+}

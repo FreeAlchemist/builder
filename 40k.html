@@ -6,6 +6,325 @@
 	<link rel="stylesheet" type="text/css" href="css/40k.css">
 </head>
 <body>
+<div id="detachments">
+<table cellpadding = "0px" cellspacing = "0px" id="detachment">
+	<tr>
+		<td class="detachment">DETACHMENT</td>
+		<td class="cp">Command Points</td>
+		<td class="hq">HQ</td>
+		<td class="troops">Troops</td>
+		<td class="elites">Elites</td>
+		<td class="fast">Fast</td>
+		<td class="heavy">Heavy</td>
+		<td class="flyers">Flyers</td>
+		<td class="dedicated">Dedicated transport</td>
+		<td class="low">Lord of war</td>
+		<td class="fortification">Fortification</td>
+	</tr>
+	<tr id = "patrol">
+		<td class="detachment">Patrol</td>
+		<td class="cp">0</td>
+		<td class="hq required">1-2
+		<select name="patrol-hq-1" id="patrol-hq-1" size="1">
+			<option>Tech Priest Dominus</option>
+			<option>Tech Priest Engineseer</option>
+		</select>
+		<select name="patrol-hq-2" id="patrol-hq-2" size="1">
+			<option></option>
+			<option>Tech Priest Dominus</option>
+			<option>Tech Priest Engineseer</option>
+		</select>
+		</td>
+		<td class="troops required">1-3
+			<select name="patrol-troops-1" id="patrol-troops-1" size="1">
+				<option>Skitarii Rangers</option>
+				<option>Skitarii Vanguard</option>
+			</select>
+			<select name="patrol-troops-2" id="patrol-troops-2" size="1">
+				<option></option>
+				<option>Skitarii Rangers</option>
+				<option>Skitarii Vanguard</option>
+			</select>
+			<select name="patrol-troops-3" id="patrol-troops-3" size="1">
+				<option></option>
+				<option>Skitarii Rangers</option>
+				<option>Skitarii Vanguard</option>
+			</select>
+		</td>
+		<td class="elites aux">0-2
+			<select name="patrol-elites-1" id="patrol-elites-1" size="1">
+				<option></option>
+				<option>Cybernetica Datasmith</option>
+				<option>Sicarian Infiltrators</option>
+			</select>
+			<select name="patrol-elites-2" id="patrol-elites-2" size="1">
+				<option></option>
+				<option>Cybernetica Datasmith</option>
+				<option>Sicarian Infiltrators</option>
+			</select>
+		</td>
+		<td class="fast aux">0-2
+			<select name="patrol-fast-1" id="patrol-fast-1" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+			<select name="patrol-fast-2" id="patrol-fast-2" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+		</td>
+		<td class="heavy aux">0-2
+			<select name="patrol-heavy-1" id="patrol-heavy-1" size="1">
+				<option></option>
+				<option>Onager Dunecrawler</option>
+				<option>Kastelan Robots</option>
+			</select>
+			<select name="patrol-heavy-2" id="patrol-heavy-2" size="1">
+				<option></option>
+				<option>Onager Dunecrawler</option>
+				<option>Kastelan Robots</option>
+			</select>
+		</td>
+		<td class="flyers aux">0-2
+			<select name="patrol-flyers-1" id="patrol-flyers-1" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+			<select name="patrol-flyers-2" id="patrol-flyers-2" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+		</td>
+		<td class="dedicated aux">1 per each choice
+			<select name="patrol-dedicated-1" id="patrol-dedicated-1" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+			<select name="patrol-dedicated-2" id="patrol-dedicated-2" size="1">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select>
+		</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "battalion">
+		<td class="detachment">Battalion</td>
+		<td class="cp">+3</td>
+		<td class="hq required">2-3</td>
+		<td class="troops required">3-6</td>
+		<td class="elites aux">0-6</td>
+		<td class="fast aux">0-3</td>
+		<td class="heavy aux">0-3</td>
+		<td class="flyers aux">0-2</td>
+		<td class="dedicated aux">1 per each choice</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "brigade">	
+		<td class="detachment">Brigade</td>
+		<td class="cp">+9</td>
+		<td class="hq required">3-5</td>
+		<td class="troops required">6-12</td>
+		<td class="elites required">3-8</td>
+		<td class="fast required">3-5</td>
+		<td class="heavy required">3-5</td>
+		<td class="flyers aux">0-2</td>
+		<td class="dedicated aux">1 per each choice</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "vanguard">
+		<td class="detachment">Vanguard</td>
+		<td class="cp">+1</td>
+		<td class="hq required">1-2</td>
+		<td class="troops aux">0-3</td>
+		<td class="elites required">3-6</td>
+		<td class="fast aux">0-2</td>
+		<td class="heavy aux">0-2</td>
+		<td class="flyers aux">0-2</td>
+		<td class="dedicated aux">1 per each choice</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "spearhead">
+		<td class="detachment">Spearhead</td>
+		<td class="cp">+1</td>
+		<td class="hq required">1-2</td>
+		<td class="troops aux">0-3</td>
+		<td class="elites aux">0-2</td>
+		<td class="fast aux">0-2</td>
+		<td class="heavy required">3-6</td>
+		<td class="flyers aux">0-2</td>
+		<td class="dedicated aux">1 per each choice</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "outrider">
+		<td class="detachment">Outrider</td>
+		<td class="cp">+1</td>
+		<td class="hq required">1-2</td>
+		<td class="troops aux">0-3</td>
+		<td class="elites aux">0-2</td>
+		<td class="fast required">3-6</td>
+		<td class="heavy aux">0-2</td>
+		<td class="flyers aux">0-2</td>
+		<td class="dedicated aux">1 per each choice</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "supreme">
+		<td class="detachment">Supreme command</td>
+		<td class="cp">+1</td>
+		<td class="hq required">3-5
+			<select name="supreme-hq-1" id="supreme-hq-1" size="1">
+				<option>Tech Priest Dominus</option>
+				<option>Tech Priest Engineseer</option>
+			</select>
+			<select name="supreme-hq-2" id="supreme-hq-2" size="1">
+				<option>Tech Priest Dominus</option>
+				<option>Tech Priest Engineseer</option>
+			</select>
+			<select name="supreme-hq-3" id="supreme-hq-3" size="1">
+				<option>Tech Priest Dominus</option>
+				<option>Tech Priest Engineseer</option>
+			</select>
+			<select name="supreme-hq-4" id="supreme-hq-4" size="1">
+				<option></option>
+				<option>Tech Priest Dominus</option>
+				<option>Tech Priest Engineseer</option>
+			</select>
+			<select name="supreme-hq-5" id="supreme-hq-5" size="1">
+				<option></option>
+				<option>Tech Priest Dominus</option>
+				<option>Tech Priest Engineseer</option>
+			</select>
+		</td>
+		<td class="troops aux">0-1
+			<select name="supreme-troops-1" id="supreme-troops-1" size="1">
+				<option></option>
+				<option>Skitarii Rangers</option>
+				<option>Skitarii Vanguard</option>
+			</select>
+		</td>
+		<td class="elites passive"></td>
+		<td class="fast passive"></td>
+		<td class="heavy passive"></td>
+		<td class="flyers passive"></td>
+		<td class="dedicated passive"></td>
+		<td class="low aux">0-1
+			<select name="supreme-low-1" id="supreme-low-1" size="1">
+				<option></option>
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+		</td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "super-heavy">
+		<td class="detachment">Super heavy</td>
+		<td class="cp">+3</td>
+		<td class="hq passive"></td>
+		<td class="troops passive"></td>
+		<td class="elites passive"></td>
+		<td class="fast passive"></td>
+		<td class="heavy passive"></td>
+		<td class="flyers passive"></td>
+		<td class="dedicated passive"></td>
+		<td class="low required">3-5
+			<select name="super-heavy-low-1" id="super-heavy-low-1" size="1">
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+			<select name="super-heavy-low-2" id="super-heavy-low-2" size="1">
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+			<select name="super-heavy-low-3" id="super-heavy-low-3" size="1">
+				<option>Knight Warden</option>
+				<option>Armiger Warglaive</option>
+			</select>
+			<select name="super-heavy-low-4" id="super-heavy-low-4" size="1">
+				<option></option>
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+			<select name="super-heavy-low-5" id="super-heavy-low-5" size="1">
+				<option></option>
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+		</td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "Air wing">
+		<td class="detachment">Air wing</td>
+		<td class="cp">+1</td>
+		<td class="hq passive"></td>
+		<td class="troops passive"></td>
+		<td class="elites passive"></td>
+		<td class="fast passive"></td>
+		<td class="heavy passive"></td>
+		<td class="flyers required">3-5</td>
+		<td class="dedicated passive"></td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "super-heavy-aux">
+		<td class="detachment">Super heavy Aux</td>
+		<td class="cp">0</td>
+		<td class="hq passive"></td>
+		<td class="troops passive"></td>
+		<td class="elites passive"></td>
+		<td class="fast passive"></td>
+		<td class="heavy passive"></td>
+		<td class="flyers passive"></td>
+		<td class="dedicated passive"></td>
+		<td class="low required">1
+			<select name="super-heavy-aux-low-1" id="super-heavy-aux-low-1" size="1">
+				<option></option>
+				<option>Armiger Warglaive</option>
+				<option>Knight Warden</option>
+			</select>
+		</td>
+		<td class="fortification passive"></td>
+	</tr>
+	<tr id = "Fortification network">
+		<td class="detachment">Fortification network</td>
+		<td class="cp">0</td>
+		<td class="hq passive"></td>
+		<td class="troops passive"></td>
+		<td class="elites passive"></td>
+		<td class="fast passive"></td>
+		<td class="heavy passive"></td>
+		<td class="flyers passive"></td>
+		<td class="dedicated passive"></td>
+		<td class="low passive"></td>
+		<td class="fortification required">1-3</td>
+	</tr>
+	<tr id = "Aux support">
+		<td class="detachment">Aux support</td>
+		<td class="cp">-1</td>
+		<td class="hq">or</td>
+		<td class="troops">or</td>
+		<td class="elites">or</td>
+		<td class="fast">or</td>
+		<td class="heavy">or</td>
+		<td class="flyers">or</td>
+		<td class="dedicated">or</td>
+		<td class="low passive"></td>
+		<td class="fortification passive"></td>
+	</tr>
+</table>
+</div>
+
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/40k.js"></script>
 </body>
