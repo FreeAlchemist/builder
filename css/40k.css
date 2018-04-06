@@ -198,12 +198,28 @@ Gainsboro
 Whitesmoke
 White
 */
-#detachments{
+#menu{
 	position: fixed;
 	top: 10px;
 	left: 10px;
 	background-color: Linen;
 	border:1px solid Black;
+	font-size: 10pt;
+	/*display: none;*/
+}
+
+
+#detachments{
+	/*position: fixed;*/
+	top: 60px;
+	left: 10px;
+	background-color: Linen;
+	border:1px solid Black;
+	font-size: 8pt;
+	/*display: none;*/
+}
+#detachments select{
+	font-size: 6pt;
 }
 
 #detachment td{
