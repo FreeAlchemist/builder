@@ -199,7 +199,7 @@ Whitesmoke
 White
 */
 #menu{
-	position: fixed;
+	position: absolute;
 	top: 10px;
 	left: 10px;
 	background-color: Linen;
@@ -210,8 +210,8 @@ White
 
 
 #detachments{
-	/*position: fixed;*/
-	top: 60px;
+	position: absolute;
+	top: 50px;
 	left: 10px;
 	background-color: Linen;
 	border:1px solid Black;
@@ -228,13 +228,14 @@ White
 	text-align: center;
 	height: 40px;
 	width: 110px;
+	vertical-align: top;
 }
 
 .detachment{
 	
 }
-.cp{
-	
+#detachment td.cp{
+	width: 30px;
 }
 .hq{
 	
@@ -271,4 +272,7 @@ White
 }
 .required{
 	background-color: Coral;
+}
+.detpoints{
+	background-color: Mintcream
 }
