@@ -1380,7 +1380,7 @@ var library = {
 				invulsave:'5+',
 				powerpoints:'7',
 				points:'90',
-				weapon : ['Basic melee','Cognis heavy stubber','Twin heavy phosphor blaster','Eradication beamer','Eradication beamer *','Neutron laser','Icarus array-Daedalus missile launcher','Icarus array-Gatling rocket launcher','Icarus array-Twin Icarus autocannon'],
+				weapon : ['Basic melee','Cognis heavy stubber','Twin heavy phosphor blaster','Eradication beamer','Eradication beamer *','Neutron laser','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon'],
 				abilities : {
 					'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 					'Smoke Launchers' : 'Once per game, a model equipped with smoke launchers can use them instead of shooting any weapons in the Shooting phase; until your next Shooting phase your opponent must substract 1 from all hit rolls for ranged weapons that target this vehicle.',

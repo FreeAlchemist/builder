@@ -1,3 +1,7 @@
+#page{
+	display: none;
+}
+
 .warscroll{
 	border:1mm solid;
 	width:20cm;
@@ -6,6 +10,15 @@
 	background-color: black;
 	page-break-inside:avoid;
 }
+
+#rostertable{
+	border:1mm solid;
+	width:20cm;
+	font-size: 8pt;
+	background-color: Beige;
+	page-break-inside:avoid;
+}
+
 .chars{
 	min-height: 1cm;
 	background-color: black;
@@ -199,24 +212,32 @@ Whitesmoke
 White
 */
 #menu{
-	position: absolute;
+	position: fixed;
 	top: 10px;
-	left: 10px;
+	right: 10px;
+	float: right;
 	background-color: Linen;
 	border:1px solid Black;
 	font-size: 10pt;
+	z-index: 100;
+	box-shadow: Gray 1px 1px 3px;
 	/*display: none;*/
 }
 
+.menupart{
+	float: left;
+	margin: 10px;
+	text-align: center;
+}
 
 #detachments{
 	position: absolute;
-	top: 50px;
+	top: 80px;
 	left: 10px;
 	background-color: Linen;
 	border:1px solid Black;
 	font-size: 8pt;
-	/*display: none;*/
+	display: block;
 }
 #detachments select{
 	font-size: 6pt;
@@ -271,8 +292,25 @@ White
 	background-color: Beige;
 }
 .required{
-	background-color: Coral;
+	background-color: SandyBrown;
+}
+.required-select{
+	background-color: Khaki;
 }
 .detpoints{
 	background-color: Mintcream
 }
+.hide{
+	display: none;
+}
+
+
+/*PRINT*/
+	@media print{
+		#menu,#detachments{
+			display: none;
+		}
+		.warscroll,#rostertable{
+			page-break-inside:avoid;
+		}
+	}
