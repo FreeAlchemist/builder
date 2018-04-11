@@ -161,6 +161,35 @@ var library = {
 	darkangels : {
 		armyname : 'Dark Angels',
 		weapons : {
+			//relics
+			'Heavenfall Blade' : {
+				range:'Melee',
+				type:'Melee',
+				strength:'+2',
+				ap:'-3',
+				damage:'D3',
+				ability:'Each time the bearer fights, it can make 1 additional attack with this weapon.',
+				points:'4',
+			},
+			'Foe-smiter' : {
+				range:'24',
+				type:'Rapid fire 2',
+				strength:'4',
+				ap:'-1',
+				damage:'2',
+				ability:'-',
+				points:'2',
+			},
+			'Mace of Redemption' : {
+				range:'Melee',
+				type:'Melee',
+				strength:'+3',
+				ap:'-3',
+				damage:'D3',
+				ability:'Re-roll all failed wound rolls made for this weapon against <b>HERETIC ASTARTES</b> units.',
+				points:'0',
+			},
+			// 'Lion\'s Roar' : {},
 			//melee
 			'Basic melee' : {
 				range:'Melee',
@@ -473,7 +502,7 @@ var library = {
 		abilities : {
 			'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 			'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
-			'Spiritual Leaders' : 'All friendly DARK ANGELS units within 6" of this model can use his Leadershup instead of their own.',
+			'Spiritual Leaders' : 'All friendly DARK ANGELS units within 6" of this model can use his Leadership instead of their own.',
 			'Litanies of Hate' : 'You can re-roll failed hit rolls in the Fight phase for friendly DARK ANGELS units within 6" of this model.',
 			'Aura of Dread' : 'Units within 6" of an enemy INTERROGATOR-CHAPLAINS must substract 1 from their Leadership characteristic.',
 			'Rozarius' : 'This model has a 4+ invulnerable save.',
@@ -493,10 +522,20 @@ var library = {
 			'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+ each unit within 6" suffers D6 mortal wounds.',
 		},
 		traits : {
-
+			'Fury of the Lion' : 'If your Warlord charged, was charged or performed a Heroic Intervention this turn, friendly <b>DARK ANGELS</b> units within 6" of him add 1 to their Strength characteristic in the Fight phase.',
+			'Courage of the first legion' : 'Friendly <b>DARK ANGELS</b> units automatically pass Morale tests whilst they are within 12" of your Warlord.',
+			'Brilliant Strategist' : 'Once per battle, if your Warlord is on the battlefield, you can re-roll a single hit roll, wound roll, damage roll or saving throw. In addition, if your army is Battle-forged, roll a D6 each time you use a Stratagem; on a 5+ you gain 1 Command Point.',
+			'Huntsman' : 'Your Warlord can fire their Pistol, Assault, Rapid Fire and Grenade weapons at enemy <b>CHARACTERS</b> even if they are not the closest enemy model. In addition, whenever your Warlord piles in or performs a Heroic Intervention, they can move towards the closest enemy <b>CHARACTER</b> instead of the closest enemy model.',
+			'Master of Manoeuvre' : 'You can re-roll the dice used to determine how far friendly <b>DARK ANGELS</b> units Advance or charge if they are within 6" of your Warlord.',
+			'Stubborn Tenacity' : 'Roll a dice each time your Warlord loses a wound. Add 1 to the result if your Warlord did not move during his last Movement phase. On a 6+ your Warlord does not lose the wound.',
 		},
 		relics : {
-			// 'SHROUD OF HEROES' : 'Your opponent must subtract 1 from all hit rolls that target the bearer.',
+			'Heavenfall Blade' : 'Model with a power sword or master-crafted power sword only. A Heavenfall Blade replaces this model\'s power sword or master-crafted power sword and has the following profile:',
+			'Foe-smiter' : 'Model with a storm bolter only. Foe-smiter replaces this model\'s storm bolter and has the following profile:',
+			'SHROUD OF HEROES' : 'Your opponent must subtract 1 from all hit rolls that target the bearer.',
+			'Mace of Redemption' : 'Model with a power maul only. Mace of Redemption replaces this model\'s power maul and has the following profile:',
+			'Lion\'s Roar' : 'Model with a combi-plasma only. Lion\'s Roar replaces this model\'s combi-plasma and has the following profile:',
+			'The eye of the unseen' : 'Enemy units within 3" of the bearer must substract 1 from their Leadership characteristic. In addition, enemy <b>CHARACTERS</b> that start the Fight phase within 3" of the bearer can only be chosen to fight after all other eligible units have made their attacks, even if they charged or have an ability that would allow them to fight first.',
 		},
 		units : {
 			interrogatorchaplain : {
@@ -519,7 +558,7 @@ var library = {
 				abilities : {
 					'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 					'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
-					'Spiritual Leaders' : 'All friendly DARK ANGELS units within 6" of this model can use his Leadershup instead of their own.',
+					'Spiritual Leaders' : 'All friendly DARK ANGELS units within 6" of this model can use his Leadership instead of their own.',
 					'Litanies of Hate' : 'You can re-roll failed hit rolls in the Fight phase for friendly DARK ANGELS units within 6" of this model.',
 					'Aura of Dread' : 'Units within 6" of an enemy INTERROGATOR-CHAPLAINS must substract 1 from their Leadership characteristic.',
 					'Rozarius' : 'This model has a 4+ invulnerable save.',

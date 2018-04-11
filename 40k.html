@@ -8,15 +8,19 @@
 <body>
 <div id="menu">
 	<div class="menupart">
+		<div>Point system</div>
+		<select name="pointsystem" id="pointsystem" size="1">
+			<option value="powerpoints" selected="selected" label="Power Points"></option>
+			<option value="points" label="Matched Points"></option>
+		</select>
+	</div>
+	<div class="menupart">
 		<div>Army select</div>
 		<select name="armyselect" id="armyselect" size="1"></select>
 	</div>
 	<div class="menupart">
 		<input type="button" id="roster-btn" value="Roster" onclick=detToggle()></input>
 	</div>
-<!-- 	<div class="menupart">
-		<input type="button" id="detachments-btn" value="Detachments" onclick=detToggle()></input>
-	</div> -->
 </div>
 
 <div id="detachments">
@@ -25,7 +29,7 @@
 <div id="page"></div>
 <!-- <div id="copyright" class="copyright">
 	<p>Web part, translation to russian, <a href="http://www.github.com/freealchemist">FreeAlchemist</a></p>
-	<p>Contents copyright ©, <a href="http://www.wyrd-games.net/home">Wyrd Miniatures</a>, LLC.</p>
+	<p>Contents copyright ©, <a href="http://www.games-workshop.com">Games Workshop</a></p>
 </div> -->
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

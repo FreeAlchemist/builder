@@ -11,7 +11,7 @@
 	page-break-inside:avoid;
 }
 
-#rostertable{
+#rostertable,#traitstable,#relicstable{
 	border:1mm solid;
 	width:20cm;
 	font-size: 8pt;
@@ -102,6 +102,30 @@
 	text-transform: uppercase;
 	float:none;
 }
+
+
+.army-header,.army-text{
+	/*margin: 0px;*/
+	/*position: relative;*/
+	/*float:left;*/
+
+	text-align: left;
+	border:solid Gray;
+	border-width: 0.5mm;
+}
+.army-header{
+	background-color: Gainsboro;
+	text-transform: uppercase;
+	padding-left: 3mm;
+	/*float:none;*/
+}
+.army-text{
+	border-color: gray;
+	/*float:none;*/
+	font-size: 8pt;
+	padding: 1mm;
+}
+
 .smallstat{
 	width:1cm;
 }
@@ -179,7 +203,7 @@
 	line-height: 0.6cm;
 }
 
-.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords{background-color: white;}
+.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable{background-color: white;}
 .alert{background-color: Coral;}
 .level{
 	float: right;
@@ -307,10 +331,10 @@ White
 
 /*PRINT*/
 	@media print{
-		#menu,#detachments{
+		#menu,#detachments,.noprint{
 			display: none;
 		}
-		.warscroll,#rostertable{
+		.warscroll,#rostertable,#traitstable{
 			page-break-inside:avoid;
 		}
 	}

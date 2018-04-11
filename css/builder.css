@@ -1,0 +1,18 @@
+.menu{
+	position: fixed;
+	    top: 50px;
+	    left: 100px;
+	    background-color: Linen;
+	    border: 1px solid Black;
+	    font-size: 20pt;
+	    z-index: 100;
+	    box-shadow: grey 1px 1px 3px;
+}
+
+.menupart{
+	float: left;
+	margin: 10px;
+	text-align: center;
+	border: 1px solid Black;
+	border-radius: 3px;
+}
