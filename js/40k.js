@@ -232,7 +232,7 @@ function detachmentsList () {
 				if(minrole == 0){
 					var td = $('<td />',{class:rolesarr[n]+' aux',text:minrole+'-'+maxrole}).append('<br>')
 					for (var m =1; m <= maxrole; m++) {
-						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m})
+						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,class:'rosterselect'})
 						detselect.push(detachmentsarr[i]+'-'+rolesarr[n]+'-'+m)
 						select.change(function(){
 							getPoints()
@@ -255,7 +255,7 @@ function detachmentsList () {
 				else{
 					var td = $('<td />',{class:rolesarr[n]+' required',text:minrole+'-'+maxrole}).append('<br>')
 					for (var m =1; m <= minrole; m++) {
-						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,class:'required-select'})
+						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,class:'required-select rosterselect'})
 						detselect.push(detachmentsarr[i]+'-'+rolesarr[n]+'-'+m)
 						select.change(function(){
 							getPoints()
@@ -278,7 +278,7 @@ function detachmentsList () {
 						td.append(select)
 					}
 					for (var m = minrole+1; m <= maxrole; m++) {
-						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m})
+						var select = $('<select />',{id:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,name:detachmentsarr[i]+'-'+rolesarr[n]+'-'+m,class:'rosterselect'})
 						detselect.push(detachmentsarr[i]+'-'+rolesarr[n]+'-'+m)
 						select.change(function(){
 							getPoints()
@@ -381,7 +381,84 @@ function getRoster(army){
 			$('#'+detachmentsarr[i]+'-roster-units').html(unitlist)
 		}
 
-	//Traits
+	//CANTICLES
+		if(library[army].canticles){
+			var table = $('<table />')
+			table.attr('cellpadding',"0px")
+			table.attr('cellspacing','0px')
+			table.attr('width','100%')
+			table.attr('class','topborder noprint')
+			table.attr('id','canticlestable')
+			$('#page').append(table)
+			var canticlesarr = []
+			for (var c in library[army].canticles) {
+				canticlesarr.push(c)
+			}
+			var canticlesquantity = canticlesarr.length
+			var tr = $('<tr />')
+			var input = $('<input />',{type:'checkbox',name:'canticlestable',value:'canticlestable',class:'noprint'})
+			var td1 = $('<td />',{class:'army-header',text:'canticles'})
+			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+							input.change(function(){
+					printToggle()
+				})
+			var canticlesinfo = tr.append(td1).append(td2)
+			$('#canticlestable').append(canticlesinfo)
+			for (var s = 0; s < canticlesquantity; s++) {
+				var thiscanticles = canticlesarr[s]
+				var thiscanticlestext = library[army].canticles[thiscanticles]
+				var tr = $('<tr />',{id:'canticles-'+(s+1)})
+				// var input = $('<input />',{type:'checkbox',name:'canticlestable',value:'canticles-'+(s+1),class:'noprint'})
+				var td1 = $('<td />',{class:'abilityheader'}).html(thiscanticles)
+				// .prepend(input)
+				var td2 = $('<td />',{class:'abilitytext'}).html(thiscanticlestext)
+				var canticlesinfo = tr.append(td1).append(td2)
+				$('#canticlestable').append(canticlesinfo)
+				// input.change(function(){
+				// 	printToggle()
+				// })
+			}
+		}
+
+	//DOGMA
+		if(library[army].dogma){
+			var table = $('<table />')
+			table.attr('cellpadding',"0px")
+			table.attr('cellspacing','0px')
+			table.attr('width','100%')
+			table.attr('class','topborder noprint')
+			table.attr('id','dogmatable')
+			$('#page').append(table)
+			var dogmaarr = []
+			for (var c in library[army].dogma) {
+				dogmaarr.push(c)
+			}
+			var dogmaquantity = dogmaarr.length
+			var tr = $('<tr />')
+			var input = $('<input />',{type:'checkbox',name:'dogmatable',value:'dogmatable',class:'noprint'})
+			var td1 = $('<td />',{class:'army-header',text:'dogma'})
+			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+							input.change(function(){
+					printToggle()
+				})
+			var dogmainfo = tr.append(td1).append(td2)
+			$('#dogmatable').append(dogmainfo)
+			for (var s = 0; s < dogmaquantity; s++) {
+				var thisdogma = dogmaarr[s]
+				var thisdogmatext = library[army].dogma[thisdogma]
+				var tr = $('<tr />',{class:'noprint',id:'dogma-'+(s+1)})
+				var input = $('<input />',{type:'checkbox',name:'dogmatable',value:'dogma-'+(s+1),class:'noprint'})
+				var td1 = $('<td />',{class:'abilityheader'}).html(thisdogma).prepend(input)
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisdogmatext)
+				var dogmainfo = tr.append(td1).append(td2)
+				$('#dogmatable').append(dogmainfo)
+				input.change(function(){
+					printToggle()
+				})
+			}
+		}
+
+	//TRAITS
 		if(library[army].traits){
 			var table = $('<table />')
 			table.attr('cellpadding',"0px")
@@ -419,7 +496,7 @@ function getRoster(army){
 			}
 		}
 
-	//Relics
+	//RELICS
 		if(library[army].relics){
 			var table = $('<table />')
 			table.attr('cellpadding',"0px")
@@ -456,6 +533,58 @@ function getRoster(army){
 				})
 			}
 		}
+
+	//MAGIC
+			if(library[army].magic){
+				var table = $('<table />')
+				table.attr('cellpadding',"0px")
+				table.attr('cellspacing','0px')
+				table.attr('width','100%')
+				table.attr('class','topborder noprint')
+				table.attr('id','magictable')
+				$('#page').append(table)
+				var magicarr = []
+				for (var c in library[army].magic.spell) {
+					magicarr.push(c)
+				}
+				var magicquantity = magicarr.length
+				var tr = $('<tr />')
+				var input = $('<input />',{type:'checkbox',name:'magictable',value:'magictable',class:'noprint'})
+				var td1 = $('<td />',{class:'army-header',text:library[army].magic.magicname})
+				var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+				input.change(function(){
+						printToggle()
+				})
+				var magicinfo = tr.append(td1).append(td2)
+				$('#magictable').append(magicinfo)
+				var tr = $('<tr />');
+				var td1 = $('<td />',{class:'spell-header-name',text:'SPELL'})
+				var td2 = $('<td />',{class:'spell-header',text:'cast'})
+				var td3 = $('<td />',{class:'spell-header',text:'range'})
+				var td4 = $('<td />',{class:'spell-header',text:'target'})
+				var td5 = $('<td />',{class:'spell-header',text:'effect'})
+				var magicinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5)
+				$('#magictable').append(magicinfo)
+				for (var s = 0; s < magicquantity; s++) {
+					var name = magicarr[s]
+					var cast = library[army].magic.spell[name].cast
+					var range = library[army].magic.spell[name].range
+					var target = library[army].magic.spell[name].target
+					var effect = library[army].magic.spell[name].effect
+					var tr = $('<tr />',{class:'noprint',id:'spell-'+(s+1)})
+					var input = $('<input />',{type:'checkbox',name:'magictable',value:'spell-'+(s+1),class:'noprint'})
+					var td1 = $('<td />',{class:'spell-name',text:name}).prepend(input)
+					var td2 = $('<td />',{class:'spell-text'}).html(cast)
+					var td3 = $('<td />',{class:'spell-text'}).html(range)
+					var td4 = $('<td />',{class:'spell-text'}).html(target)
+					var td5 = $('<td />',{class:'spell-text'}).html(effect)
+					var magicinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5)
+					$('#magictable').append(magicinfo)
+					input.change(function(){
+						printToggle()
+					})
+				}
+			}
 
 	//WARSCROLLS
 		for (var i =0; i < rosterarr.length; i++) {

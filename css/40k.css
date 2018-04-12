@@ -11,12 +11,16 @@
 	page-break-inside:avoid;
 }
 
-#rostertable,#traitstable,#relicstable{
+#rostertable,#traitstable,#relicstable,#magictable,#dogmatable,#canticlestable{
 	border:1mm solid;
 	width:20cm;
 	font-size: 8pt;
 	background-color: Beige;
 	page-break-inside:avoid;
+}
+
+.rosterselect{
+	font-size: 10pt;
 }
 
 .chars{
@@ -203,7 +207,7 @@
 	line-height: 0.6cm;
 }
 
-.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable{background-color: white;}
+.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable,#magictable,#dogmatable,#canticlestable{background-color: white;}
 .alert{background-color: Coral;}
 .level{
 	float: right;
@@ -254,6 +258,18 @@ White
 	text-align: center;
 }
 
+.menubtn{
+	float: left;
+	margin: 3px;
+	padding: 3px;
+	text-align: center;
+	text-decoration: none;
+	border: 2px solid Black;
+	border-radius: 5px;
+	background-color: dimgray;
+	color: lightgoldenrodyellow;
+}
+
 #detachments{
 	position: absolute;
 	top: 80px;
@@ -263,9 +279,9 @@ White
 	font-size: 8pt;
 	display: block;
 }
-#detachments select{
+/*#detachments select{
 	font-size: 6pt;
-}
+}*/
 
 #detachment td{
 	border:1px solid gray;
@@ -274,6 +290,7 @@ White
 	height: 40px;
 	width: 110px;
 	vertical-align: top;
+	font-size: 10pt;
 }
 
 .detachment{
@@ -327,14 +344,35 @@ White
 .hide{
 	display: none;
 }
+.spell-header-name,.spell-header{
+	background-color: Gainsboro;
+	text-transform: uppercase;
+	border-right:0.5mm solid Gray;
+	border-top:0.5mm solid Gray;
+}
+.spell-header-name,.spell-name{
+	width:3.5cm;
+	padding-left: 3mm;
+}
+.spell-header{
+	text-align: center;
+	padding-left: 3mm;
+	padding-right: 3mm;
+}
 
+.spell-name,.spell-text{
+	/*background-color: Linen;*/
+	padding-left: 3mm;
+	border-right:0.5mm solid Gray;
+	border-top:0.5mm solid Gray;
+}
 
 /*PRINT*/
 	@media print{
 		#menu,#detachments,.noprint{
 			display: none;
 		}
-		.warscroll,#rostertable,#traitstable{
+		.warscroll,#rostertable,#traitstable,#magictable,#dogmatable,#canticlestable{
 			page-break-inside:avoid;
 		}
 	}
