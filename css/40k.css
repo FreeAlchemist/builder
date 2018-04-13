@@ -228,6 +228,14 @@
 	width: 3.5mm;
 	height: 3.5mm;
 }
+
+.relicprofile td{
+	border:1px solid Black;
+}
+.relicprofileheader td{
+	background-color: Gainsboro;
+	text-transform: uppercase;
+}
 /*
 Black
 DimGray
@@ -248,7 +256,7 @@ White
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;
-	box-shadow: Gray 1px 1px 3px;
+	box-shadow: Black 1px 1px 3px;
 	/*display: none;*/
 }
 
