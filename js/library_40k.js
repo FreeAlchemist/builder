@@ -14,7 +14,7 @@ var detachments = {
 	},
 	battalion : {
 		name : 'Battalion',
-		cp : '+3',
+		cp : '+5',
 		hq : [2,3],
 		troops : [3,6],
 		elites : [0,6],
@@ -27,7 +27,7 @@ var detachments = {
 	},
 	brigade : {
 		name : 'Brigade',
-		cp : '+9',
+		cp : '+12',
 		hq : [3,5],
 		troops : [6,12],
 		elites : [3,8],
