@@ -21,6 +21,7 @@
 
 .rosterselect{
 	font-size: 10pt;
+	background-color: Mintcream;
 }
 
 .chars{
@@ -252,7 +253,7 @@ White
 	top: 10px;
 	right: 10px;
 	float: right;
-	background-color: Linen;
+	background-color: rgba(30,34,33,1);
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;
@@ -262,8 +263,22 @@ White
 
 .menupart{
 	float: left;
-	margin: 10px;
+	margin: 6px;
 	text-align: center;
+	font-size: 12pt;
+	background-color: Linen;
+	color: Linen;
+	background: rgba(30,34,33,1) ;
+    border: 2px solid rgba(192,167,106,1) ;
+    border-bottom-color: Burlywood ;
+    border-bottom-width: 3px ;
+    border-left-color: Bisque ;
+    border-left-width: 2px ;
+    border-right-color: Burlywood ;
+    border-right-width: 3px ;
+    border-style: groove ;
+    border-top-color: Bisque ;
+    border-top-width: 2px ;
 }
 
 .menubtn{
@@ -277,7 +292,7 @@ White
 	background-color: dimgray;
 	color: lightgoldenrodyellow;
 }
-
+.menubtn:hover{border-color: Linen;}
 #detachments{
 	position: absolute;
 	top: 80px;
@@ -292,7 +307,7 @@ White
 }*/
 
 #detachment td{
-	border:1px solid gray;
+	border:1px solid rgba(64,58,34,1);
 	border-top:3px solid black;
 	text-align: center;
 	height: 40px;
@@ -335,16 +350,16 @@ White
 	
 }
 .passive{
-	background-color: DimGray;
+	background-color: rgba(64,58,34,1);
 }
 .aux{
 	background-color: Beige;
 }
 .required{
-	background-color: SandyBrown;
+	background-color: rgba(249,206,116,1);
 }
 .required-select{
-	background-color: Khaki;
+	background-color: #e3f3de;
 }
 .detpoints{
 	background-color: Mintcream
@@ -375,6 +390,41 @@ White
 	border-top:0.5mm solid Gray;
 }
 
+
+.wrap{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 8px 10px 8px;
+/*border-color: transparent transparent rgba(197, 192, 187, 1) transparent;*/
+border-color: transparent transparent rgba(118,112,75,1) transparent;
+float: left;
+padding-top: 10px;
+/*margin-top: 5px;*/
+/*margin-right: 1px;*/
+}
+
+.wrap:hover{
+	border-color: transparent transparent rgb(104, 139, 156)  transparent;
+}
+
+.wrap:active{
+	border-color: transparent transparent rgb(34, 145, 199)  transparent;
+}
+
+.wrap_closed{
+	/*border-width: 10px 0px 10px 10px;*/
+	/*border-color: transparent transparent rgba(88, 80, 72, 1) transparent;*/
+	/*border-color: transparent transparent Orange transparent;*/
+	width: 97.8%;
+	/*height: 10px;*/
+	margin-top: 0px;
+	background-color: rgba(249,206,116,1);
+}
+
+
+
+
 /*PRINT*/
 	@media print{
 		#menu,#detachments,.noprint{
@@ -382,5 +432,12 @@ White
 		}
 		.warscroll,#rostertable,#traitstable,#magictable,#dogmatable,#canticlestable{
 			page-break-inside:avoid;
+		}
+		.modelsnum{
+			color: Linen;
+			background-color: transparent;
+			border:none;
+			width: 30px;
+			padding: 2px;
 		}
 	}
