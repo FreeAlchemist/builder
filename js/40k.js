@@ -438,88 +438,98 @@ function getRoster(army){
 			$('#'+detachmentsarr[i]+'-roster-units').html(unitlist)
 		}
 
-	//CANTICLES
-		if(library[army].canticles){
-			var wrap = $('<div />',{id:"canticles_wrap", class:"wrap noprint",title:"Canticles"})
+	//SPECIAL RULES (Canticles of the Omnissiah, Warp Storm, etc)
+		if(library[army].specialrules){
+			var wrap = $('<div />',{id:"specialrules_wrap", class:"wrap noprint",title:"specialrules"})
 			wrap.click(function(){
-				$("#canticlestable tr").toggle()
+				$("#specialrulestable tr").toggle()
 			})
 			var table = $('<table />')
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
 			table.attr('class','topborder noprint')
-			table.attr('id','canticlestable')
+			table.attr('id','specialrulestable')
 			$('#page').append(table.append(wrap))
-			var canticlesarr = []
-			for (var c in library[army].canticles) {
-				canticlesarr.push(c)
+			var specialrulesarr = []
+			for (var c in library[army].specialrules) {
+				specialrulesarr.push(c)
 			}
-			var canticlesquantity = canticlesarr.length
+			var specialrulesquantity = specialrulesarr.length
 			var tr = $('<tr />')
-			var input = $('<input />',{type:'checkbox',name:'canticlestable',value:'canticlestable',class:'noprint'})
-			var td1 = $('<td />',{class:'army-header',text:'canticles'})
-			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var input = $('<input />',{type:'checkbox',name:'specialrulestable',value:'specialrulestable',class:'noprint floatright'})
+			// var td1 = $('<td />',{class:'army-header',text:library[army].specialrules.specialrulesname})
+			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(library[army].specialrules.specialrulesname+'<span class="noprint floatright">Print</span>').append(input)
 			input.change(function(){
 					printToggle()
-			})
-			var canticlesinfo = tr.append(td1).append(td2)
-			$('#canticlestable').append(canticlesinfo)
-			for (var s = 0; s < canticlesquantity; s++) {
-				var thiscanticles = canticlesarr[s]
-				var thiscanticlestext = library[army].canticles[thiscanticles]
-				var tr = $('<tr />',{id:'canticles-'+(s+1)})
-				// var input = $('<input />',{type:'checkbox',name:'canticlestable',value:'canticles-'+(s+1),class:'noprint'})
-				var td1 = $('<td />',{class:'abilityheader'}).html(thiscanticles)
-				// .prepend(input)
-				var td2 = $('<td />',{class:'abilitytext'}).html(thiscanticlestext)
-				var canticlesinfo = tr.append(td1).append(td2)
-				$('#canticlestable').append(canticlesinfo)
-				// input.change(function(){
-				// 	printToggle()
-				// })
+				})
+			var specialrulesinfo = tr.append(td1)
+			$('#specialrulestable').append(specialrulesinfo)
+			if(library[army].specialrules.specialrulestext){
+				var tr = $('<tr />')
+				var td1 = $('<td />',{colspan:'2',class:'abilitytext'}).html(library[army].specialrules.specialrulestext)
+				var specialrulesinfo = tr.append(td1)
+				$('#specialrulestable').append(specialrulesinfo)
+			}
+			for (var s = 0; s < specialrulesquantity; s++) {
+				var thisspecialrules = specialrulesarr[s]
+				if(thisspecialrules != 'specialrulesname' && thisspecialrules != 'specialrulestext'){
+					var thisspecialrulestext = library[army].specialrules[thisspecialrules]
+					var tr = $('<tr />',{id:'specialrules-'+(s+1)})
+					// var input = $('<input />',{type:'checkbox',name:'specialrulestable',value:'specialrules-'+(s+1),class:'noprint'})
+					var td1 = $('<td />',{class:'abilityheader'}).html(thisspecialrules)
+					var td2 = $('<td />',{class:'abilitytext'}).html(thisspecialrulestext)
+					var specialrulesinfo = tr.append(td1).append(td2)
+					$('#specialrulestable').append(specialrulesinfo)
+					// input.change(function(){
+					// 	printToggle()
+					// })
+				}
 			}
 		}
 
-	//DOGMA
-		if(library[army].dogma){
-			var wrap = $('<div />',{id:"dogma_wrap", class:"wrap noprint",title:"Dogma"})
+	//ADAPTATIONS (Dogma, Hive Fleet, etc)
+		if(library[army].adaptation){
+			var wrap = $('<div />',{id:"adaptation_wrap", class:"wrap noprint",title:"adaptation"})
 			wrap.click(function(){
-				$("#dogmatable tr").toggle()
+				$("#adaptationtable tr").toggle()
 			})
 			var table = $('<table />')
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
 			table.attr('class','topborder noprint')
-			table.attr('id','dogmatable')
+			table.attr('id','adaptationtable')
 			$('#page').append(table.append(wrap))
-			var dogmaarr = []
-			for (var c in library[army].dogma) {
-				dogmaarr.push(c)
+			var adaptationarr = []
+			for (var c in library[army].adaptation) {
+				adaptationarr.push(c)
 			}
-			var dogmaquantity = dogmaarr.length
+			var adaptationquantity = adaptationarr.length
 			var tr = $('<tr />')
-			var input = $('<input />',{type:'checkbox',name:'dogmatable',value:'dogmatable',class:'noprint'})
-			var td1 = $('<td />',{class:'army-header',text:'dogma'})
-			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var input = $('<input />',{type:'checkbox',name:'adaptationtable',value:'adaptationtable',class:'noprint floatright'})
+			// var td1 = $('<td />',{class:'army-header',text:library[army].adaptation.adaptationname})
+			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(library[army].adaptation.adaptationname+'<span class="noprint floatright">Print</span>').append(input)
 			input.change(function(){
 					printToggle()
 				})
-			var dogmainfo = tr.append(td1).append(td2)
-			$('#dogmatable').append(dogmainfo)
-			for (var s = 0; s < dogmaquantity; s++) {
-				var thisdogma = dogmaarr[s]
-				var thisdogmatext = library[army].dogma[thisdogma]
-				var tr = $('<tr />',{class:'noprint',id:'dogma-'+(s+1)})
-				var input = $('<input />',{type:'checkbox',name:'dogmatable',value:'dogma-'+(s+1),class:'noprint'})
-				var td1 = $('<td />',{class:'abilityheader'}).html(thisdogma).prepend(input)
-				var td2 = $('<td />',{class:'abilitytext'}).html(thisdogmatext)
-				var dogmainfo = tr.append(td1).append(td2)
-				$('#dogmatable').append(dogmainfo)
-				input.change(function(){
-					printToggle()
-				})
+			var adaptationinfo = tr.append(td1)
+			$('#adaptationtable').append(adaptationinfo)
+			for (var s = 0; s < adaptationquantity; s++) {
+				var thisadaptation = adaptationarr[s]
+				if(thisadaptation != 'adaptationname'){
+					var thisadaptationtext = library[army].adaptation[thisadaptation]
+					var tr = $('<tr />',{class:'noprint',id:'adaptation-'+(s+1)})
+					var input = $('<input />',{type:'checkbox',name:'adaptationtable',value:'adaptation-'+(s+1),class:'noprint'})
+					var td1 = $('<td />',{class:'abilityheader'}).html(thisadaptation).prepend(input)
+					var td2 = $('<td />',{class:'abilitytext'}).html(thisadaptationtext)
+					var adaptationinfo = tr.append(td1).append(td2)
+					$('#adaptationtable').append(adaptationinfo)
+					input.change(function(){
+						printToggle()
+					})
+				}
 			}
 		}
 
@@ -542,21 +552,22 @@ function getRoster(army){
 			}
 			var traitsquantity = traitsarr.length
 			var tr = $('<tr />')
-			var input = $('<input />',{type:'checkbox',name:'traitstable',value:'traitstable',class:'noprint'})
-			var td1 = $('<td />',{class:'army-header',text:'Traits'})
-			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var input = $('<input />',{type:'checkbox',name:'traitstable',value:'traitstable',class:'noprint floatright'})
+			// var td1 = $('<td />',{class:'army-header',text:'Traits'})
+			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html('Traits<span class="noprint floatright">Print</span>').append(input)
 			input.change(function(){
 					printToggle()
 				})
-			var traitsinfo = tr.append(td1).append(td2)
+			var traitsinfo = tr.append(td1)
 			$('#traitstable').append(traitsinfo)
 			for (var s = 0; s < traitsquantity; s++) {
-				var thistrait = traitsarr[s]
-				var thistraittext = library[army].traits[thistrait]
+				var thistraits = traitsarr[s]
+				var thistraitstext = library[army].traits[thistraits]
 				var tr = $('<tr />',{class:'noprint',id:'trait-'+(s+1)})
 				var input = $('<input />',{type:'checkbox',name:'traitstable',value:'trait-'+(s+1),class:'noprint'})
-				var td1 = $('<td />',{class:'abilityheader'}).html(thistrait).prepend(input)
-				var td2 = $('<td />',{class:'abilitytext'}).html(thistraittext)
+				var td1 = $('<td />',{class:'abilityheader'}).html(thistraits).prepend(input)
+				var td2 = $('<td />',{class:'abilitytext'}).html(thistraitstext)
 				var traitsinfo = tr.append(td1).append(td2)
 				$('#traitstable').append(traitsinfo)
 				input.change(function(){
@@ -584,13 +595,14 @@ function getRoster(army){
 			}
 			var relicsquantity = relicsarr.length
 			var tr = $('<tr />')
-			var input = $('<input />',{type:'checkbox',name:'relicstable',value:'relicstable',class:'noprint'})
-			var td1 = $('<td />',{class:'army-header',text:'Relics'})
-			var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var input = $('<input />',{type:'checkbox',name:'relicstable',value:'relicstable',class:'noprint floatright'})
+			// var td1 = $('<td />',{class:'army-header',text:'Relics'})
+			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html('Relics<span class="noprint floatright">Print</span>').append(input)
 			input.change(function(){
 				printToggle()
 			})
-			var relicsinfo = tr.append(td1).append(td2)
+			var relicsinfo = tr.append(td1)
 			$('#relicstable').append(relicsinfo)
 			for (var s = 0; s < relicsquantity; s++) {
 				var thisrelic = relicsarr[s]
@@ -651,13 +663,14 @@ function getRoster(army){
 				}
 				var magicquantity = magicarr.length
 				var tr = $('<tr />')
-				var input = $('<input />',{type:'checkbox',name:'magictable',value:'magictable',class:'noprint'})
-				var td1 = $('<td />',{class:'army-header',text:library[army].magic.magicname})
-				var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+				var input = $('<input />',{type:'checkbox',name:'magictable',value:'magictable',class:'noprint floatright'})
+				// var td1 = $('<td />',{class:'army-header',text:library[army].magic.magicname})
+				// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
+				var td1 = $('<td />',{colspan:'5', class:'army-header'}).html(library[army].magic.magicname+' psychic powers<span class="noprint floatright">Print</span>').append(input)
 				input.change(function(){
 					printToggle()
 				})
-				var magicinfo = tr.append(td1).append(td2)
+				var magicinfo = tr.append(td1)
 				$('#magictable').append(magicinfo)
 				var tr = $('<tr />');
 				var td1 = $('<td />',{class:'spell-header-name',text:'SPELL'})
@@ -1209,9 +1222,15 @@ function getRoster(army){
 					for (var s = 0; s < abilquantity; s++) {
 						var thisability = abilarr[s]
 						var thisabilitytext = thisunit.abilities[thisability]
+						//If can, get info from abilities
 						if(library[army].abilities && library[army].abilities[thisability]){
 							// console.log('found '+thisability)
 							thisabilitytext = library[army].abilities[thisability]
+						}
+						//If can, get info from adaptation
+						if(library[army].adaptation && library[army].adaptation[thisability]){
+							// console.log('found '+thisability)
+							thisabilitytext = library[army].adaptation[thisability]
 						}
 						var tr = $('<tr />');
 						var td1 = $('<td />',{class:'abilityheader'}).html(thisability)

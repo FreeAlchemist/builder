@@ -11,7 +11,7 @@
 	page-break-inside:avoid;
 }
 
-#rostertable,#traitstable,#relicstable,#magictable,#dogmatable,#canticlestable{
+#rostertable,#traitstable,#relicstable,#magictable,#specialrulestable,#adaptationtable{
 	border:1mm solid;
 	width:20cm;
 	font-size: 8pt;
@@ -208,7 +208,7 @@
 	line-height: 0.6cm;
 }
 
-.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable,#magictable,#dogmatable,#canticlestable{background-color: white;}
+.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable,#magictable,#specialrulestable,#adaptationtable{background-color: white;}
 .alert{background-color: Coral;}
 .level{
 	float: right;
@@ -423,7 +423,10 @@ padding-top: 10px;
 	background-color: rgba(249,206,116,1);
 }
 
-
+.floatright{
+	float: right;
+	margin-right: 5px;
+}
 
 
 /*PRINT*/
@@ -431,7 +434,7 @@ padding-top: 10px;
 		#menu,#detachments,.noprint{
 			display: none;
 		}
-		.warscroll,#rostertable,#traitstable,#magictable,#dogmatable,#canticlestable{
+		.warscroll,#rostertable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
 			page-break-inside:avoid;
 		}
 		.modelsnum{

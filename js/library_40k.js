@@ -1374,7 +1374,7 @@ var library = {
 				// 		'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 6" suffers D3 mortal wounds.',
 				// 		'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
 				// 		},
-				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, FREEBLADE',
+				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, HOUSEHOLD',
 				// 	keywords:'VEHICLE, ARMIGER, ARMIGER WARGLAIVE',
 				// },
 				// knightwarden : {
@@ -1399,7 +1399,7 @@ var library = {
 				// 		'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 2D6" suffers D6 mortal wounds.',
 				// 		'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
 				// 		},
-				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, FREEBLADE',
+				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, HOUSEHOLD',
 				// 	keywords:'TITANIC, VEHICLE, KNIGHT WARDEN',
 				// },
 			//Fortification
@@ -1908,11 +1908,31 @@ var library = {
 				ability:'You can re-roll failed Morale tests for unit that includes a model with enhanced data-tether.',
 				points:'5',
 			},
+			'Broad Spectrum Data-tether' : {
+				range:'-',
+				type:'-',
+				strength:'-',
+				ap:'-',
+				damage:'-',
+				ability:'FORGEWORLD units within 3" of any friendly models equipped with a broad spectrum data-tether at the start of the Morale phase add 1 to their Leadership for the duration of the phase.',
+				points:'0',
+			},
+			'Smoke Launchers' : {
+				range:'-',
+				type:'-',
+				strength:'-',
+				ap:'-',
+				damage:'-',
+				ability:'Once per game, a model equipped with smoke launchers can use them instead of shooting any weapons in the Shooting phase; until your next Shooting phase your opponent must substract 1 from all hit rolls for ranged weapons that target this vehicle.',
+				points:'0',
+			},
 		},
 		abilities : {
 			'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 		},
-		canticles : {
+		specialrules : {
+			specialrulesname : 'Canticles of the Omnissiah',
+			specialrulestext : 'At units with this ability gain a bonus during the battle depending on the Canticle of the Omnissiah currently being canted.<br>At the start of each battle round, pick which Canticle of the Omnissiah from the table below is in effect for the duration of the battle round. The same Canticle may not be picked twice during the same battle.<br>Alternatively, you can randomly determine which Canticle of the Omnissiah is in effect by rolling a D6 and consulting the table below. Note that if you randomly determine a Canticle, it takes effect even if the same Canticle has been in effect earlier in the battle.<br>If you have a Battle-forged army, units only receive the bonus if every model in their Detachment has this ability.',
 			'<b>1. Incarnation of the Iron Soul</b>' : 'You can re-roll failed Morale tests for affected units.',
 			'<b>2. Litany of the Electromancer</b>' : 'Roll a D6 for each enemy unit that is within 1" of any affected units; on a roll of 6, the unit being rolled for suffers D3 mortal wounds.',
 			'<b>3. Chant of the Remorseless Fist</b>' : 'You can re-roll any hit rolls of 1 for affected units in the Fight phase.',
@@ -1920,7 +1940,8 @@ var library = {
 			'<b>5. Invocation of Machine Might</b>' : 'Affected units have +1 Strength.',
 			'<b>6. Benediction of the Omnissiah</b>' : 'You can re-roll failed hit rolls of 1 for affected units in the Shooting phase.',
 		},
-		dogma : {
+		adaptation : {
+			adaptationname : 'Forgeworld Dogma',
 			'MARS' : 'Glory to the Omnissiah: Each time you randomly determine which Canticle of the Omnissiah is being canted, roll two dice instead of one. All units with this dogma receive the benefit of both results, instead of just the result of the first dice (if duplicate is rolled, no additional Canticle is canted this turn).',
 			'GRAIA' : 'Refusal to Yield: Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either that model is not slain (and has 1 wound remaining), or that model does not flee. However, <b>GRAIA</b> units with this dogma cannot Fall Back unless there is a friendly <b>GRAIA CHARACTER</b> on the battlefield.',
 			'METALICA' : 'Relentless March: If a unit with this dogma Advances, it can ignore the penalty for firing Assault weapons and treats all Rapid Fire weapons it is armed with as Assault weapons until the end of the turn (e.g. a Rapid Fire 1 weapon is treated as an Assault 1 weapon).',
@@ -1979,20 +2000,19 @@ var library = {
 					powerpoints:'7',
 					pointspermodel:'115',
 					points:'115',
-					weapon : ['Omnissian Axe','Macrostubber','Phosphor serpenta','Volkite Blaster','Eradication ray','Eradication ray *'],
 					weaponbasic : ['Omnissian Axe','Macrostubber','Volkite Blaster'],
 					weaponoption : ['Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Masterwork Bionics' : 'At the beginning of each of your turns, this model regains D3 lost wounds.',
-						'Autocaduceus of Arkhan Land (Arcana)' : 'At the start of each of your turns, the bearer of this relic heals 1 wound. In addition, when the bearer uses an ability to repair a friendly ADEPTUS MECHANICUS model (such as Master of Machines), you may re-roll the dice to determine how many wounds are regained.',
-						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly GRAIA or QUESTOR MECHANICUS model within 3" (but not itself).  GRAIA model regains D3 lost wounds; QUESTOR MECHANICUS model regains 1 lost wound. A model may not be the target of the Master of Machines ability more than once per turn.',
+						'Autocaduceus of Arkhan Land (Arcana)' : 'At the start of each of your turns, the bearer of this relic heals 1 wound. In addition, when the bearer uses an ability to repair a friendly <b>ADEPTUS MECHANICUS</b> model (such as Master of Machines), you may re-roll the dice to determine how many wounds are regained.',
+						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly <b>FORGEWORLD</b> or <b>QUESTOR MECHANICUS</b> model within 3" (but not itself).  <b>FORGEWORLD</b> model regains D3 lost wounds; <b>QUESTOR MECHANICUS</b> model regains 1 lost wound. A model may not be the target of the Master of Machines ability more than once per turn.',
 						'WARLORD TRAIT Necromechanic' : 'Each time your Warlord uses an ability to repair a friendly model, that model regains 1 additional wound.',
-						'Lord of the Machine Cult' : 'You can re-roll hit rolls of 1 in the Shooting phase for friendly GRAIA units within 6".',
+						'Lord of the Machine Cult' : 'You can re-roll hit rolls of 1 in the Shooting phase for friendly <b>FORGEWORLD</b> units within 6".',
 						'Refractor Field' : 'This model has a 5+ invulnerable save.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, FORGEWORLD',
 					keywords:'CHARACTER, INFANTRY, TECH-PRIEST, DOMINUS',
 				},
 				techpriestenginseer : {
@@ -2014,11 +2034,11 @@ var library = {
 					weaponbasic : ['Omnissian Axe','Servo-arm','Laspistol'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
-						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly GRAIA VEHICLE, ASTRA MILITARUM VEHICLE or QUESTOR MECHANICUS model within 3". If a model being repaired is a GRAIA or ASTRA MILITARUM model, it regains D3 lost wounds; if it is a QUESTOR MECHANICUS model, it regains 1 lost wound. A model may not be the target of the Master of Machines ability more than once per turn.',
+						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly <b>FORGEWORLD VEHICLE</b> , <b>ASTRA MILITARUM VEHICLE</b> or <b>QUESTOR MECHANICUS</b> model within 3". If a model being repaired is a <b>FORGEWORLD</b> or <b>ASTRA MILITARUM</b> model, it regains D3 lost wounds; if it is a <b>QUESTOR MECHANICUS</b> model, it regains 1 lost wound. A model may not be the target of the Master of Machines ability more than once per turn.',
 						'Bionics' : 'This model has a 6+ invulnerable save.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, FORGEWORLD',
 					keywords:'CHARACTER, INFANTRY, TECH-PRIEST, ENGINSEER',
 				},
 			//Troops
@@ -2039,18 +2059,15 @@ var library = {
 					models : [5,10],
 					pointspermodel:'7',
 					points:'35',
-					weapon : ['Basic melee','Power sword','Arc maul','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Galvanic rifle','Transuranic arquebus','Omnispex'],
 					weaponbasic : ['Basic melee','Galvanic rifle'],
 					weaponoption : ['Power sword','Arc maul','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Transuranic arquebus','Omnispex','Enhanced Data-tether'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Soldiers of the machine god' : 'This unit within range of objective marker controls it if there no enemy units with such ability else who have most models.',
 						'Bionics' : 'All models in this unit have a 6+ invulnerable save.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
-						// 'Omnispex' : 'Enemy units do not receive the benefit to their saving throws for being in cover against attacks made by a unit that includes a model with an omnispex.',
-						// 'Enhanced Data-tether' : 'You can re-roll failed Morale tests for unit that includes a model with enhanced data-tether.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, FORGEWORLD',
 					keywords:'INFANTRY, SKITARII RANGERS',
 				},
 				skitariivanguard : {
@@ -2077,12 +2094,10 @@ var library = {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Soldiers of the machine god' : 'This unit within range of objective marker controls it if there no enemy units with such ability else who have most models.',
 						'Bionics' : 'All models in this unit have a 6+ invulnerable save.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
 						'Rad-saturation':'Reduce the toughness of enemy units (other than VEHICLES) by 1 whilst they are within 1" of any Skitarii Vanguard units.',
-						// 'Omnispex' : 'Enemy units do not receive the benefit to their saving throws for being in cover against attacks made by a unit that includes a model with an omnispex.',
-						// 'Enhanced Data-tether' : 'You can re-roll failed Morale tests for unit that includes a model with enhanced data-tether.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, FORGEWORLD',
 					keywords:'INFANTRY, SKITARII VANGUARD',
 				},
 			//Elites
@@ -2108,12 +2123,12 @@ var library = {
 					weaponoption : ['Taser Goad','Flechette blaster'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
 						'Neurostatic Aura':'Enemy units within 3" of any Sicarian Infiltrators must substract 1 from their Leadership.',
 						'Infiltrators' : 'During deployment, you can set this unit up in concealment instead of placing it on the battlefield. At the end of any of your Movement phases, this unit can reveal its location - set it up anywhere on the battlefield that is more than 9" from any enemy model.',
 						'Bionics' : 'All models in this unit have a 6+ invulnerable save.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, FORGEWORLD',
 					keywords:'INFANTRY, SICARIAN INFILTRATORS',
 				},
 				cyberneticadatasmith : {
@@ -2136,10 +2151,10 @@ var library = {
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly Kastelan Robot within 3". That model regains D3 lost wounds. A model may not be the target of the Master of Machines ability more than once per turn.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
 						'Refractor Field' : 'This model has a 5+ invulnerable save.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, FORGEWORLD',
 					keywords:'CHARACTER, INFANTRY, TECH-PRIEST, CYBERNETICA DATASMITH',
 				},
 			//Fast
@@ -2165,14 +2180,12 @@ var library = {
 					weaponoption : ['Cognis heavy stubber','Twin heavy phosphor blaster','Neutron laser','Icarus array:','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon','Broad Spectrum Data-tether','Smoke Launchers'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
-						'Smoke Launchers' : 'Once per game, a model equipped with smoke launchers can use them instead of shooting any weapons in the Shooting phase; until your next Shooting phase your opponent must substract 1 from all hit rolls for ranged weapons that target this vehicle.',
-						'Broad Spectrum Data-tether' : 'GRAIA units within 3" of any friendly models equipped with a broad spectrum data-tether at the start of the Morale phase add 1 to their Leadership for the duration of the phase.',
 						'Crawler' : 'This model can only Advance D3", but ignores the -1 penalty to its hit rolls for moving and firing a Heavy weapon.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+ each unit within 6" suffers D3 mortal wounds.',
-						'Emanatus Force Field' : 'This model has a 5+ invulnerable save. You can re-roll invulnerable saving throws of 1 for any Onager Dunecrawler if it is within 6" of at least one other friendly GRAIA Onager Dunecrawler',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
+						'Emanatus Force Field' : 'This model has a 5+ invulnerable save. You can re-roll invulnerable saving throws of 1 for any Onager Dunecrawler if it is within 6" of at least one other friendly <b>FORGEWORLD</b> Onager Dunecrawler',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, GRAIA',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, SKITARII, FORGEWORLD',
 					keywords:'VEHICLE, ONAGER DUNECRAWLER',
 				},
 				kastelanrobots : {
@@ -2192,21 +2205,20 @@ var library = {
 					models : [2,6],
 					pointspermodel:'65',
 					points:'130',
-					weapon : ['Kastelan fists','Heavy phosphor blaster','Incendine combustor'],
 					weaponbasic : ['Kastelan fists','Incendine combustor'],
 					weaponoption : ['Heavy phosphor blaster'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
-						'GRAIA dogma: Refusal to Yield' : 'Roll a D6 each time a model with this dogma is slain or flees - on a 6 that model refuses to yield; either the wound that slew it is ignored or the model does not flee. However, GRAIA units with this dogma cannot Fall Back unless there is a friendly GRAIA CHARACTER on the battlefield.',
-						'Battle Protocols' : 'When this unit is set up, the Aegis Protocol (see below) is in effect. You can attempt to change the unit\'s battle protocol at the start of each of your Movement phases if there is a friendly RYZA Cybernetica Datasmith within 6". Roll a D6; on a 2+ the attempt is successful and you can select any one of the three battle protocols to take effect from the start of the next battle round. Otherwise, the attempt fails and the unit\'s current protocol remains in effect.',
+						'Battle Protocols' : 'When this unit is set up, the Aegis Protocol (see below) is in effect. You can attempt to change the unit\'s battle protocol at the start of each of your Movement phases if there is a friendly <b>FORGEWORLD</b> Cybernetica Datasmith within 6". Roll a D6; on a 2+ the attempt is successful and you can select any one of the three battle protocols to take effect from the start of the next battle round. Otherwise, the attempt fails and the unit\'s current protocol remains in effect.',
 						'Aegis Protocol' : 'Whilst this battle protocol is in effect, you can add 1 to any armour and invulnerable saving throws you make for this unit.',
 						'Conqueror Protocol' : 'Whilst this battle protocol is in effect, this unit cannot shoot, but it can fight twice in each Fight phase instead of only once.',
 						'Protector Protocol' : 'Whilst this battle protocol is in effect, this unit cannot move or charge, but you can double the number of shots it makes with each of its ranged weapons - i.e., the Heavy phosphor blaster\'s Type becomes Heavy 6 and Incendine combustor\'s Type becomes Heavy 2D6.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+ each unit within 3" suffers D3 mortal wounds.',
 						'Repulsor Grid' : 'All models in this unit have a 5+ invulnerable save against shooting attacks. In addition, each time you roll a 6 (after re-rolls, but before modifiers) for a repulsor grid\'s invulnerable saving throw, the unit that made that attack suffers a mortal wound.',
+						'Forgeworld Dogma' : '',
 						},
-					factionkeywords : 'IMPERIUM, QUESTOR MECHANICUS, FREEBLADE',
-					keywords:'VEHICLE, ARMIGER, ARMIGER WARGLAIVE',
+					factionkeywords : 'IMPERIUM, ADEPTUS MECHANICUS, CULT MECHANICUS, FORGEWORLD',
+					keywords:'VEHICLE, KASTELAN ROBOTS',
 				},
 			//Flyers
 			//Dedicated Transport
@@ -2235,8 +2247,9 @@ var library = {
 						'Vehicle Squadron' : 'The first time this unit is set up, all of its models must be placed within 6" of at least one other model in their unit. Then, each operates independently and is treated as a separate unit.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 6" suffers D3 mortal wounds.',
 						'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
+						'Household' : '',
 						},
-					factionkeywords : 'IMPERIUM, QUESTOR MECHANICUS, FREEBLADE',
+					factionkeywords : 'IMPERIUM, QUESTOR MECHANICUS, HOUSEHOLD',
 					keywords:'VEHICLE, ARMIGER, ARMIGER WARGLAIVE',
 				},
 				knightwarden : {
@@ -2262,8 +2275,9 @@ var library = {
 						'Super-heavy Walker' : 'This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy INFANTRY models, though it must end its move more than 1" from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls.                                                                                                                                                                                                                            Finally, this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 2D6" suffers D6 mortal wounds.',
 						'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
+						'Household' : '',
 						},
-					factionkeywords : 'IMPERIUM, QUESTOR MECHANICUS, FREEBLADE',
+					factionkeywords : 'IMPERIUM, QUESTOR MECHANICUS, HOUSEHOLD',
 					keywords:'TITANIC, VEHICLE, KNIGHT WARDEN',
 				},
 			//Fortification
@@ -2576,15 +2590,15 @@ var library = {
 			'Xenos' : 'You can re-roll hit rolls and wound rolls of 1 for <b>ORDO XENOS</b> units against targets that do not have the <b>CHAOS, IMPERIUM</b> or <b>UNALIGNED FACTION</b> keywords.',
 			'Specialist' : 'You can re-roll hit rolls of 1 for Specialist units if the target has the<b>CHARACTER</b> keyword.',
 		},
-		traits : {
+		// traits : {},
+		adaptation : {
+			adaptationname : 'Ordo',
 			'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
 			'Hereticus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO HERETICUS</b> units if the target has the<b>CHAOS</b> or <b>PSYKER</b> keyword.',
 			'Xenos' : 'You can re-roll hit rolls and wound rolls of 1 for <b>ORDO XENOS</b> units against targets that do not have the <b>CHAOS, IMPERIUM</b> or <b>UNALIGNED FACTION</b> keywords.',
 			'Specialist' : 'You can re-roll hit rolls of 1 for Specialist units if the target has the<b>CHARACTER</b> keyword.',
 		},
-		// relics : {
-
-		// },
+		// relics : {},
 		magic : {
 			magicname : 'Telethesia',
 			spell : {
@@ -2800,14 +2814,453 @@ var library = {
 		}
 	},
 
+	tyranids : {
+		armyname : 'Tyranids',
+		weapons : {
+			'Monstrous rending claws' : {
+				range:'Melee',
+				type:'Melee',
+				strength:'user',
+				ap:'-3',
+				damage:'D3',
+				ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+				points:'0',
+			},
+			// 'Scythes of Tyran' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'Slayer Sabres' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'Slimer Maggot Infestation' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'Balethorn Cannon' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'The Miasma Cannon' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'Scythes of Tyran' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'Scythes of Tyran' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+		},
+		abilities : {
+			'Synapse' : '<b>HIVE FLEET</b> units automatically pass Morale tests if they are within 12\" of any friendly <b>HIVE FLEET</b> units with this ability.',
+			'Instinctive Behaviour' : 'unless a <b>HIVE FLEET</b> unit with this ability is with 24\" of any friendly <b>HIVE FLEET SYNAPSE</b> unit, you must substract 1 from any hit rolls made for it when shooting any target other than the nearest visible enemy unit, and you must substract 2 from its charge roll if it declares a charge against any unit other than the nearest enemy unit.',
+			'Shadow in the warp' : 'Enemy <b>PSYKERS</b> must substract 1 from any Psychic tests they make if they are within 18\" of any units with this ability. <b>TYRANID PSYKERS</b> are not affected.',
+		},
+		traits : {
+			'Alien cunning' : '',
+			'Heightened senses' : '',
+			'Synaptic Lynchpin' : '',
+			'Mind eater' : '',
+			'Instinktive Killer' : '',
+			'Adaptive Biology' : '',
+			'BEHEMOTH' : 'Monstrous Hunger: ',
+			'KRAKEN' : 'One Step Ahead: ',
+			'LEVIATHAN' : 'Perfectly Adapted: ',
+			'GORGON' : 'Lethal Miasma',
+			'JORMUNGANDR' : 'Insidious Threat',
+			'HYDRA' : 'Endless Regeneration',
+			'KRONOS' : 'Soul Hunger',
+		},
+		relics : {
+			'Scythes of Tyran' : '',
+			'The Ymgarl Factor' : '',
+			'The Reaper of Obliterax' : '',
+			'Chameleonic Mutation' : '',
+			'Hyper-adaptive Biology' : '',
+			'Slayer Sabres' : '',
+			'Slimer Maggot Infestation' : '',
+			'Balethorn Cannon' : '',
+			'The Maw-claws of Thyrax' : '',
+			'The Norn Crown' : '',
+			'The Miasma Cannon' : '',
+			'Infrasonic Roar' : '',
+		},
+		adaptation : {
+			adaptationname : 'Hive Fleet',
+			'BEHEMOTH' : 'Hyper-aggression: You can re-roll failed charge rolls for units with this adaptation.',
+			'KRAKEN' : 'Questing Tendrils: When a unit with this adaptation Advances, roll three dice instead of one and pick the highest to add to the Move characteristic of all models in the unit for that Movement phase. In addition, such units can Fall Back and charge in the same turn.',
+			'LEVIATHAN' : 'Synaptic Imperative: Roll a D6 each time a unit with this adaptation loses a wound whilst it is within 6\" of a friendly <b>SYNAPSE</b> unit from the same hive fleet. On a 6, the damage is ignored and the unit does not lose a wound. ignore this adaptation on a unit that is currently affected by the <i>Catalyst</i> psychic power.',
+			'GORGON' : 'Adaptive Toxins: You can re-roll wound rolls of 1 in the Fight phase for units with this adaptation.',
+			'JORMUNGANDR' : 'Tunnel Networks: A unit with this adaptation (other than units that can <b>FLY</b>) always has the benefit of cover for the purposes of shooting attacks. If the unit Advances or charges, however, it loses the benefit of this adaptation until the start of your next Movement phase.',
+			'HYDRA' : 'Swarming Instincts: You can re-roll hit rolls in the Fight phase for units with this adaptation that target units containing fewer models than their own.',
+			'KRONOS' : 'Bio-barrage: You can re-roll hit rolls of 1 for units with this adaptation in your Shooting phase if they did not move in te preceding Movement phase.',
+		},
+		magic : {
+			magicname : 'Hive Mind',
+			spell : {
+				'Smite' : {
+					cast:'5',
+					range:'18 in LoS',
+					target:'enemy unit',
+					effect:'The unit you pick up suffers D3 mortal wounds.',
+				},
+				'Dominion' : {
+					cast:'5',
+					range:'36',
+					target:'friendly <b>TYRANIDS</b> unit with Instinctive Behaviour',
+					effect:'Until the end of your next Psychic phase, that unit ignores its Instinctive Behaviour ability and automatically passes Morale tests.',
+				},
+				'Catalyst' : {
+					cast:'6',
+					range:'18',
+					target:'friendly <b>TYRANIDS</b> unit',
+					effect:'Until the start of your next Psychic phase, each time that unit loses a wound, roll a D6; on a 5+, the damage is ignored and the unit does not lose that wound.',
+				},
+				'The Horror' : {
+					cast:'6',
+					range:'24 in LoS',
+					target:'unit',
+					effect:'Until the start of your next Psychic phase, that unit must substract 1 from their hit rolls and Leadership characteristic.',
+				},
+				'Onslaught' : {
+					cast:'6',
+					range:'18',
+					target:'friendly <b>TYRANIDS</b> unit',
+					effect:'That unit can shoot this turn (even if it Advanced) without suffering any penalties to its hit rolls for moving and shooting Heavy weapons, or Advancing and shooting Assault weapons. In addition, that unit can charge this turn even if it Advanced (though not if it Fell Back).',
+				},
+				'Paroxysm' : {
+					cast:'5',
+					range:'18',
+					target:'enemy unit',
+					effect:'Until your next Psychic phase, that unit cannot fight in the Fight phase  until all other units that are able to have done so. If the target unit has an ability that allows it to fight first in the Fight phase, it instead fights as if it didn\'t have this ability. If both players have units that cannot fight until all other units have done so, then alternate choosing which of those units to fight with, starting with the player whose turn is taking place.',
+				},
+				'Psychic Scream' : {
+					cast:'5',
+					range:'18',
+					target:'nearest enemy unit',
+					effect:'Nearest enemy unit within 18\" suffers D3 mortal wounds. In addition, if that unit is a <b>PSYKER</b>, roll two dice. If the result is higher than their Leadership characteristic, randomly select one of their psychic powers. They can no longer use that psychic power.',
+				},
+			},
+		},
+		units : {
+			//HQ
+				broodlord : {
+					name:'Broodlord',
+					role:'HQ',
+					move:'8',
+					ws:'2+',
+					bs:'-',
+					strength:'5',
+					toughness:'5',
+					wounds:'6',
+					attacks:'6',
+					leadership:'10',
+					save:'4+',
+					invulsave:'5+',
+					powerpoints:'8',
+					pointspermodel:'162',
+					weaponbasic : ['Monstrous rending claws'],
+					abilities : {
+						'Synapse' : '',
+						'Shadow in the warp' : '',
+						'Swift and deadly' : 'This model can charge even if it Advanced during its turn.',
+						'Brood Telepathy' : 'You can add 1 to hit rolls in the Fight phase for <b>HIVE FLEET</b> Genestealer units within 6\" of any friendly <b>HIVE FLEET</b> Broodlords.',
+						'Lightning reflexes' : 'This model has a 5+ invulnerable save.',
+						'PSYKER' : 'A Broodlord can attempt to manifest one psychic power in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the <i>Smite</i> power and one psychic power from the Hive Mind discipline.',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'CHARACTER, INFANTRY, GENESTEALER, PSYKER, SYNAPSE, BROODLORD',
+				},
+			//Troops
+			//Elites
+			//Fast
+			//Heavy
+			//Flyers
+			//Dedicated Transport
+			//Lord of War
+			//Fortification
+		}
+	},
+	necrons : {
+		armyname : 'Necrons',
+		weapons : {
+			// 'Voidreaper' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'The Gauntlet of the Conflagrator' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'The Abyssal Staff' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			// 'The Voltaic Staff' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+			'The Blood Scythe' : {
+				range:'Melee',
+				type:'Melee',
+				strength:'+2',
+				ap:'-4',
+				damage:'2',
+				ability:'Each time the bearer fights, it can make D3 additional attacks with this weapon.',
+				points:'',
+			},
+			// 'The Solar Staff' : {
+			// 	range:'Melee',
+			// 	type:'Melee',
+			// 	strength:'user',
+			// 	ap:'-3',
+			// 	damage:'D3',
+			// 	ability:'You can re-roll failed wound rolls for this weapon. In addition, each time you make a wound roll of 6+, that hit is resolved with an AP of -6 and Damage of 3.',
+			// 	points:'0',
+			// },
+		},
+		abilities : {
+			'Reanimation Protocols' : '',
+			'Living Metal' : 'At the beginning of your turn, this unit regains 1 lost wound.',
+			'' : '',
+			'' : '',
+			'' : '',
+			'' : '',
+		},
+		traits : {
+			'Enduring Will' : '',
+			'Eternal Madness' : '',
+			'Immortal Pride' : '',
+			'Thrall of the Silent King' : '',
+			'Implacable Conqueror' : '',
+			'Honorable Combatant' : '',
+			'SAUTEKH' : 'Hyperlogical Strategist: ',
+			'MEPHRIT' : 'Merciless tyrant',
+			'NOVOKH' : 'Crimson Haze',
+			'NIHILAKH' : 'Precognitive Strike',
+			'NEPHREKH' : 'Skin of Living Gold',
+		},
+		relics : {
+			'The Orb of Eternity' : '',
+			'Voidreaper' : '',
+			'Lightning Field' : '',
+			'The Nightmare Shroud' : '',
+			'The Gauntlet of the Conflagrator' : '',
+			'The Veil of Darkness' : '',
+			'The Nanoscarab Casket' : '',
+			'Sempiternal Weave' : '',
+			'The Abyssal Staff' : '',
+			'Timesplinter Cloak' : '',
+			'The Voltaic Staff' : '',
+			'The Blood Scythe' : '<b>NOVOKH</b>',
+			'The Solar Staff' : '',
+		},
+		adaptation : {
+			adaptationname : 'Dynastic Codes',
+			'SAUTEKH' : 'Relentless advance: If a unit with this code Advances, it treats all ranged weapons it is equipped with as Assault weapons until the end of the turn. In addition, unless it has Advanced this turn, a unit with this code does not suffer the penalty to hit rolls for moving and firing a Heavy weapon.',
+			'MEPHRIT' : 'Solar Fury: Each time a model with this code shoots an enemy unit that is within half range of it weapon\’s maximum range, the Armour Penetration characteristic of that weapon\’s attack is improved by 1.',
+			'NOVOKH' : 'Awakened by murder: You can re-roll failed hit rolls in the Fight phase for units with this code if they charged, were charged, or performed a Heroic Intervention this turn.',
+			'NIHILAKH' : 'Aggressively territorial: Re-roll hit rolls of 1 for units with this code whenever they shoot, including Overwatch, as long as they did not move in the preceding Movement phase and they have not disembarked from a <b>TRANSPORT</b> during this turn.',
+			'NEPHREKH' : 'Translocation beams: If unit with this code Advances, add 6\" to its Move characteristic for that Movement phase instead of rolling a dice (if the unit is being affected by the My Will Be Done or Wave of Command ability, add 7\" to its Move characteristic instead). In addition, if a unit with this code Advances, its models can move across models and terrain as if they were not there.',
+		},
+		magic : {
+			magicname : 'Power\"s of the C\'tan',
+			spell : {
+				// 'Smite' : {
+				// 	cast:'5',
+				// 	range:'18 in LoS',
+				// 	target:'enemy unit',
+				// 	effect:'The unit you pick up suffers D3 mortal wounds.',
+				// },
+				'Antimatter meteor' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+				'Time\'s arrow' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+				'Sky of falling stars' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+				'Cosmic fire' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+				'Seismic assault' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+				'Transdimentional thunderbolt' : {
+					cast:'',
+					range:'',
+					target:'',
+					effect:'',
+				},
+			},
+		},
+		units : {
+			//HQ
+				// broodlord : {
+				// 	name:'Broodlord',
+				// 	role:'HQ',
+				// 	move:'8',
+				// 	ws:'2+',
+				// 	bs:'-',
+				// 	strength:'5',
+				// 	toughness:'5',
+				// 	wounds:'6',
+				// 	attacks:'6',
+				// 	leadership:'10',
+				// 	save:'4+',
+				// 	invulsave:'5+',
+				// 	powerpoints:'8',
+				// 	pointspermodel:'162',
+				// 	weaponbasic : ['Monstrous rending claws'],
+				// 	abilities : {
+				// 		'Synapse' : '',
+				// 		'Shadow in the warp' : '',
+				// 		'Swift and deadly' : 'This model can charge even if it Advanced during its turn.',
+				// 		'Brood Telepathy' : 'You can add 1 to hit rolls in the Fight phase for <b>HIVE FLEET</b> Genestealer units within 6\" of any friendly <b>HIVE FLEET</b> Broodlords.',
+				// 		'Lightning reflexes' : 'This model has a 5+ invulnerable save.',
+				// 		'PSYKER' : 'A Broodlord can attempt to manifest one psychic power in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the <i>Smite</i> power and one psychic power from the Hive Mind discipline.',
+				// 		'Hive Fleet' :'',
+				// 		},
+				// 	factionkeywords : 'TYRANIDS, HIVE FLEET',
+				// 	keywords:'CHARACTER, INFANTRY, GENESTEALER, PSYKER, SYNAPSE, BROODLORD',
+				// },
+			//Troops
+			//Elites
+			//Fast
+				canoptecwraiths : {
+					name:'Canoptek Wraiths',
+					role:'Fast',
+					move:'12',
+				// 	ws:'2+',
+				// 	bs:'-',
+					strength:'6',
+					toughness:'5',
+				// 	wounds:'6',
+					attacks:'3',
+					leadership:'10',
+					save:'4+',
+					invulsave:'3+',
+					models : [3,6],
+				// 	powerpoints:'8',
+					pointspermodel:'55',
+					weaponbasic : ['Vicious claws'],
+				// 	weaponoption : ['Transdimensional Beamer'],
+				// 	abilities : {
+				// 		'Synapse' : '',
+				// 		'Shadow in the warp' : '',
+				// 		'Swift and deadly' : 'This model can charge even if it Advanced during its turn.',
+				// 		'Brood Telepathy' : 'You can add 1 to hit rolls in the Fight phase for <b>HIVE FLEET</b> Genestealer units within 6\" of any friendly <b>HIVE FLEET</b> Broodlords.',
+				// 		'Lightning reflexes' : 'This model has a 5+ invulnerable save.',
+				// 		'PSYKER' : 'A Broodlord can attempt to manifest one psychic power in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the <i>Smite</i> power and one psychic power from the Hive Mind discipline.',
+				// 		'Hive Fleet' :'',
+				// 		},
+				// 	factionkeywords : 'NECRONS, DYNASTY',
+				// 	keywords:'CHARACTER, INFANTRY, GENESTEALER, PSYKER, SYNAPSE, BROODLORD',
+				},
+			//Heavy
+			//Flyers
+			//Dedicated Transport
+			//Lord of War
+			//Fortification
+		}
+	},
 	// fallen : {
 	// 	armyname : 'Fallen',
 	// 	weapons : {
 
 	// 	},
 	// 	abilities : {
-			
+			// 	'' : '',
+			// 	'' : '',
+			// 	'' : '',
+			// 	'' : '',
+			// 	'' : '',
+			// 	'' : '',
 	// 	},
+	// relics : {
+	// 	'' : '',
+	// 	'' : '',
+	// 	'' : '',
+	// 	'' : '',
+	// 	'' : '',
+	// 	'' : '',
+	// },
 	// 	units : {
 			//HQ
 			//Troops
@@ -3123,30 +3576,7 @@ var library = {
 	// 	},
 	// },
 
-	// tyranids : {
-	// 	armyname : 'Tyranids',
-	// 	weapons : {
 
-	// 	},
-	// 	abilities : {
-			
-	// 	},
-	// 	traits : {
-
-	// 	},
-	// 	relics : {
-
-	// 	},
-		//HQ
-		//Troops
-		//Elites
-		//Fast
-		//Heavy
-		//Flyers
-		//Dedicated Transport
-		//Lord of War
-		//Fortification
-	// },
 }
 
 /*
