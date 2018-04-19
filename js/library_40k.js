@@ -173,7 +173,7 @@ var library = {
 				},
 				'Foe-smiter' : {
 					range:'24',
-					type:'Rapid fire 2',
+					type:'Rapid Fire 2',
 					strength:'4',
 					ap:'-1',
 					damage:'2',
@@ -218,7 +218,7 @@ var library = {
 					ability:'-',
 					points:'0',
 				},
-				'Chain sword' : {
+				'Chainsword' : {
 					range:'Melee',
 					type:'Melee',
 					strength:'4',
@@ -290,7 +290,7 @@ var library = {
 					ability:'You can re-roll failed wound rolls for this weapon. If a model is armed with two lightning claws, each tome it fights it can make 1 additional attack with them.',
 					points:'8',
 				},
-				'Lightning claw (pair)' : {
+				'Lightning claws (pair)' : {
 					range:'Melee',
 					type:'Melee',
 					strength:'User',
@@ -325,6 +325,15 @@ var library = {
 					damage:'D3',
 					ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
 					points:'12',
+				},
+				'Power axe' : {
+					range:'Melee',
+					type:'Melee',
+					strength:'+1',
+					ap:'-2',
+					damage:'1',
+					ability:'-',
+					points:'5',
 				},
 				'Power maul' : {
 					range:'Melee',
@@ -401,7 +410,7 @@ var library = {
 				},
 				'Boltgun' : {
 					range:'24',
-					type:'Rapid fire 1',
+					type:'Rapid Fire 1',
 					strength:'4',
 					ap:'0',
 					damage:'1',
@@ -416,6 +425,114 @@ var library = {
 					damage:'1',
 					ability:'-',
 					points:'22',
+				},
+				'Combi-flamer' : {
+					range:'-',
+					type:'-',
+					strength:'-',
+					ap:'-',
+					damage:'-',
+					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+					points:'11',
+				},
+				'Combi-grav' : {
+					range:'-',
+					type:'-',
+					strength:'-',
+					ap:'-',
+					damage:'-',
+					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+					points:'17',
+				},
+				'Combi-melta' : {
+					range:'-',
+					type:'-',
+					strength:'-',
+					ap:'-',
+					damage:'-',
+					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+					points:'19',
+				},
+				'Combi-plasma' : {
+					range:'-',
+					type:'-',
+					strength:'-',
+					ap:'-',
+					damage:'-',
+					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+					points:'15',
+				},
+				'- Boltgun' : {
+					range:'24',
+					type:'Rapid Fire 1',
+					strength:'4',
+					ap:'0',
+					damage:'1',
+					ability:'-',
+					points:'0',
+				},
+				'- Flamer' : {
+					range:'8',
+					type:'Assault D6',
+					strength:'4',
+					ap:'0',
+					damage:'1',
+					ability:'This weapon automatically hits its target.',
+					points:'0',
+				},
+				'- Grav-gun' : {
+					range:'18',
+					type:'Rapid Fire 1',
+					strength:'5',
+					ap:'-3',
+					damage:'1',
+					ability:'If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.',
+					points:'0',
+				},
+				'- Meltagun' : {
+					range:'12',
+					type:'Assault 1',
+					strength:'8',
+					ap:'-4',
+					damage:'D6',
+					ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
+					points:'0',
+				},
+				'- Plasma gun (Standard)' : {
+					range:'24',
+					type:'Rapid Fire 1',
+					strength:'7',
+					ap:'-3',
+					damage:'1',
+					ability:'-',
+					points:'0',
+				},
+				'- Plasma gun (Supercharged)' : {
+					range:'24',
+					type:'Rapid Fire 1',
+					strength:'8',
+					ap:'-3',
+					damage:'2',
+					ability:'On a hit roll of 1, the bearer is slain after all of this weapon\'s shots have been resolved.',
+					points:'0',
+				},
+				'Cyclone missile launcher - Frag missile' : {
+					range:'36',
+					type:'Heavy 2D3',
+					strength:'4',
+					ap:'0',
+					damage:'1',
+					ability:'-',
+					points:'50',
+				},
+				'Cyclone missile launcher - Krak missile' : {
+					range:'36',
+					type:'Heavy 2',
+					strength:'8',
+					ap:'-2',
+					damage:'D6',
+					ability:'-',
+					points:'0',
 				},
 				'Flamer' : {
 					range:'8',
@@ -443,6 +560,33 @@ var library = {
 					damage:'1',
 					ability:'-',
 					points:'4',
+				},
+				'Grav-pistol' : {
+					range:'12',
+					type:'Pistol 1',
+					strength:'5',
+					ap:'-3',
+					damage:'1',
+					ability:'If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.',
+					points:'8',
+				},
+				'Grav-cannon and grav-amp' : {
+					range:'24',
+					type:'Heavy 4',
+					strength:'5',
+					ap:'-3',
+					damage:'1',
+					ability:'If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.',
+					points:'',
+				},
+				'Grav-gun' : {
+					range:'18',
+					type:'Rapid Fire 1',
+					strength:'5',
+					ap:'-3',
+					damage:'1',
+					ability:'If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.',
+					points:'8',
 				},
 				'Heavy bolter' : {
 					range:'36',
@@ -491,7 +635,7 @@ var library = {
 				},
 				'Hurricane bolter' : {
 					range:'24',
-					type:'Rapid fire 6',
+					type:'Rapid Fire 6',
 					strength:'4',
 					ap:'0',
 					damage:'1',
@@ -608,7 +752,7 @@ var library = {
 				},
 				'Plasma gun (Standard)' : {
 					range:'24',
-					type:'Rapid fire 1',
+					type:'Rapid Fire 1',
 					strength:'7',
 					ap:'-3',
 					damage:'1',
@@ -617,7 +761,7 @@ var library = {
 				},
 				'Plasma gun (Supercharged)' : {
 					range:'24',
-					type:'Rapid fire 1',
+					type:'Rapid Fire 1',
 					strength:'8',
 					ap:'-3',
 					damage:'2',
@@ -680,7 +824,7 @@ var library = {
 				},
 				'Storm bolter' : {
 					range:'24',
-					type:'Rapid fire 2',
+					type:'Rapid Fire 2',
 					strength:'4',
 					ap:'0',
 					damage:'1',
@@ -707,7 +851,7 @@ var library = {
 				},
 				'Twin storm bolter' : {
 					range:'24',
-					type:'Rapid fire 4',
+					type:'Rapid Fire 4',
 					strength:'4',
 					ap:'0',
 					damage:'1',
@@ -748,6 +892,7 @@ var library = {
 			'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a <b>FALLEN</b>',
 			'And They Shall Know No Fear' : 'You can re-roll failed Morale tests for this unit.',
 			'Jink' : 'If this unit Advances, it gains a 4+ invulnerable save against all shooting attacks until the start of your next Movement phase.',
+			'Jump Pack Assault' : 'During deployment, if this model has a jump pack, you can set it up high in the skies instead of placing it on the battlefield. At the end of any of your Movement phases this unit can assault from above - set it up anywhere on the battlefield that is more than 9" from any enemy models.',
 			// 'Spiritual Leaders' : 'All friendly DARK ANGELS units within 6" of this model can use his Leadership instead of their own.',
 			// 'Litanies of Hate' : 'You can re-roll failed hit rolls in the Fight phase for friendly DARK ANGELS units within 6" of this model.',
 			// 'Aura of Dread' : 'Units within 6" of an enemy INTERROGATOR-CHAPLAINS must substract 1 from their Leadership characteristic.',
@@ -862,33 +1007,6 @@ var library = {
 					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS, RAVENWING',
 					keywords:'BIKER, CHARACTER, GRAND MASTER, FLY, SAMMAEL',
 				},
-				mastergravis : {
-					name:'Master (Gravis)',
-					role:'HQ',
-					move:'5',
-					ws:'2+',
-					bs:'2+',
-					strength:'4',
-					toughness:'5',
-					wounds:'6',
-					degradate : ['6'],
-					attacks:'5',
-					leadership:'9',
-					save:'3+',
-					invulsave:'4+',
-					powerpoints:'7',
-					pointspermodel:'102',
-					// points:'97',
-					weaponbasic : ['Master-crafted power sword','Boltstorm gauntlet (melee)','Boltstorm gauntlet (shooting)'],
-					abilities : {
-						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
-						'And They Shall Know No Fear' : 'You can re-roll failed Morale tests for this unit.',
-						'Rites of Battle' : 'You can re-roll hit rolls of 1 made for friendly <b>DARK ANGELS</b> units within 6" of this model.',
-						'Iron Halo' : 'This model has a 4+ invulnerable save.',
-						},
-					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS',
-					keywords:'CHARACTER, INFANTRY, MK X GRAVIS, PRIMARIS, MASTER',
-				},
 				interrogatorchaplain : {
 					name:'Interrogator Chaplain',
 					role:'HQ',
@@ -905,8 +1023,8 @@ var library = {
 					invulsave:'4+',
 					powerpoints:'5',
 					pointspermodel:'85',
-					// points:'97',
-					weapon : ['Crozius arcanum','Power fist','Frag grenade','Krak grenade','Bolt pistol','Boltgun'],
+					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Chainsword','Lightning claw','Power axe','Power fist','Power maul','Power sword','Thunder hammer','Boltgun','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Grav-pistol','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -917,6 +1035,36 @@ var library = {
 						},
 					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS, DEATHWING',
 					keywords:'CHARACTER, INFANTRY, CHAPLAIN, INTERROGATOR-CHAPLAIN',
+				},
+				interrogatorchaplainjumppack : {
+					name:'Interrogator Chaplain (Jump Pack)',
+					role:'HQ',
+					move:'12',
+					ws:'2+',
+					bs:'3+',
+					strength:'4',
+					toughness:'4',
+					wounds:'5',
+					degradate : ['5'],
+					attacks:'3',
+					leadership:'9',
+					save:'3+',
+					invulsave:'4+',
+					powerpoints:'6',
+					pointspermodel:'85',
+					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Chainsword','Lightning claw','Power axe','Power fist','Power maul','Power sword','Thunder hammer','Boltgun','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Grav-pistol','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Storm bolter'],
+					abilities : {
+						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
+						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
+						'Spiritual Leaders' : 'All friendly <b>DARK ANGELS</b> units within 6" of this model can use his Leadership instead of their own.',
+						'Litanies of Hate' : 'You can re-roll failed hit rolls in the Fight phase for friendly <b>DARK ANGELS</b> units within 6" of this model.',
+						'Aura of Dread' : 'Units within 6" of an enemy <b>INTERROGATOR-CHAPLAINS</b> must substract 1 from their Leadership characteristic.',
+						'Jump Pack Assault' : '',
+						'Rozarius' : 'This model has a 4+ invulnerable save.',
+						},
+					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS, DEATHWING',
+					keywords:'CHARACTER, INFANTRY, CHAPLAIN, INTERROGATOR-CHAPLAIN, JUMP PACK, FLY',
 				},
 				interrogatorchaplainterminator : {
 					name:'Interrogator Chaplain (Terminator)',
@@ -934,8 +1082,8 @@ var library = {
 					invulsave:'4+',
 					powerpoints:'6',
 					pointspermodel:'125',
-					// points:'125',
-					weapon : ['Crozius arcanum','Storm bolter'],
+					weaponbasic : ['Crozius arcanum','Storm bolter'],
+					weaponoption : ['Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -964,8 +1112,8 @@ var library = {
 					invulsave:'-',
 					powerpoints:'8',
 					pointspermodel:'88',
-					// points:'120',
-					weapon : ['Force axe','Force stave','Force sword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponbasic : ['Force stave','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Force axe','Force sword','Grav-pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -991,11 +1139,12 @@ var library = {
 					invulsave:'-',
 					powerpoints:'9',
 					pointspermodel:'112',
-					// points:'120',
-					weapon : ['Force axe','Force stave','Force sword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponbasic : ['Force stave','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Force axe','Force sword','Grav-pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
+						'Jump Pack Assault' : '',
 						'Psychic Hood' : 'You can add 1 to Deny the Witch tests you take for this model against enemy <b>PSYKERS</b> within 12\".',
 						'PSYKER' : 'This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the <i>Smite</i> power and two psychic powers from the Interromancy discipline.',
 						},
@@ -1018,8 +1167,8 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'8',
 					pointspermodel:'120',
-					// points:'120',
-					weapon : ['Force axe','Force stave','Force sword'],
+					weaponbasic : ['Force stave'],
+					weaponoption : ['Force axe','Force sword','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -1030,6 +1179,32 @@ var library = {
 						},
 					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS, DEATHWING',
 					keywords:'CHARACTER, INFANTRY, TERMINATOR, PSYKER, LIBRARIAN',
+				},
+				mastergravis : {
+					name:'Master (Gravis)',
+					role:'HQ',
+					move:'5',
+					ws:'2+',
+					bs:'2+',
+					strength:'4',
+					toughness:'5',
+					wounds:'6',
+					degradate : ['6'],
+					attacks:'5',
+					leadership:'9',
+					save:'3+',
+					invulsave:'4+',
+					powerpoints:'7',
+					pointspermodel:'102',
+					weaponbasic : ['Master-crafted power sword','Boltstorm gauntlet (melee)','Boltstorm gauntlet (shooting)'],
+					abilities : {
+						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
+						'And They Shall Know No Fear' : 'You can re-roll failed Morale tests for this unit.',
+						'Rites of Battle' : 'You can re-roll hit rolls of 1 made for friendly <b>DARK ANGELS</b> units within 6" of this model.',
+						'Iron Halo' : 'This model has a 4+ invulnerable save.',
+						},
+					factionkeywords : 'IMPERIUM, ADEPTUS ASTARTES, DARK ANGELS',
+					keywords:'CHARACTER, INFANTRY, MK X GRAVIS, PRIMARIS, MASTER',
 				},
 			//Troops
 				// tacticalsquad : {
@@ -1049,7 +1224,7 @@ var library = {
 				// 	// models : [5,10],
 				// 	// pointspermodel:'16',
 				// 	// points:'64',
-				// 	// weapon : ['Basic melee','Power sword','Power maul','Chain sword','Power fist','Flamer','Frag grenade','Krak grenade','Bolt pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Plasma gun (Standard)','Plasma gun (Supercharged)','Meltagun','Heavy bolter'],
+				// 	// weapon : ['Basic melee','Power sword','Power maul','Chainsword','Power fist','Flamer','Frag grenade','Krak grenade','Bolt pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Plasma gun (Standard)','Plasma gun (Supercharged)','Meltagun','Heavy bolter'],
 				// 	// abilities : {
 				// 	// 	'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 				// 	// 	'And They Shall Know No Fear' : 'You can re-roll failed Morale tests for this unit.',
@@ -1075,10 +1250,8 @@ var library = {
 					powerpoints:'13',
 					models : [2,5],
 					pointspermodel:'16',
-					points:'64',
-					weapon : ['Basic melee','Power sword','Power maul','Chain sword','Power fist','Flamer','Frag grenade','Krak grenade','Bolt pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Plasma gun (Standard)','Plasma gun (Supercharged)','Meltagun','Heavy bolter','Combat shield'],
-					weaponbasic : ['Chain sword','Frag grenade','Krak grenade','Bolt pistol'],
-					weaponoption : ['Basic melee','Power sword','Power maul','Power fist','Flamer','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Plasma gun (Standard)','Plasma gun (Supercharged)','Meltagun','Heavy bolter','Combat shield'],
+					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Basic melee','Power sword','Power maul','Power fist','Flamer','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Plasma gun (Standard)','Plasma gun (Supercharged)','Meltagun','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Storm bolter','Heavy bolter','Combat shield'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'And They Shall Know No Fear' : 'You can re-roll failed Morale tests for this unit.',
@@ -1103,7 +1276,6 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'4',
 					pointspermodel:'75',
-					// points:'75',
 					weaponbasic : ['Basic melee','Storm bolter'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
@@ -1131,9 +1303,8 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'7',
 					pointspermodel:'103',
-					// points:'103',
 					weaponbasic : ['Power fist','Storm bolter'],
-					weaponoption : ['Lightning claw (pair)','Chain fist','Thunder hammer','Storm shield'],
+					weaponoption : ['Lightning claws (pair)','Chain fist','Thunder hammer','Storm shield'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -1160,10 +1331,8 @@ var library = {
 					powerpoints:'13',
 					models : [5,10],
 					pointspermodel:'26',
-					points:'227',
-					// weapon : ['Power sword','Power fist','Chain fist','Storm bolter','Assault cannon','Watcher in the Dark'],
 					weaponbasic : ['Power sword','Power fist','Storm bolter'],
-					weaponoption : ['Chain fist','Lightning claw (pair)','Thunder hammer','Storm shield','Assault cannon','Plasma cannon (Standard)','Plasma cannon (Supercharged)','Heavy flamer','Cyclone missile launcher','Watcher in the Dark'],
+					weaponoption : ['Chain fist','Lightning claws (pair)','Thunder hammer','Storm shield','Assault cannon','Plasma cannon (Standard)','Plasma cannon (Supercharged)','Heavy flamer','Cyclone missile launcher - Frag missile','Cyclone missile launcher - Krak missile','Watcher in the Dark'],
 					abilities : {
 						'Grim Resolve' : 'You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed Morale test.',
 						'Inner Circle' : 'This unit automatically passes Morale tests. In addition, you can re-roll failed hit rolls in the Fight phase for attacks by this unit that target a FALLEN',
@@ -1190,7 +1359,6 @@ var library = {
 					powerpoints:'12',
 					models : [5,10],
 					pointspermodel:'45',
-					points:'250',
 					weapon : ['Flail of the Unforgiven','Mace of Absolution','Storm shield','Watcher in the Dark'],
 					weaponbasic : ['Flail of the Unforgiven','Mace of Absolution','Storm shield'],
 					weaponoption : ['Watcher in the Dark'],
@@ -1220,8 +1388,6 @@ var library = {
 					invulsave:'-',
 					powerpoints:'8',
 					pointspermodel:'90',
-					points:'165',
-					// weapon : ['Basic melee','Dreadnought combat weapon','Heavy flamer','Storm bolter','Multi-melta','Heavy plasma cannon (Standard)','Heavy plasma cannon (Supercharged)','Twin lascannon','Missile launcher - Frag missile','Missile launcher - Krak missile'],
 					weaponbasic : ['Dreadnought combat weapon','Storm bolter','Assault cannon'],
 					weaponoption : ['Basic melee','Heavy flamer','Multi-melta','Heavy plasma cannon (Standard)','Heavy plasma cannon (Supercharged)','Twin lascannon','Missile launcher - Frag missile','Missile launcher - Krak missile'],
 					abilities : {
@@ -1249,8 +1415,6 @@ var library = {
 					invulsave:'-',
 					powerpoints:'10',
 					pointspermodel:'140',
-					points:'140',
-					// weapon : ['Basic melee','Redemptor fist','Heavy flamer','Fragstorm grenade launcher','Onslaught gatling cannon'],
 					weaponbasic : ['Redemptor fist','Heavy flamer','Fragstorm grenade launcher','Fragstorm grenade launcher','Heavy onslaught gatling cannon'],
 					weaponoption : ['Basic melee','Onslaught gatling cannon','Macro plasma Incinerator (Standard)','Macro plasma Incinerator (Supercharged)','Storm bolter','Storm bolter','Icarus rocket pod'],
 					abilities : {
@@ -1277,8 +1441,6 @@ var library = {
 					invulsave:'-',
 					powerpoints:'7',
 					pointspermodel:'122',
-					// points:'165',
-					weapon : ['Basic melee','Heavy bolter','Assault cannon','Plasma storm battery (Standard)','Plasma storm battery (Supercharged)'],
 					weaponbasic : ['Basic melee','Heavy bolter','Plasma storm battery (Standard)','Plasma storm battery (Supercharged)'],
 					weaponoption : ['Assault cannon'],
 					abilities : {
@@ -1305,8 +1467,6 @@ var library = {
 					invulsave:'-',
 					powerpoints:'16',
 					pointspermodel:'244',
-					points:'266',
-					weapon : ['Basic melee','Hurricane bolter','Twin assault cannon','Storm bolter','Multi-melta','Hunter-killer missile'],
 					weaponbasic : ['Basic melee','Hurricane bolter','Hurricane bolter','Twin assault cannon'],
 					weaponoption : ['Storm bolter','Multi-melta','Hunter-killer missile'],
 					abilities : {
@@ -1337,8 +1497,6 @@ var library = {
 					invulsave:'-',
 					powerpoints:'4',
 					pointspermodel:'70',
-					// points:'266',
-					weapon : ['Basic melee','Storm bolter','Hunter-killer missile'],
 					weaponbasic : ['Basic melee','Storm bolter'],
 					weaponoption : ['Storm bolter','Hunter-killer missile'],
 					abilities : {
@@ -1351,57 +1509,6 @@ var library = {
 					keywords:'VEHICLE, TRANSPORT, RHINO',
 				},
 			//Lord of War
-				// armigerwarglaive : {
-				// 	name:'Armiger Warglaive',
-				// 	role:'Lord of War',
-				// 	move:'14 10 7',
-				// 	ws:'3+ 4+ 5+',
-				// 	bs:'3+ 4+ 5+',
-				// 	strength:'6',
-				// 	toughness:'7',
-				// 	wounds:'0-5 6-8 9-12',
-				// 	attacks:'4',
-				// 	leadership:'8',
-				// 	save:'3+',
-				// 	invulsave:'5+ against shooting',
-				// 	powerpoints:'12',
-				// 	models : [1,3],
-				// 	pointspermodel:'223',
-				// 	points:'223',
-				// 	weapon : ['Reaper chain-cleaver','Meltagun','Thermal spear','Heavy stubber'],
-				// 	abilities : {
-				// 		'Vehicle Squadron' : 'The first time this unit is set up, all of its models must be placed within 6" of at least one other model in their unit. Then, each operates independently and is treated as a separate unit.',
-				// 		'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 6" suffers D3 mortal wounds.',
-				// 		'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
-				// 		},
-				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, HOUSEHOLD',
-				// 	keywords:'VEHICLE, ARMIGER, ARMIGER WARGLAIVE',
-				// },
-				// knightwarden : {
-				// 	name:'Knight Warden',
-				// 	role:'Lord of War',
-				// 	move:'12 9 6',
-				// 	ws:'3+ 4+ 5+',
-				// 	bs:'3+ 4+ 5+',
-				// 	strength:'8',
-				// 	toughness:'8',
-				// 	wounds:'0-11 12-17 18-24',
-				// 	attacks:'4',
-				// 	leadership:'9',
-				// 	save:'3+',
-				// 	invulsave:'5+ against shooting',
-				// 	powerpoints:'25',
-				// 	pointspermodel:'320',
-				// 	points:'500',
-				// 	weapon : ['Titanic feet','Thunderstrike gauntlet','Heavy flamer','Meltagun','Avenger gatling cannon','Ironstorm missile pod'],
-				// 	abilities : {
-				// 		'Super-heavy Walker' : 'This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy INFANTRY models, though it must end its move more than 1" from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls.                                                                                                                                                                                                                            Finally, this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer.',
-				// 		'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 2D6" suffers D6 mortal wounds.',
-				// 		'Ion shield' : 'This model has a 5+ invulnerable save against shooting attacks.',
-				// 		},
-				// 	factionkeywords : 'IMPERIUM, QUESTOR IMPERIALIS, HOUSEHOLD',
-				// 	keywords:'TITANIC, VEHICLE, KNIGHT WARDEN',
-				// },
 			//Fortification
 		},
 	},
@@ -1409,6 +1516,27 @@ var library = {
 	skitarii : {
 		armyname : 'Skitarii',
 		weapons : {
+			/*
+			----special
+			Arc rifle
+			Plasma caliver
+			Transuranic arq
+
+			----pistol
+			Arc pistol
+			Phosphor blast pistol
+			Radium pistol
+
+			----melee
+			Arc maul
+			Power sword
+			Taser goad
+
+			----carapace
+			Twin Icarus autocannon
+			Stormspear rocked pod
+			Ironstorm missile pod
+			*/
 			//relics
 			'Pater Cog-tooth' : {
 				range:'Melee',
@@ -1537,7 +1665,7 @@ var library = {
 				ability:'Each servo-arm can only be used to make one attack each time this model fights. When a model attacks with this weapon, you must substract 1 from the hit roll.',
 				points:'12',
 			},
-			'Taser Goad' : {
+			'Taser goad' : {
 				range:'Melee',
 				type:'Melee',
 				strength:'+2',
@@ -1799,6 +1927,15 @@ var library = {
 				ability:'Treat damage rolls of 1 and 2 made by this weapon as 3 instead.',
 				points:'45',
 			},
+			'Phosphor blast pistol' : {
+				range:'12',
+				type:'Pistol 1',
+				strength:'5',
+				ap:'-1',
+				damage:'1',
+				ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
+				points:'4',
+			},
 			'Phosphor serpenta' : {
 				range:'18',
 				type:'Assault 1',
@@ -1844,6 +1981,15 @@ var library = {
 				ability:'Wound roll of 6+: that hit inflicts 2 damage instead of 1.',
 				points:'0',
 			},
+			'Stormspear rocked pod' : {
+				range:'48',
+				type:'Heavy 3',
+				strength:'8',
+				ap:'-2',
+				damage:'D6',
+				ability:'-',
+				points:'45',
+			},
 			'Stubcarbine' : {
 				range:'18',
 				type:'Pistol 3',
@@ -1878,6 +2024,15 @@ var library = {
 				ap:'-2',
 				damage:'1',
 				ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
+				points:'30',
+			},
+			'Twin Icarus autocannon' : {
+				range:'48',
+				type:'Heavy 4',
+				strength:'7',
+				ap:'-1',
+				damage:'2',
+				ability:'*',
 				points:'30',
 			},
 			'Volkite Blaster' : {
@@ -1985,7 +2140,7 @@ var library = {
 		units : {
 			//HQ
 				techpriestdominus : {
-					name:'TECH-PRIEST DOMINUS',
+					name:'Tech-Priest Dominus',
 					role:'HQ',
 					move:'6',
 					ws:'3+',
@@ -1999,15 +2154,12 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'7',
 					pointspermodel:'115',
-					points:'115',
 					weaponbasic : ['Omnissian Axe','Macrostubber','Volkite Blaster'],
 					weaponoption : ['Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Masterwork Bionics' : 'At the beginning of each of your turns, this model regains D3 lost wounds.',
-						'Autocaduceus of Arkhan Land (Arcana)' : 'At the start of each of your turns, the bearer of this relic heals 1 wound. In addition, when the bearer uses an ability to repair a friendly <b>ADEPTUS MECHANICUS</b> model (such as Master of Machines), you may re-roll the dice to determine how many wounds are regained.',
 						'Master of Machines' : 'At the end of your Movement phase this model can repair a single friendly <b>FORGEWORLD</b> or <b>QUESTOR MECHANICUS</b> model within 3" (but not itself).  <b>FORGEWORLD</b> model regains D3 lost wounds; <b>QUESTOR MECHANICUS</b> model regains 1 lost wound. A model may not be the target of the Master of Machines ability more than once per turn.',
-						'WARLORD TRAIT Necromechanic' : 'Each time your Warlord uses an ability to repair a friendly model, that model regains 1 additional wound.',
 						'Lord of the Machine Cult' : 'You can re-roll hit rolls of 1 in the Shooting phase for friendly <b>FORGEWORLD</b> units within 6".',
 						'Refractor Field' : 'This model has a 5+ invulnerable save.',
 						'Forgeworld Dogma' : '',
@@ -2016,7 +2168,7 @@ var library = {
 					keywords:'CHARACTER, INFANTRY, TECH-PRIEST, DOMINUS',
 				},
 				techpriestenginseer : {
-					name:'TECH-PRIEST Enginseer',
+					name:'Tech-Priest Enginseer',
 					role:'HQ',
 					move:'6',
 					ws:'4+',
@@ -2030,7 +2182,6 @@ var library = {
 					invulsave:'6+',
 					powerpoints:'7',
 					pointspermodel:'35',
-					points:'35',
 					weaponbasic : ['Omnissian Axe','Servo-arm','Laspistol'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
@@ -2058,9 +2209,8 @@ var library = {
 					powerpoints:'4',
 					models : [5,10],
 					pointspermodel:'7',
-					points:'35',
 					weaponbasic : ['Basic melee','Galvanic rifle'],
-					weaponoption : ['Power sword','Arc maul','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Transuranic arquebus','Omnispex','Enhanced Data-tether'],
+					weaponoption : ['Power sword','Arc maul','Taser goad','Phosphor blast pistol','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Transuranic arquebus','Omnispex','Enhanced Data-tether'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Soldiers of the machine god' : 'This unit within range of objective marker controls it if there no enemy units with such ability else who have most models.',
@@ -2086,10 +2236,8 @@ var library = {
 					powerpoints:'4',
 					models : [5,10],
 					pointspermodel:'8',
-					points:'40',
-					weapon : ['Basic melee','Power sword','Arc maul','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Radium Carbine','Arc rifle','Transuranic arquebus','Enhanced Data-tether'],
 					weaponbasic : ['Basic melee','Radium Carbine'],
-					weaponoption : ['Power sword','Arc maul','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Transuranic arquebus','Omnispex','Enhanced Data-tether'],
+					weaponoption : ['Power sword','Arc maul','Taser goad','Phosphor blast pistol','Radium pistol','Arc pistol','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Arc rifle','Transuranic arquebus','Omnispex','Enhanced Data-tether'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Soldiers of the machine god' : 'This unit within range of objective marker controls it if there no enemy units with such ability else who have most models.',
@@ -2117,10 +2265,8 @@ var library = {
 					powerpoints:'6',
 					models : [5,10],
 					pointspermodel:'16',
-					points:'16',
-					weapon : ['Taser Goad','Flechette blaster'],
 					weaponbasic : ['Power sword','Stubcarbine'],
-					weaponoption : ['Taser Goad','Flechette blaster'],
+					weaponoption : ['Taser goad','Flechette blaster'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
 						'Neurostatic Aura':'Enemy units within 3" of any Sicarian Infiltrators must substract 1 from their Leadership.',
@@ -2146,7 +2292,6 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'3',
 					pointspermodel:'22',
-					points:'22',
 					weaponbasic : ['Power fist','Gamma pistol'],
 					abilities : {
 						'Canticles of the Omnissiah' : 'Gain bonus in battle depending on the Canticle of the Omnissiah currently being canted.',
@@ -2174,8 +2319,6 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'7',
 					pointspermodel:'90',
-					points:'90',
-					weapon : ['Basic melee','Cognis heavy stubber','Twin heavy phosphor blaster','Eradication beamer','Eradication beamer *','Neutron laser','Icarus array:','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon'],
 					weaponbasic : ['Basic melee','Eradication beamer','Eradication beamer *'],
 					weaponoption : ['Cognis heavy stubber','Twin heavy phosphor blaster','Neutron laser','Icarus array:','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon','Broad Spectrum Data-tether','Smoke Launchers'],
 					abilities : {
@@ -2204,7 +2347,6 @@ var library = {
 					powerpoints:'12',
 					models : [2,6],
 					pointspermodel:'65',
-					points:'130',
 					weaponbasic : ['Kastelan fists','Incendine combustor'],
 					weaponoption : ['Heavy phosphor blaster'],
 					abilities : {
@@ -2239,8 +2381,6 @@ var library = {
 					powerpoints:'12',
 					models : [1,3],
 					pointspermodel:'223',
-					points:'223',
-					weapon : ['Reaper chain-cleaver','Meltagun','Thermal spear','Heavy stubber'],
 					weaponbasic : ['Reaper chain-cleaver','Thermal spear','Heavy stubber'],
 					weaponoption : ['Meltagun'],
 					abilities : {
@@ -2267,10 +2407,8 @@ var library = {
 					invulsave:'5+ against shooting',
 					powerpoints:'25',
 					pointspermodel:'320',
-					points:'500',
-					weapon : ['Titanic feet','Thunderstrike gauntlet','Heavy flamer','Meltagun','Avenger gatling cannon','Ironstorm missile pod'],
 					weaponbasic : ['Titanic feet','Reaper chainsword','Heavy flamer','Heavy stubber','Avenger gatling cannon'],
-					weaponoption : ['Thunderstrike gauntlet','Meltagun','Ironstorm missile pod'],
+					weaponoption : ['Thunderstrike gauntlet','Meltagun','Ironstorm missile pod','Stormspear rocked pod','Twin Icarus autocannon'],
 					abilities : {
 						'Super-heavy Walker' : 'This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy INFANTRY models, though it must end its move more than 1" from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls.                                                                                                                                                                                                                            Finally, this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 2D6" suffers D6 mortal wounds.',
@@ -2288,6 +2426,15 @@ var library = {
 		armyname : 'Inquisition',
 		weapons : {
 			//inqisition melee weapons
+			'Master-crafted power sword' : {
+				range:'Melee',
+				type:'Melee',
+				strength:'User',
+				ap:'-3',
+				damage:'2',
+				ability:'-',
+				points:'0',
+			},
 			'Basic melee' : {
 				range:'Melee',
 				type:'Melee',
@@ -2306,7 +2453,7 @@ var library = {
 				ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
 				points:'25',
 			},
-			'Chain sword' : {
+			'Chainsword' : {
 				range:'Melee',
 				type:'Melee',
 				strength:'4',
@@ -2437,16 +2584,97 @@ var library = {
 			//inqisition ranged weapons
 			'Boltgun' : {
 				range:'24',
-				type:'Rapid fire 1',
+				type:'Rapid Fire 1',
 				strength:'4',
 				ap:'0',
 				damage:'1',
 				ability:'-',
 				points:'0',
 			},
+			'Combi-flamer' : {
+				range:'-',
+				type:'-',
+				strength:'-',
+				ap:'-',
+				damage:'-',
+				ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+				points:'11',
+			},
+			'Combi-melta' : {
+				range:'-',
+				type:'-',
+				strength:'-',
+				ap:'-',
+				damage:'-',
+				ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+				points:'19',
+			},
+			'Combi-plasma' : {
+				range:'-',
+				type:'-',
+				strength:'-',
+				ap:'-',
+				damage:'-',
+				ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
+				points:'15',
+			},
+			'- Boltgun' : {
+				range:'24',
+				type:'Rapid Fire 1',
+				strength:'4',
+				ap:'0',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'- Flamer' : {
+				range:'8',
+				type:'Assault D6',
+				strength:'4',
+				ap:'0',
+				damage:'1',
+				ability:'This weapon automatically hits its target.',
+				points:'0',
+			},
+			'- Meltagun' : {
+				range:'12',
+				type:'Assault 1',
+				strength:'8',
+				ap:'-4',
+				damage:'D6',
+				ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
+				points:'0',
+			},
+			'- Plasma gun (Standard)' : {
+				range:'24',
+				type:'Rapid Fire 1',
+				strength:'7',
+				ap:'-3',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'- Plasma gun (Supercharged)' : {
+				range:'24',
+				type:'Rapid Fire 1',
+				strength:'8',
+				ap:'-3',
+				damage:'2',
+				ability:'On a hit roll of 1, the bearer is slain after all of this weapon\'s shots have been resolved.',
+				points:'0',
+			},
+			'Master-crafted condemnor boltgun' : {
+				range:'24',
+				type:'Rapid Fire 1',
+				strength:'4',
+				ap:'-1',
+				damage:'1',
+				ability:'If the target is a<b>PSYKER</b>, increase the Damage of an attack with this weapon from 1 to 3.',
+				points:'0',
+			},
 			'Condemnor Boltgun' : {
 				range:'24',
-				type:'Rapid fire 1',
+				type:'Rapid Fire 1',
 				strength:'4',
 				ap:'0',
 				damage:'1',
@@ -2530,7 +2758,7 @@ var library = {
 			//combi-plasma 15
 			'Plasma gun (Standard)' : {
 				range:'24',
-				type:'Rapid fire 1',
+				type:'Rapid Fire 1',
 				strength:'7',
 				ap:'-3',
 				damage:'1',
@@ -2539,7 +2767,7 @@ var library = {
 			},
 			'Plasma gun (Supercharged)' : {
 				range:'24',
-				type:'Rapid fire 1',
+				type:'Rapid Fire 1',
 				strength:'8',
 				ap:'-3',
 				damage:'2',
@@ -2548,7 +2776,7 @@ var library = {
 			},
 			'Hot-shot lasgun' : {
 				range:'18',
-				type:'Rapid fire 1',
+				type:'Rapid Fire 1',
 				strength:'3',
 				ap:'-2',
 				damage:'1',
@@ -2566,7 +2794,7 @@ var library = {
 			},
 			'Storm bolter' : {
 				range:'24',
-				type:'Rapid fire 2',
+				type:'Rapid Fire 2',
 				strength:'4',
 				ap:'0',
 				damage:'1',
@@ -2585,10 +2813,7 @@ var library = {
 		},
 		abilities : {
 			'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
-			'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
-			'Hereticus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO HERETICUS</b> units if the target has the<b>CHAOS</b> or <b>PSYKER</b> keyword.',
-			'Xenos' : 'You can re-roll hit rolls and wound rolls of 1 for <b>ORDO XENOS</b> units against targets that do not have the <b>CHAOS, IMPERIUM</b> or <b>UNALIGNED FACTION</b> keywords.',
-			'Specialist' : 'You can re-roll hit rolls of 1 for Specialist units if the target has the<b>CHARACTER</b> keyword.',
+			'Unquestionable Wisdom' : 'All friendly <b>IMPERIUM</b> units within 6" of this model can use its Leadership characteristic instead of their own.',
 		},
 		// traits : {},
 		adaptation : {
@@ -2630,6 +2855,34 @@ var library = {
 		},
 		units : {
 			//HQ
+				inquisitorgreyfax : {
+					name:'Inquisitor Greyfax',
+					role:'HQ',
+					move:'6',
+					ws:'3+',
+					bs:'3+',
+					strength:'3',
+					toughness:'3',
+					wounds:'5',
+					attacks:'4',
+					leadership:'10',
+					save:'3+',
+					invulsave:'-',
+					models : [1,1],
+					powerpoints:'5',
+					pointspermodel:'85',
+					weaponbasic : ['Master-crafted power sword','Frag grenade','Krak grenade','Psyk-out grenade','Master-crafted condemnor boltgun'],
+					abilities : {
+						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
+						'Psyocculum' : 'Inquisitor Greyfax can target enemy CHARACTERS that have PSYKER or DAEMON keyword even if they are not the closest enemy unit.',
+						'Indomitable' : 'Add 1 to the result of the roll for any Deny the Witch tests made for Inquisitor Greyfax.',
+						'Unquestionable Wisdom' : 'All friendly <b>IMPERIUM</b> units within 6" of this model can use its Leadership characteristic instead of their own.',
+						'PSYKER' : 'Inquisitor Greyfax can attempt to manifest one psychic power in each friendly Psychic phase, and attempt to deny two psychic powers in each enemy Psychic phase. She knows the <i>Smite</i> power and one psychic power from the Telethesia discipline.',
+						'Hereticus' : '',
+						},
+					factionkeywords : 'IMPERIUM, INQUISITION, ORDO HERETICUS',
+					keywords:'CHARACTER, INFANTRY, INQUISITOR, PSYKER, GREYFAX',
+				},
 				inquisitor : {
 					name:'Inquisitor',
 					role:'HQ',
@@ -2645,10 +2898,8 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					points:'87',
-					weapon : ['Basic melee','Nemesis Daemon hammer','Chain sword','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Frag grenade','Krak grenade','Bolt pistol','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
-					weaponbasic : ['Chain sword','Frag grenade','Krak grenade','Bolt pistol'],
-					weaponoption : ['Basic melee','Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Flamer','Hot-shot lasgun','Incinerator','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'ORDO' : '',
@@ -2673,10 +2924,8 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					points:'87',
-					weapon : ['Basic melee','Nemesis Daemon hammer','Chain sword','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Frag grenade','Krak grenade','Bolt pistol','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
-					weaponbasic : ['Chain sword','Frag grenade','Krak grenade','Bolt pistol'],
-					weaponoption : ['Basic melee','Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Flamer','Hot-shot lasgun','Incinerator','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'ORDO' : '',
@@ -2701,10 +2950,9 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					points:'87',
-					weapon : ['Basic melee','Nemesis Daemon hammer','Chain sword','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Frag grenade','Krak grenade','Bolt pistol','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
-					weaponbasic : ['Chain sword','Frag grenade','Krak grenade','Bolt pistol'],
-					weaponoption : ['Basic melee','Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weapon : ['Basic melee','Nemesis Daemon hammer','Chainsword','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Frag grenade','Krak grenade','Bolt pistol','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Flamer','Hot-shot lasgun','Incinerator','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
@@ -2729,10 +2977,8 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					points:'87',
-					weapon : ['Basic melee','Nemesis Daemon hammer','Chain sword','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Frag grenade','Krak grenade','Bolt pistol','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
-					weaponbasic : ['Chain sword','Frag grenade','Krak grenade','Bolt pistol'],
-					weaponoption : ['Basic melee','Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Flamer','Laspistol','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Hot-shot lasgun','Incinerator','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
+					weaponoption : ['Nemesis Daemon hammer','Null rod','Power fist','Power maul','Power sword','Thunder hammer','Force axe','Force sword','Force stave','Inferno pistol','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Condemnor Boltgun','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Flamer','Hot-shot lasgun','Incinerator','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Storm bolter'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
@@ -2757,10 +3003,8 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'7',
 					pointspermodel:'91',
-					points:'126',
-					weapon : ['Nemesis Daemon hammer','Psyk-out grenade','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
 					weaponbasic : ['Nemesis Daemon hammer','Psyk-out grenade','Storm bolter'],
-					weaponoption : ['Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponoption : ['Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
@@ -2787,14 +3031,11 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'7',
 					pointspermodel:'91',
-					points:'126',
-					weapon : ['Nemesis Daemon hammer','Force axe','Force sword','Force stave','Psyk-out grenade','Storm bolter','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
 					weaponbasic : ['Nemesis Daemon hammer','Psyk-out grenade','Storm bolter'],
-					weaponoption : ['Force axe','Force sword','Force stave','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
+					weaponoption : ['Force axe','Force sword','Force stave','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Psycannon','Combi-melta','Combi-plasma','Combi-flamer'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'Malleus' : 'You can re-roll hit rolls and wound rolls for <b>ORDO MALLEUS</b> units if the target has the<b>CHAOS</b> or <b>DAEMON</b> keyword.',
-						// 'Iron Will' : 'If an enemy psychic power targets an <b>INQUISITOR</b> who is not a <b>PSYKER</b>, roll 2D6. If the result equals or beats the result of the Psychic test for the psychic power, then power has no effect upon that model (though any other models that were targeted will be affected normally).',
 						'Unquestionable Wisdom' : 'All friendly <b>IMPERIUM</b> units within 6" of this model can use its Leadership characteristic instead of their own.',
 						'Teleport Strike' : 'During deployment, you can set up this model in a teleportarium chamber instead of placing it on the battlefield. At the end of any of your Movement phases this model can teleport into battle - set it up anywhere on the battlefield that is more than 9" from any enemy models.',
 						'Terminator Armour' : 'Ordo Malleus Inquisitors in Terminator Armour have a 5+ invulnerable save.',
@@ -2804,7 +3045,56 @@ var library = {
 					keywords:'CHARACTER, INFANTRY, TERMINATOR, PSYKER, INQUISITOR',
 				},
 				//Troops
-				//Elites
+			//Elites
+				acolytes : {
+					name:'Acolytes',
+					role:'Elites',
+					move:'6',
+					ws:'4+',
+					bs:'4+',
+					strength:'3',
+					toughness:'3',
+					wounds:'3',
+					attacks:'2',
+					leadership:'7',
+					save:'5+',
+					invulsave:'-',
+					models : [1,6],
+					powerpoints:'1',
+					pointspermodel:'8',
+					weaponbasic : ['Chainsword','Laspistol'],
+					weaponoption : ['Power fist','Power maul','Power sword','Thunder hammer','Needle pistol','Plasma pistol (Standard)','Plasma pistol (Supercharged)','Boltgun','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharged)','Flamer','Hot-shot lasgun','Meltagun','Plasma gun (Standard)','Plasma gun (Supercharged)','Storm bolter'],
+					abilities : {
+						'Authority of the Inquisition' : 'Roll a D6 for this model at the start of its Movement phase, and look up the result of the roll on the following table.<br>1-2: Daemonic Speed: The model has a Move of 12\" and can FLY for the rest of the Movement phase.<br>3-4: Re-knit Host Form: Remove any wounds suffered by this model earlier in the battle.<br>5-6: Energy Torrent: Roll a D6 for each enemy unit within 3\" of this model; on roll of 2+ the enemy unit suffers D3 mortal wounds.',
+						'Loyal Servant' : 'Roll a D6 each time a friendly ORDO INQUISITOR loses a wound whilst they are within 3\" of this unit; on a 2+ a model from this unit can intercept that hit - the character does not lose a wound but the Acolyte suffers a mortal wound.',
+						'Ordo' : '',
+						},
+					factionkeywords : 'IMPERIUM, INQUISITION, ORDO',
+					keywords:'INFANTRY, ACOLYTE',
+				},
+				daemonhost : {
+					name:'Daemonhost',
+					role:'Elites',
+					move:'6',
+					ws:'4+',
+					bs:'4+',
+					strength:'4',
+					toughness:'4',
+					wounds:'3',
+					attacks:'2',
+					leadership:'7',
+					save:'7+',
+					invulsave:'5+',
+					powerpoints:'1',
+					pointspermodel:'25',
+					weaponbasic : ['Warp grasp','Unholy gaze'],
+					abilities : {
+						'Daemonic Power' : 'Roll a D6 for this model at the start of its Movement phase, and look up the result of the roll on the following table.<br>1-2: Daemonic Speed: The model has a Move of 12\" and can FLY for the rest of the Movement phase.<br>3-4: Re-knit Host Form: Remove any wounds suffered by this model earlier in the battle.<br>5-6: Energy Torrent: Roll a D6 for each enemy unit within 3\" of this model; on roll of 2+ the enemy unit suffers D3 mortal wounds.',
+						'Daemonic' : 'This model has a 5+ invulnerable save.',
+						},
+					factionkeywords : 'IMPERIUM, INQUISITION',
+					keywords:'INFANTRY, DAEMON, DAEMONHOST',
+				},
 				//Fast
 				//Heavy
 				//Flyers
@@ -2813,7 +3103,6 @@ var library = {
 				//Fortification
 		}
 	},
-
 	tyranids : {
 		armyname : 'Tyranids',
 		weapons : {
@@ -3438,7 +3727,7 @@ var library = {
 	// 					damage:'1',
 	// 					ability:'-',
 	// 				},
-	// 				'Chain sword' : {
+	// 				'Chainsword' : {
 	// 					range:'Melee',
 	// 					type:'Melee',
 	// 					strength:'4',
@@ -3498,7 +3787,7 @@ var library = {
 	// 				},
 	// 				'Boltgun' : {
 	// 					range:'24',
-	// 					type:'Rapid fire 1',
+	// 					type:'Rapid Fire 1',
 	// 					strength:'4',
 	// 					ap:'0',
 	// 					damage:'1',
@@ -3522,7 +3811,7 @@ var library = {
 	// 				},
 	// 				'Plasma gun (Standard)' : {
 	// 					range:'24',
-	// 					type:'Rapid fire 1',
+	// 					type:'Rapid Fire 1',
 	// 					strength:'7',
 	// 					ap:'-3',
 	// 					damage:'1',
@@ -3530,7 +3819,7 @@ var library = {
 	// 				},
 	// 				'Plasma gun (Supercharged)' : {
 	// 					range:'24',
-	// 					type:'Rapid fire 1',
+	// 					type:'Rapid Fire 1',
 	// 					strength:'8',
 	// 					ap:'-3',
 	// 					damage:'2',
@@ -3610,7 +3899,7 @@ var library = {
 	// 				},
 	// 				'Combi-bolter' : {
 	// 					range:'24',
-	// 					type:'Rapid fire 2',
+	// 					type:'Rapid Fire 2',
 	// 					strength:'4',
 	// 					ap:'0',
 	// 					damage:'1',
