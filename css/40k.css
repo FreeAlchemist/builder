@@ -431,9 +431,7 @@ padding-top: 10px;
 
 /*PRINT*/
 	@media print{
-		#menu,#detachments,.noprint{
-			display: none;
-		}
+
 		.warscroll,#rostertable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
 			page-break-inside:avoid;
 		}
@@ -443,5 +441,8 @@ padding-top: 10px;
 			border:none;
 			width: 30px;
 			padding: 2px;
+		}
+		#menu,#detachments,.noprint{
+			display: none;
 		}
 	}
