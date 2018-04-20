@@ -4,7 +4,7 @@
 
 .warscroll{
 	border:1mm solid;
-	width:20cm;
+	width: 19.8cm;
 	font-size: 10pt;
 	font-size: 8pt;
 	background-color: black;
@@ -396,38 +396,51 @@ width: 0;
 width: 100%;
 height: 0;
 border-style: solid;
-border-width: 0 8px 10px 8px;
+/*border-width: 0 8px 10px 8px;*/
+border-width: 0 20px 15px 20px;
 /*border-color: transparent transparent rgba(197, 192, 187, 1) transparent;*/
 border-color: transparent transparent rgba(118,112,75,1) transparent;
 float: left;
 padding-top: 10px;
 /*margin-top: 5px;*/
 /*margin-right: 1px;*/
+color: rgba(118,112,75,1);
+text-transform: uppercase;
 }
 
 .wrap:hover{
 	border-color: transparent transparent rgb(104, 139, 156)  transparent;
+	color: rgb(104, 139, 156);
+}
+.wrap_closed:hover{
+	border-color: transparent transparent rgb(104, 139, 156)  transparent;
+	color: Linen;
 }
 
 .wrap:active{
 	border-color: transparent transparent rgb(34, 145, 199)  transparent;
+	/*color: rgb(34, 145, 199);*/
 }
 
 .wrap_closed{
 	/*border-width: 10px 0px 10px 10px;*/
 	/*border-color: transparent transparent rgba(88, 80, 72, 1) transparent;*/
 	/*border-color: transparent transparent Orange transparent;*/
-	width: 97.8%;
+	width: 94.8%;
 	/*height: 10px;*/
 	margin-top: 0px;
 	background-color: rgba(249,206,116,1);
+	color: Linen;
+}
+
+span.wrap_closed,span.wrap{
+	width: 95%;
 }
 
 .floatright{
 	float: right;
 	margin-right: 5px;
 }
-
 
 /*PRINT*/
 	@media print{
@@ -442,7 +455,7 @@ padding-top: 10px;
 			width: 30px;
 			padding: 2px;
 		}
-		#menu,#detachments,.noprint{
+		#menu,#detachments,.noprint,.wrap_closed,.wrap{
 			display: none;
 		}
 	}
