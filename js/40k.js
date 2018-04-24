@@ -8,6 +8,7 @@ $("#armyselect").change(function(){
 		detachmentsList ()
 		getPoints()
 		detToggle2()
+		validatemenu()
 })
 //----------------------------------------------------------------------
 $("#pointsystem").change(function(){
@@ -15,6 +16,7 @@ $("#pointsystem").change(function(){
 		detachmentsList ()
 		getPoints()
 		detToggle2()
+		validatemenu()
 })
 
 var rosterformed = 0
@@ -46,6 +48,15 @@ function detToggle2(){
 		$('#roster-btn').attr("value","Roster")
 		$('#roster-btn').attr("title","Generate Army Roster")
 	}
+}
+//----------------------------------------------------------------------Wrap all infoblocks
+function wrapAll(){
+	// $('.wrap')
+	$('.wrap').click(function(){
+		// $('#'+this.title+' > *').toggle()
+		$('#'+this.title+' > div').toggle()
+		// $('#'+this.title+' div:first-child').toggle()
+	})
 }
 //----------------------------------------------------------------------Declare if selected table must be printed
 function printToggle(){
@@ -196,7 +207,7 @@ function getPoints(){
 		var detroster = []
 																				// console.log(detachselect)
 																				// console.log(detachselect.length)
-		var previousunit
+		// var previousunit
 		for (var j =0; j < detachselect.length; j++) {
 			var selectedunit = $("select[name='"+detachselect[j]+"'] > option:checked").val()
 			unitdet = $('#'+detachselect[j]).parent().parent().attr('id')
@@ -798,16 +809,22 @@ function getRoster(army){
 			//---------------IF ADD ALL SELECTED UNITS
 			$('#page').append($('<div />',{class:'warscroll '+rosterarrdet[i],id:rosterarr[i]+'-'+i}))
 
+			// var content = $('<span />',{id:rosterarr[i]+'-'+i+"-content"})
+			// $('#'+rosterarr[i]+'-'+i).prepend(content)
+			
 			//ADD Wrappers for every warscroll
 			var wrap = $('<span />',{id:rosterarr[i]+'-'+i+"_wrap", class:"wrap noprint",title:rosterarr[i]+'-'+i,text:name})
 			// wrap.append($('<span />',{text:rosterarr[i]+'-'+i}).css('display','none'))
-			var hidescroll = $('#'+rosterarr[i]+'-'+i).attr( "id" )
+			// var hidescroll = $('#'+rosterarr[i]+'-'+i).attr( "id" )
 			//'#'+tohide+' > div'
 			// console.log(hidescroll)
 			wrap.click(function(){
+				// $('#'+this.title+' > *').toggle()
 				$('#'+this.title+' > div').toggle()
+				// $('#'+this.title+' div:first-child').toggle()
 			})
 			$('#'+rosterarr[i]+'-'+i).prepend(wrap)
+
 
 
 			//CHARACTERISTICS
@@ -1345,7 +1362,7 @@ function getRoster(army){
 				var td2 = $('<td />',{class:'abilitytext'}).html(keywords)
 				// $('#'+rosterarr[i]+'-keywords').append(table.append(tr.append(td1).append(td2)))
 				$('#'+rosterarr[i]+'-'+i+'-keywords').append(table.append(tr.append(td1).append(td2)))
-				console.log(hidescroll)
+				// console.log(hidescroll)
 		}	
 																			// console.log('---- pointsarr')
 																			// console.log(pointsarr)
@@ -1380,13 +1397,13 @@ function consoleInfo(){
 	console.log('++++ Stop ++++')
 }
 
-function hideIt(tohide){
-	console.log('tohide')
-	console.log(tohide)
-	// $('#'+tohide+' > div').toggle()
-	$(tohide).toggle()
+function validatemenu(){
+	// $("select:empty").css('background-color','red')
+	$("select:empty").css('display','none')
 }
+
 
 armyList(library)
 detachmentsList ()
 getPoints()
+validatemenu()
