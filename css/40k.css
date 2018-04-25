@@ -450,8 +450,8 @@ span.wrap_closed,span.wrap{
 			page-break-inside:avoid;
 		}
 		.modelsnum{
-			color: Linen;
-			background-color: black;
+			/*color: Linen;*/
+			/*background-color: black;*/
 			border:none;
 			width: 30px;
 			padding: 2px;
