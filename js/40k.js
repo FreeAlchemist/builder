@@ -181,7 +181,8 @@ function armyList(library){
 				// console.log(army)
 			}
 			option.attr('label',library[arr[i]].armyname)
-				$('#armyselect').append(option)
+				// $('#armyselect').append(option)
+				option.appendTo($('#armyselect'))
 		}
 	}
 }
@@ -207,10 +208,11 @@ function getPoints(){
 		var detroster = []
 																				// console.log(detachselect)
 																				// console.log(detachselect.length)
-		// var previousunit
 		for (var j =0; j < detachselect.length; j++) {
 			var selectedunit = $("select[name='"+detachselect[j]+"'] > option:checked").val()
 			unitdet = $('#'+detachselect[j]).parent().parent().attr('id')
+			// console.log('unitdet')
+			// console.log(unitdet)
 			if(selectedunit){
 				allrosterarr.push(selectedunit)
 				rosterarrdet.push(unitdet)
@@ -1400,6 +1402,11 @@ function consoleInfo(){
 function validatemenu(){
 	// $("select:empty").css('background-color','red')
 	$("select:empty").css('display','none')
+	if($("select:empty").parent().hasClass('required')){
+		$("td[class*='required']:has(select:empty)").css('background-color','Crimson')
+		$("tr:has(td[class*='required']:has(select:empty))").css('display','none')
+		//[type="checkbox"]
+	}
 }
 
 

@@ -20,6 +20,8 @@
 }
 
 .rosterselect{
+	max-width: 150px;
+	height: 26.5px;
 	font-size: 10pt;
 	background-color: Mintcream;
 }
@@ -412,10 +414,12 @@ text-transform: uppercase;
 .wrap:hover{
 	border-color: transparent transparent rgb(104, 139, 156)  transparent;
 	color: rgb(104, 139, 156);
+	cursor: pointer;
 }
 .wrap_closed:hover{
 	border-color: transparent transparent rgb(104, 139, 156)  transparent;
 	color: Linen;
+	cursor: pointer;
 }
 
 .wrap:active{
