@@ -1,8 +1,7 @@
-//Get selected option values for Army and Pointsystem
 var army
 pointsystem = $("select[name='pointsystem'] > option:checked").val()
 																		// console.log('pointsystem '+pointsystem)
-//----------------------------------------------------------------------
+//----------------------------------------------------------------------//Get selected option value for Army
 $("#armyselect").change(function(){
 		army = $("select[name='armyselect'] > option:checked").val()
 		detachmentsList ()
@@ -10,7 +9,7 @@ $("#armyselect").change(function(){
 		detToggle2()
 		validatemenu()
 })
-//----------------------------------------------------------------------
+//----------------------------------------------------------------------//Get selected option value for Pointsystem
 $("#pointsystem").change(function(){
 		pointsystem = $("select[name='pointsystem'] > option:checked").val()
 		detachmentsList ()
@@ -18,7 +17,6 @@ $("#pointsystem").change(function(){
 		detToggle2()
 		validatemenu()
 })
-
 var rosterformed = 0
 //----------------------------------------------------------------------Toggle between detachments and roster
 function detToggle(){
@@ -49,15 +47,6 @@ function detToggle2(){
 		$('#roster-btn').attr("title","Generate Army Roster")
 	}
 }
-//----------------------------------------------------------------------Wrap all infoblocks
-function wrapAll(){
-	// $('.wrap')
-	$('.wrap').click(function(){
-		// $('#'+this.title+' > *').toggle()
-		$('#'+this.title+' > div').toggle()
-		// $('#'+this.title+' div:first-child').toggle()
-	})
-}
 //----------------------------------------------------------------------Declare if selected table must be printed
 function printToggle(){
 	var noprintarr = $( "input[type=checkbox]" )
@@ -85,20 +74,15 @@ function counterVal(){
 	var pointsperdet = 0
 	var pointsperdetarr = []
 	for (var i =0; i < detachmentsarr.length; i++) {
-		// console.log(detachmentsarr[i])
+																		// console.log(detachmentsarr[i])
 		$('#'+detachmentsarr[i]+'-roster-points').html('')
 	}
 	for (var i =0; i < rosterarr.length; i++) { 
-		// rosterarr[i]
 		var weaponnumberarr = $('#'+rosterarr[i]+'-'+i+' input[type=number]')
-		// var weaponnumberarr = $('#'+rosterarr[i]+' input[type=number]')
+		var modelsvalue = $('#'+rosterarr[i]+'-'+i+'-modelsnum').val()
+		var pointsperunit = pointsarr[i]
 																		// console.log('---weaponnumberarr')
 																		// console.log(weaponnumberarr)
-		// var counternames = []
-		var modelsvalue = $('#'+rosterarr[i]+'-'+i+'-modelsnum').val()
-		// var modelsvalue = $('#'+rosterarr[i]+'-modelsnum').val()
-
-		var pointsperunit = pointsarr[i]
 		if(modelsvalue){
 																		// console.log(modelsvalue)
 			pointsperunit = parseInt(pointsarr[i])*parseInt(modelsvalue)
@@ -163,14 +147,12 @@ function counterVal(){
 	//-----------------------------------------------------------------------REWRITE POINTS PER ARMY
 	$('#roster-totalpoints').html(pointsperarmy)
 }
-//---------------------------------------------------------------------------Add all army select options to menu
+//----------------------------------------------------------------------Add all army select options to menu
 function armyList(library){
 	var arr = []
-	// selectarr = []
 	for (p in library){
 		arr.push(p)
 	}
-	// console.log(arr)
 	for(var i = 0; i < arr.length; i++){
 		if(library[arr[i]]){
 			var option = $('<option />')
@@ -178,16 +160,15 @@ function armyList(library){
 			if(i == 0){
 				option.attr('selected','selected')
 				army = arr[i]
-				// console.log(army)
 			}
 			option.attr('label',library[arr[i]].armyname)
-				// $('#armyselect').append(option)
 				option.appendTo($('#armyselect'))
 		}
 	}
 }
-//---------------------------------------------------------------------------Get points for all selected units
+//----------------------------------------------------------------------Get points for all selected units
 function getPoints(){
+	validatemenu()
 	//all selected units
 	allrosterarr = []
 	//detachment of each selected unit
@@ -203,16 +184,16 @@ function getPoints(){
 	unitcount = 0
 	for (var i =0; i < selectarr.length; i++) {
 		var detachselectpoints = 0
-		// $("#"+detachmentsarr[i]+"-points").html(detachselectpoints+' pts')
 		var detachselect = selectarr[i]
 		var detroster = []
+		var requirednum = 0
 																				// console.log(detachselect)
 																				// console.log(detachselect.length)
 		for (var j =0; j < detachselect.length; j++) {
 			var selectedunit = $("select[name='"+detachselect[j]+"'] > option:checked").val()
 			unitdet = $('#'+detachselect[j]).parent().parent().attr('id')
-			// console.log('unitdet')
-			// console.log(unitdet)
+																				// console.log('unitdet')
+																				// console.log(unitdet)
 			if(selectedunit){
 				allrosterarr.push(selectedunit)
 				rosterarrdet.push(unitdet)
@@ -228,8 +209,6 @@ function getPoints(){
 				if(pointsystem == 'points'){
 					if(library[army].units[selectedunit].pointspermodel){
 						unitpoints = library[army].units[selectedunit].pointspermodel || 0
-						// unitpoints = $('#'+selectedunit+'-totalunitpoints').value || 0
-						// $('#'+selectedunit+'-totalunitpoints')
 					}
 				}
 																			// console.log('unitpoints '+unitpoints)
@@ -238,11 +217,9 @@ function getPoints(){
 				detachselectpoints+=parseInt(unitpoints)
 			}
 			$("#"+detachmentsarr[i]+"-points").html(detachselectpoints+' pts')
-
 		}
 		detrosterarr.push(detroster)
 	}
-	// army = $("select[name='armyselect'] > option:checked").val()
 																				// console.log(unitcount+' units')
 																				// console.log(detpoints+' pts')
 	$("#totalpoints").html(detpoints+' pts')
@@ -254,8 +231,6 @@ function getPoints(){
 	})
 	//-------------OR all selected units----------------------
 	rosterarr = allrosterarr
-
-
 													// console.log("allrosterarr: all selected units")
 													// console.log(allrosterarr)
 													// console.log(allrosterarr.length)
@@ -269,7 +244,7 @@ function getPoints(){
 													// console.log(rosterarr)
 													// console.log(rosterarr.length)
 }
-//---------------------------------------------------------------------------Form detachments list with options
+//----------------------------------------------------------------------Form detachments list with options
 function detachmentsList () {
 	selectarr = []
 	var unitarr = []
@@ -417,7 +392,7 @@ function detachmentsList () {
 	selectarr.push(detselect)
 	}
 }
-//---------------------------------------------------------------------------Form datasheets for all selected units
+//----------------------------------------------------------------------Form datasheets for all selected units
 function getRoster(army){
 	if(army){
 													// console.log(rosterarr.length)
@@ -511,11 +486,8 @@ function getRoster(army){
 			var specialrulesquantity = specialrulesarr.length
 			var tr = $('<tr />')
 			var input = $('<input />',{type:'checkbox',name:'specialrulestable',value:'specialrulestable',class:'noprint floatright'})
-			// var td1 = $('<td />',{class:'army-header',text:library[army].specialrules.specialrulesname})
 			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(library[army].specialrules.specialrulesname+'<span class="noprint floatright">Print</span>').append(input)
-			input.change(function(){
-					printToggle()
-				})
+			input.change(function(){printToggle()})
 			var specialrulesinfo = tr.append(td1)
 			$('#specialrulestable').append(specialrulesinfo)
 			if(library[army].specialrules.specialrulestext){
@@ -561,12 +533,8 @@ function getRoster(army){
 			var adaptationquantity = adaptationarr.length
 			var tr = $('<tr />')
 			var input = $('<input />',{type:'checkbox',name:'adaptationtable',value:'adaptationtable',class:'noprint floatright'})
-			// var td1 = $('<td />',{class:'army-header',text:library[army].adaptation.adaptationname})
-			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
 			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(library[army].adaptation.adaptationname+'<span class="noprint floatright">Print</span>').append(input)
-			input.change(function(){
-					printToggle()
-				})
+			input.change(function(){printToggle()})
 			var adaptationinfo = tr.append(td1)
 			$('#adaptationtable').append(adaptationinfo)
 			for (var s = 0; s < adaptationquantity; s++) {
@@ -606,12 +574,8 @@ function getRoster(army){
 			var traitsquantity = traitsarr.length
 			var tr = $('<tr />')
 			var input = $('<input />',{type:'checkbox',name:'traitstable',value:'traitstable',class:'noprint floatright'})
-			// var td1 = $('<td />',{class:'army-header',text:'Traits'})
-			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
 			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html('Traits<span class="noprint floatright">Print</span>').append(input)
-			input.change(function(){
-					printToggle()
-				})
+			input.change(function(){printToggle()})
 			var traitsinfo = tr.append(td1)
 			$('#traitstable').append(traitsinfo)
 			for (var s = 0; s < traitsquantity; s++) {
@@ -649,12 +613,8 @@ function getRoster(army){
 			var relicsquantity = relicsarr.length
 			var tr = $('<tr />')
 			var input = $('<input />',{type:'checkbox',name:'relicstable',value:'relicstable',class:'noprint floatright'})
-			// var td1 = $('<td />',{class:'army-header',text:'Relics'})
-			// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
 			var td1 = $('<td />',{colspan:'2', class:'army-header'}).html('Relics<span class="noprint floatright">Print</span>').append(input)
-			input.change(function(){
-				printToggle()
-			})
+			input.change(function(){printToggle()})
 			var relicsinfo = tr.append(td1)
 			$('#relicstable').append(relicsinfo)
 			for (var s = 0; s < relicsquantity; s++) {
@@ -717,12 +677,8 @@ function getRoster(army){
 				var magicquantity = magicarr.length
 				var tr = $('<tr />')
 				var input = $('<input />',{type:'checkbox',name:'magictable',value:'magictable',class:'noprint floatright'})
-				// var td1 = $('<td />',{class:'army-header',text:library[army].magic.magicname})
-				// var td2 = $('<td />',{class:'army-header'}).html('<span class="noprint">Print</span>').append(input)
 				var td1 = $('<td />',{colspan:'5', class:'army-header'}).html(library[army].magic.magicname+' psychic powers<span class="noprint floatright">Print</span>').append(input)
-				input.change(function(){
-					printToggle()
-				})
+				input.change(function(){printToggle()})
 				var magicinfo = tr.append(td1)
 				$('#magictable').append(magicinfo)
 				var tr = $('<tr />');
@@ -805,63 +761,40 @@ function getRoster(army){
 					rolename += (' models x '+'<input type="number" name="'+rosterarr[i]+'-'+i+'-modelsnum" id="'+rosterarr[i]+'-'+i+'-modelsnum" min="1" max="5" value="1" class="modelsnum"/>')
 				}
 			}
-		
 
-			// $('#page').append($('<div />',{class:'warscroll',id:rosterarr[i]}))
-			//---------------IF ADD ALL SELECTED UNITS
 			$('#page').append($('<div />',{class:'warscroll '+rosterarrdet[i],id:rosterarr[i]+'-'+i}))
-
-			// var content = $('<span />',{id:rosterarr[i]+'-'+i+"-content"})
-			// $('#'+rosterarr[i]+'-'+i).prepend(content)
 			
 			//ADD Wrappers for every warscroll
 			var wrap = $('<span />',{id:rosterarr[i]+'-'+i+"_wrap", class:"wrap noprint",title:rosterarr[i]+'-'+i,text:name})
-			// wrap.append($('<span />',{text:rosterarr[i]+'-'+i}).css('display','none'))
-			// var hidescroll = $('#'+rosterarr[i]+'-'+i).attr( "id" )
-			//'#'+tohide+' > div'
-			// console.log(hidescroll)
 			wrap.click(function(){
-				// $('#'+this.title+' > *').toggle()
 				$('#'+this.title+' > div').toggle()
-				// $('#'+this.title+' div:first-child').toggle()
 			})
 			$('#'+rosterarr[i]+'-'+i).prepend(wrap)
 
-
-
 			//CHARACTERISTICS
 				$('#'+rosterarr[i]+'-'+i).append($('<div />',{class:'chars',id:rosterarr[i]+'-'+i+'-chars'}))
-				// $('#'+rosterarr[i]).append($('<div />',{class:'chars',id:rosterarr[i]+'-chars'}))
 				if(thisunit.degradate){
-					// $('#'+rosterarr[i]+'-chars').append($('<div />',{class:'name'}).html(rolename).append($('<div />',{class:'level',id:rosterarr[i]+'-level'})))
 					$('#'+rosterarr[i]+'-'+i+'-chars').append($('<div />',{class:'name'}).html(rolename).append($('<div />',{class:'level',id:rosterarr[i]+'-'+i+'-level'})))
 					var degradatearr = thisunit.degradate
 					var degradatequantity = degradatearr.length
 					for (var s = 0; s < degradatequantity; s++) {
-						// $('#'+rosterarr[i]+'-level').append($('<div />',{class:'woundlevel',id:rosterarr[i]+'-level-'+s}))
 						$('#'+rosterarr[i]+'-'+i+'-level').append($('<div />',{class:'woundlevel',id:rosterarr[i]+'-'+i+'-level-'+s}))
 						var level = parseInt(degradatearr[s])
 						for (var l = 0; l < level; l++) {
-							// $('#'+rosterarr[i]+'-level-'+s).append($('<div />',{class:'wound'}))
 							$('#'+rosterarr[i]+'-'+i+'-level-'+s).append($('<div />',{class:'wound'}))
 						};
-						// $('#'+rosterarr[i]+'-level-'+s).append($('<div />',{class:'woundfiller'}))
 						$('#'+rosterarr[i]+'-'+i+'-level-'+s).append($('<div />',{class:'woundfiller'}))
 					}
 				}
 				else{
-					// $('#'+rosterarr[i]+'-chars').append($('<div />',{class:'name'}).html(rolename))
 					$('#'+rosterarr[i]+'-'+i+'-chars').append($('<div />',{class:'name'}).html(rolename))
 				}
-				// $('#'+rosterarr[i]+'-modelsnum').change(function(){counterVal()})
 				$('#'+rosterarr[i]+'-'+i+'-modelsnum').change(function(){counterVal()})
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
 				table.attr('cellspacing','0px')
 				table.attr('width','100%')
 				table.attr('class','topborder')
-				// table.attr('id',rosterarr[i]+'-statstable')
-				// $('#'+rosterarr[i]+'-chars').append(table)
 				table.attr('id',rosterarr[i]+'-'+i+'-statstable')
 				$('#'+rosterarr[i]+'-'+i+'-chars').append(table)
 				var tr = $('<tr />');
@@ -876,7 +809,6 @@ function getRoster(army){
 				var td9 = $('<td />',{class:'weapon-stats-header',text:'Sv'})
 				var td10 = $('<td />',{class:'weapon-stats-header',text:'InvSv'})
 				var statsinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9).append(td10)
-				// $('#'+rosterarr[i]+'-statstable').append(statsinfo)
 				$('#'+rosterarr[i]+'-'+i+'-statstable').append(statsinfo)
 				var tr = $('<tr />');
 				var td1 = $('<td />',{class:'weapon-stats-text',text:move})
@@ -890,7 +822,6 @@ function getRoster(army){
 				var td9 = $('<td />',{class:'weapon-stats-text',text:save})
 				var td10 = $('<td />',{class:'weapon-stats-text',text:invulsave})
 				var statsinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9).append(td10)
-				// $('#'+rosterarr[i]+'-statstable').append(statsinfo)
 				$('#'+rosterarr[i]+'-'+i+'-statstable').append(statsinfo)
 
 			//WEAPON
@@ -898,14 +829,11 @@ function getRoster(army){
 					//----------------------------------------------------------------------ADD BASIC WEAPONS
 					// console.log('----- ADD BASIC WEAPONS -----')
 					$('#'+rosterarr[i]+'-'+i).append($('<div />',{class:'weapon',id:rosterarr[i]+'-'+i+'-weapon'}))
-					// $('#'+rosterarr[i]).append($('<div />',{class:'weapon',id:rosterarr[i]+'-weapon'}))
 					var table = $('<table />')
 					table.attr('cellpadding',"0px")
 					table.attr('cellspacing','0px')
 					table.attr('width','100%')
 					table.attr('class','topborder')
-					// table.attr('id',rosterarr[i]+'-weapontable')
-					// $('#'+rosterarr[i]+'-weapon').append(table)
 					table.attr('id',rosterarr[i]+'-'+i+'-weapontable')
 					$('#'+rosterarr[i]+'-'+i+'-weapon').append(table)
 					var tr = $('<tr />');
@@ -924,8 +852,6 @@ function getRoster(army){
 						var weaponinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8)
 					}
 					$('#'+rosterarr[i]+'-'+i+'-weapontable').append(weaponinfo)
-					// $('#'+rosterarr[i]+'-weapontable').append(weaponinfo)
-
 					var weaponarr = thisunit.weaponbasic
 					var weaponquantity = weaponarr.length
 					var wargearpoints = 0
@@ -952,8 +878,16 @@ function getRoster(army){
 							}
 							if(library[army].weapons[name].strength){
 								var weaponstrength = library[army].weapons[name].strength
+								var unitstrength = parseInt(thisunit.strength)
+								if(weaponstrength == 'user' || weaponstrength == 'User'){weaponstrength = 'user ('+unitstrength+')'}
+								if(weaponstrength == '+1'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 1)+')'}
+								if(weaponstrength == '+2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 2)+')'}
+								if(weaponstrength == '+3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 3)+')'}
+								if(weaponstrength == '+4'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 4)+')'}	
+								if(weaponstrength == 'x2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*2+')'}
+								if(weaponstrength == 'x3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*3+')'}
 								var td4 = $('<td />',{class:'weapon-stats-text smallstat',text:weaponstrength})
-							}
+								}
 							else{
 								var weaponstrength = '???'
 								var td4 = $('<td />',{class:'weapon-stats-text smallstat alert',text:weaponstrength})
@@ -1031,7 +965,6 @@ function getRoster(army){
 							var weaponinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9)
 						}
 						$('#'+rosterarr[i]+'-'+i+'-weapontable').append(weaponinfo)
-						// $('#'+rosterarr[i]+'-weapontable').append(weaponinfo)
 					}
 
 					if(thisunit.weaponoption){
@@ -1062,6 +995,14 @@ function getRoster(army){
 								}
 								if(library[army].weapons[name].strength){
 									var weaponstrength = library[army].weapons[name].strength
+									var unitstrength = parseInt(thisunit.strength)
+									if(weaponstrength == 'user' || weaponstrength == 'User'){weaponstrength = 'user ('+unitstrength+')'}
+									if(weaponstrength == '+1'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 1)+')'}
+									if(weaponstrength == '+2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 2)+')'}
+									if(weaponstrength == '+3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 3)+')'}
+									if(weaponstrength == '+4'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 4)+')'}	
+									if(weaponstrength == 'x2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*2+')'}
+									if(weaponstrength == 'x3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*3+')'}
 									var td4 = $('<td />',{class:'weapon-stats-text smallstat',text:weaponstrength})
 								}
 								else{
@@ -1136,31 +1077,19 @@ function getRoster(army){
 								var weaponinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9)
 							}
 							$('#'+rosterarr[i]+'-'+i+'-weapontable').append(weaponinfo)
-							// $('#'+rosterarr[i]+'-weapontable').append(weaponinfo)
 						}
 					}
 
-					// var totalunitpoints = parseInt(pointspermodel)+parseInt(wargearpoints)
 					if(minmodels){
-						// totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)+parseInt(wargearpoints)
 						var totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)
-						// console.log(parseInt(pointspermodel))
-						// console.log(parseInt(minmodels))
-						// console.log(parseInt(parseInt(pointspermodel)*parseInt(minmodels)))
 						$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(totalunitpoints)
-						// $('#'+rosterarr[i]+'-totalunitpoints').html(totalunitpoints)
 					}
-					// console.log(pointspermodel)
-					// console.log(wargearpoints)
-					// console.log(totalunitpoints)
-					// $('#'+rosterarr[i]+'-totalunitpoints').html(totalunitpoints)
 					counterVal()
 				}
 				else if(thisunit.weapon){
 					//----------------------------------------------------------------------ADD MIXED WEAPONS
 					// console.log('----- ADD MIXED WEAPONS -----')
 					$('#'+rosterarr[i]+'-'+i).append($('<div />',{class:'weapon',id:rosterarr[i]+'-'+i+'-weapon'}))
-					// $('#'+rosterarr[i]).append($('<div />',{class:'weapon',id:rosterarr[i]+'-weapon'}))
 					var table = $('<table />')
 					table.attr('cellpadding',"0px")
 					table.attr('cellspacing','0px')
@@ -1168,8 +1097,6 @@ function getRoster(army){
 					table.attr('class','topborder')
 					table.attr('id',rosterarr[i]+'-'+i+'-weapontable')
 					$('#'+rosterarr[i]+'-'+i+'-weapon').append(table)
-					// table.attr('id',rosterarr[i]+'-weapontable')
-					// $('#'+rosterarr[i]+'-weapon').append(table)
 					var tr = $('<tr />');
 					var td1 = $('<td />',{class:'weapon-type',text:'weapon'})
 					var td2 = $('<td />',{class:'weapon-stats-header smallstat',text:'rng"'})
@@ -1186,7 +1113,6 @@ function getRoster(army){
 						var weaponinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8)
 					}
 					$('#'+rosterarr[i]+'-'+i+'-weapontable').append(weaponinfo)
-					// $('#'+rosterarr[i]+'-weapontable').append(weaponinfo)
 					var weaponarr = thisunit.weapon
 					var weaponquantity = weaponarr.length
 					var wargearpoints = 0
@@ -1213,6 +1139,14 @@ function getRoster(army){
 							}
 							if(library[army].weapons[name].strength){
 								var weaponstrength = library[army].weapons[name].strength
+								var unitstrength = parseInt(thisunit.strength)
+								if(weaponstrength == 'user' || weaponstrength == 'User'){weaponstrength = 'user ('+unitstrength+')'}
+								if(weaponstrength == '+1'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 1)+')'}
+								if(weaponstrength == '+2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 2)+')'}
+								if(weaponstrength == '+3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 3)+')'}
+								if(weaponstrength == '+4'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength + 4)+')'}	
+								if(weaponstrength == 'x2'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*2+')'}
+								if(weaponstrength == 'x3'){weaponstrength = library[army].weapons[name].strength+' ('+parseInt(unitstrength)*3+')'}
 								var td4 = $('<td />',{class:'weapon-stats-text smallstat',text:weaponstrength})
 							}
 							else{
@@ -1287,31 +1221,21 @@ function getRoster(army){
 							var weaponinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9)
 						}
 						$('#'+rosterarr[i]+'-'+i+'-weapontable').append(weaponinfo)
-						// $('#'+rosterarr[i]+'-weapontable').append(weaponinfo)
 					}
 
-					// var totalunitpoints = parseInt(pointspermodel)+parseInt(wargearpoints)
 					if(minmodels){
-						// totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)+parseInt(wargearpoints)
 						var totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)
 						console.log(parseInt(pointspermodel))
 						console.log(parseInt(minmodels))
 						console.log(parseInt(parseInt(pointspermodel)*parseInt(minmodels)))
 						$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(totalunitpoints)
-						// $('#'+rosterarr[i]+'-totalunitpoints').html(totalunitpoints)
 					}
-					// console.log(pointspermodel)
-					// console.log(wargearpoints)
-					// console.log(totalunitpoints)
-					// $('#'+rosterarr[i]+'-totalunitpoints').html(totalunitpoints)
 				}
 
 			//ABILITIES
 				if(thisunit.abilities){
 					$('#'+rosterarr[i]+'-'+i).append($('<div />',{class:'abilities',id:rosterarr[i]+'-'+i+'-abilities'}))
-					// $('#'+rosterarr[i]).append($('<div />',{class:'abilities',id:rosterarr[i]+'-abilities'}))
 					$('#'+rosterarr[i]+'-'+i+'-abilities').append($('<div />',{class:'header',text:'ABILITIES'}))
-					// $('#'+rosterarr[i]+'-abilities').append($('<div />',{class:'header',text:'ABILITIES'}))
 					var abilarr = []
 					for (var c in thisunit.abilities) {
 						abilarr.push(c)
@@ -1321,53 +1245,42 @@ function getRoster(army){
 					table.attr('cellpadding',"0px")
 					table.attr('cellspacing','0px')
 					table.attr('width','100%')
-					// table.attr('id',rosterarr[i]+'-abiltable')
 					table.attr('id',rosterarr[i]+'-'+i+'-abiltable')
 					for (var s = 0; s < abilquantity; s++) {
 						var thisability = abilarr[s]
 						var thisabilitytext = thisunit.abilities[thisability]
 						//If can, get info from abilities
 						if(library[army].abilities && library[army].abilities[thisability]){
-							// console.log('found '+thisability)
 							thisabilitytext = library[army].abilities[thisability]
 						}
 						//If can, get info from adaptation
 						if(library[army].adaptation && library[army].adaptation[thisability]){
-							// console.log('found '+thisability)
 							thisabilitytext = library[army].adaptation[thisability]
 						}
 						var tr = $('<tr />');
 						var td1 = $('<td />',{class:'abilityheader'}).html(thisability)
 						var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
 						$('#'+rosterarr[i]+'-'+i+'-abilities').append(table.append(tr.append(td1).append(td2)))
-						// $('#'+rosterarr[i]+'-abilities').append(table.append(tr.append(td1).append(td2)))
 					}
 				}
 
 			//KEYWORDS
 				$('#'+rosterarr[i]+'-'+i).append($('<div />',{class:'abilities',id:rosterarr[i]+'-'+i+'-keywords'}))
-				// $('#'+rosterarr[i]).append($('<div />',{class:'abilities',id:rosterarr[i]+'-keywords'}))
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
 				table.attr('cellspacing','0px')
 				table.attr('width','100%')
 				table.attr('class','topborder')
-				// table.attr('id',rosterarr[i]+'-keywordstable')
 				table.attr('id',rosterarr[i]+'-'+i+'-keywordstable')
 				var tr = $('<tr />');
 				var td1 = $('<td />',{class:'abilityheader table-header',text:'FACTION KEYWORDS'})
 				var td2 = $('<td />',{class:'abilitytext'}).html(factionkeywords)
-				// $('#'+rosterarr[i]+'-keywords').append(table.append(tr.append(td1).append(td2)))
 				$('#'+rosterarr[i]+'-'+i+'-keywords').append(table.append(tr.append(td1).append(td2)))
 				var tr = $('<tr />');
 				var td1 = $('<td />',{class:'abilityheader table-header',text:'KEYWORDS'})
 				var td2 = $('<td />',{class:'abilitytext'}).html(keywords)
-				// $('#'+rosterarr[i]+'-keywords').append(table.append(tr.append(td1).append(td2)))
 				$('#'+rosterarr[i]+'-'+i+'-keywords').append(table.append(tr.append(td1).append(td2)))
-				// console.log(hidescroll)
 		}	
-																			// console.log('---- pointsarr')
-																			// console.log(pointsarr)
 	}
 	//----------------------------------------------------------------------Show or hide infoblocks
 	$(".wrap").click(function(){
@@ -1381,7 +1294,6 @@ function getRoster(army){
 
 	// consoleInfo()
 }
-//--------------------------------------------------------------------
 
 function consoleInfo(){
 	console.log('++++ Show arrays ++++')
@@ -1398,13 +1310,15 @@ function consoleInfo(){
 	// console.log(magicarr)
 	console.log('++++ Stop ++++')
 }
-
+//----------------------------------------------------------------------Hide unmakable detachments
 function validatemenu(){
 	// $("select:empty").css('background-color','red')
 	$("select:empty").css('display','none')
 	if($("select:empty").parent().hasClass('required')){
-		$("td[class*='required']:has(select:empty)").css('background-color','Crimson')
+		// $("td[class*='required']:has(select:empty)").css('background-color','Crimson')
 		$("tr:has(td[class*='required']:has(select:empty))").css('display','none')
+
+		// $("td[class*='required']:has(select[class*='required']:has(option[value]:selected))").css('background-color','coral')
 		//[type="checkbox"]
 	}
 }
