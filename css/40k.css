@@ -292,14 +292,15 @@ White
 	text-decoration: none;
 	border: 2px solid Black;
 	border-radius: 5px;
-	background-color: dimgray;
-	color: lightgoldenrodyellow;
+	background-color: Dimgray;
+	color: Lightgoldenrodyellow;
 }
 .menubtn:hover{border-color: Linen;}
 #detachments{
 	position: absolute;
 	top: 80px;
-	left: 10px;
+	/*left: 10px;*/
+	left: 0px;
 	background-color: Linen;
 	border:1px solid Black;
 	font-size: 8pt;
