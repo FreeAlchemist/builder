@@ -476,7 +476,8 @@ function getRoster(army){
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
-			table.attr('class','topborder noprint')
+			// table.attr('class','topborder noprint')
+			table.attr('class','topborder')
 			table.attr('id','specialrulestable')
 			$('#page').append(table.append(wrap))
 			var specialrulesarr = []
@@ -523,7 +524,8 @@ function getRoster(army){
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
-			table.attr('class','topborder noprint')
+			// table.attr('class','topborder noprint')
+			table.attr('class','topborder')
 			table.attr('id','adaptationtable')
 			$('#page').append(table.append(wrap))
 			var adaptationarr = []
@@ -564,7 +566,8 @@ function getRoster(army){
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
-			table.attr('class','topborder noprint')
+			// table.attr('class','topborder noprint')
+			table.attr('class','topborder')
 			table.attr('id','traitstable')
 			$('#page').append(table.append(wrap))
 			var traitsarr = []
@@ -603,7 +606,8 @@ function getRoster(army){
 			table.attr('cellpadding',"0px")
 			table.attr('cellspacing','0px')
 			table.attr('width','100%')
-			table.attr('class','topborder noprint')
+			// table.attr('class','topborder noprint')
+			table.attr('class','topborder')
 			table.attr('id','relicstable')
 			$('#page').append(table.append(wrap))
 			var relicsarr = []
@@ -667,7 +671,8 @@ function getRoster(army){
 				table.attr('cellpadding',"0px")
 				table.attr('cellspacing','0px')
 				table.attr('width','100%')
-				table.attr('class','topborder noprint')
+				table.attr('class','topborder')
+				// table.attr('class','topborder noprint')
 				table.attr('id','magictable')
 				$('#page').append(table.append(wrap))
 				var magicarr = []
@@ -1291,7 +1296,7 @@ function getRoster(army){
 			$(this).addClass("wrap_closed")
 		}
 	})
-
+	$("input:checkbox.floatright").attr('checked','checked')
 	// consoleInfo()
 }
 
