@@ -25,7 +25,9 @@
 	font-size: 10pt;
 	background-color: Mintcream;
 }
-
+.rosterselect:hover{
+	background-color: Powderblue;
+}
 .chars{
 	min-height: 1cm;
 	background-color: black;
