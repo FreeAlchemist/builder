@@ -450,6 +450,10 @@ span.wrap_closed,span.wrap{
 	margin-right: 5px;
 }
 
+.modelsnum{
+	background-color: White;
+}
+
 /*PRINT*/
 	@media print{
 
@@ -457,8 +461,8 @@ span.wrap_closed,span.wrap{
 			page-break-inside:avoid;
 		}
 		.modelsnum{
-			/*color: Linen;*/
-			/*background-color: black;*/
+			color: White;
+			background-color: black;
 			border:none;
 			width: 30px;
 			padding: 2px;

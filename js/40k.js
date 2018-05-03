@@ -97,8 +97,12 @@ function counterVal(){
 																		// console.log($(weaponnumberarr[j]).parent().parent('tr'))
 				$(weaponnumberarr[j]).parent().parent('tr').removeClass('noprint')
 			}
-			else{
+			else if ($(weaponnumberarr[j]).hasClass('modelsnum') == false){
 				$(weaponnumberarr[j]).css('background-color','white')
+				$(weaponnumberarr[j]).parent().parent('tr').addClass('noprint')
+			}
+			else{
+				// $(weaponnumberarr[j]).css('background-color','white')
 				$(weaponnumberarr[j]).parent().parent('tr').addClass('noprint')
 			}
 																		// counternames.push(countername)
@@ -1187,7 +1191,7 @@ function getRoster(army){
 								wargearpoints += parseInt(weaponpoints)
 								var td8 = $('<td />',{class:'weapon-stats-text xsmallstat',text:weaponpoints})
 								//Add counter for each weapon option
-								var counter = $('<input />',{type:'number',name:name,min:'0',max:'5',value:'0'})
+								var counter = $('<input />',{type:'number',name:name,min:'0',max:'5',value:'1'})
 								if(thisunit.models && maxmodels){counter.attr('max',maxmodels)}
 								counter.change(function(){counterVal()})
 								var td9 = $('<td />',{class:'weapon-stats-text xsmallstat noprint'}).html(counter)
@@ -1235,6 +1239,7 @@ function getRoster(army){
 						console.log(parseInt(parseInt(pointspermodel)*parseInt(minmodels)))
 						$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(totalunitpoints)
 					}
+					counterVal()
 				}
 
 			//ABILITIES
