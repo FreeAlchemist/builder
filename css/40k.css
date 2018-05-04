@@ -1,7 +1,6 @@
 #page{
 	display: none;
 }
-
 .warscroll{
 	border:1mm solid;
 	width: 19.8cm;
@@ -10,7 +9,6 @@
 	background-color: black;
 	page-break-inside:avoid;
 }
-
 #rostertable,#traitstable,#relicstable,#magictable,#specialrulestable,#adaptationtable{
 	border:1mm solid;
 	width:20cm;
@@ -18,7 +16,6 @@
 	background-color: Beige;
 	page-break-inside:avoid;
 }
-
 .rosterselect{
 	max-width: 150px;
 	height: 26.5px;
@@ -112,12 +109,7 @@
 	float:none;
 }
 
-
 .army-header,.army-text{
-	/*margin: 0px;*/
-	/*position: relative;*/
-	/*float:left;*/
-
 	text-align: left;
 	border:solid Gray;
 	border-width: 0.5mm;
@@ -262,7 +254,6 @@ White
 	font-size: 10pt;
 	z-index: 100;
 	box-shadow: Black 1px 1px 3px;
-	/*display: none;*/
 	box-shadow: #291109 0px 4px 8px
 }
 
@@ -301,16 +292,12 @@ White
 #detachments{
 	position: absolute;
 	top: 80px;
-	/*left: 10px;*/
 	left: 0px;
 	background-color: Linen;
 	border:1px solid Black;
 	font-size: 8pt;
 	display: block;
 }
-/*#detachments select{
-	font-size: 6pt;
-}*/
 
 #detachment td{
 	border:1px solid rgba(64,58,34,1);
@@ -390,7 +377,6 @@ White
 }
 
 .spell-name,.spell-text{
-	/*background-color: Linen;*/
 	padding-left: 3mm;
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
@@ -402,14 +388,10 @@ width: 0;
 width: 100%;
 height: 0;
 border-style: solid;
-/*border-width: 0 8px 10px 8px;*/
 border-width: 0 20px 15px 20px;
-/*border-color: transparent transparent rgba(197, 192, 187, 1) transparent;*/
 border-color: transparent transparent rgba(118,112,75,1) transparent;
 float: left;
 padding-top: 10px;
-/*margin-top: 5px;*/
-/*margin-right: 1px;*/
 color: rgba(118,112,75,1);
 text-transform: uppercase;
 }
@@ -427,15 +409,10 @@ text-transform: uppercase;
 
 .wrap:active{
 	border-color: transparent transparent rgb(34, 145, 199)  transparent;
-	/*color: rgb(34, 145, 199);*/
 }
 
 .wrap_closed{
-	/*border-width: 10px 0px 10px 10px;*/
-	/*border-color: transparent transparent rgba(88, 80, 72, 1) transparent;*/
-	/*border-color: transparent transparent Orange transparent;*/
 	width: 94.8%;
-	/*height: 10px;*/
 	margin-top: 0px;
 	background-color: rgba(249,206,116,1);
 	color: Linen;
