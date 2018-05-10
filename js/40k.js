@@ -219,6 +219,17 @@ function detachmentsList () {
 	var detarr = [hqarr,troopsarr,elitesarr,fastarr,heavyarr,flyersarr,dedicatedarr,lowarr,fortificationarr]
 	var tr = $('<tr />');
 	var td1 = $('<td />',{class:'detachment',text:'DETACHMENT'})
+	
+	//
+	var input = $('<input />',{type:'button',name:'clearall',value:'clear all'})
+	input.click(function(){
+		$( "select[class*='rosterselect']" ).children().removeAttr('selected')
+		$( "select[class*='rosterselect'] :first-child" ).attr('selected','selected')
+		getPoints()
+	})
+	td1.html('DETACHMENT<br>').append(input)
+	//
+
 	var td2 = $('<td />',{class:'cp',text:'CP'})
 	var td3 = $('<td />',{class:'hq',text:'HQ'})
 	var td4 = $('<td />',{class:'troops',text:'Troops'})
@@ -238,7 +249,14 @@ function detachmentsList () {
 		var thisdetachment = detachments[detachmentsarr[i]]
 		var detselect = []
 		var tr = $('<tr />',{id:detachmentsarr[i]})
-		var td1 = $('<td />',{class:'detachment',text:thisdetachment.name})
+		var td1 = $('<td />',{class:'detachment'})
+		var input = $('<input />',{type:'button',name:detachmentsarr[i],value:'clear'})
+		input.click(function(){
+			$( "select[id^='"+this.name+"']" ).children().removeAttr('selected')
+			$( "select[id^='"+this.name+"'] :first-child" ).attr('selected','selected')
+			getPoints()
+		})
+		td1.html(thisdetachment.name+'<br><br>').append(input)
 		var td2 = $('<td />',{class:'cp',text:thisdetachment.cp})
 		var detachmentsinfo = tr.append(td1).append(td2)
 		$("#detachment").append(detachmentsinfo)
