@@ -47,22 +47,22 @@ function detToggle2(){
 	}
 }
 //	Declare if selected table must be printed
-function printToggle(){
-	var noprintarr = $( "input[type=checkbox]" )
-		for (var i =0; i < noprintarr.length; i++) {
-		var noprintname = noprintarr[i].value
-		if(!$("#"+noprintname).hasClass( "noprint" )){
-			$("#"+noprintname).addClass("noprint")
-		}
-	}
-	var printarr = $( "input[type=checkbox]:checked" )
-	for (var i =0; i < printarr.length; i++) {
-		var printname = printarr[i].value
-		if($("#"+printname).hasClass( "noprint" )){
-			$("#"+printname).removeClass("noprint")
-		}
-	}
-}
+// function printToggle(){
+// 	var noprintarr = $( "input[type=checkbox]" )
+// 		for (var i =0; i < noprintarr.length; i++) {
+// 		var noprintname = noprintarr[i].value
+// 		if(!$("#"+noprintname).hasClass( "noprint" )){
+// 			$("#"+noprintname).addClass("noprint")
+// 		}
+// 	}
+// 	var printarr = $( "input[type=checkbox]:checked" )
+// 	for (var i =0; i < printarr.length; i++) {
+// 		var printname = printarr[i].value
+// 		if($("#"+printname).hasClass( "noprint" )){
+// 			$("#"+printname).removeClass("noprint")
+// 		}
+// 	}
+// }
 //	Count points per roster
 function counterVal(){
 	var pointsperarmy = 0
@@ -218,29 +218,25 @@ function detachmentsList () {
 	var rolesarr = ['hq','troops','elites','fast','heavy','flyers','dedicated','low','fortification']
 	var detarr = [hqarr,troopsarr,elitesarr,fastarr,heavyarr,flyersarr,dedicatedarr,lowarr,fortificationarr]
 	var tr = $('<tr />');
-	var td1 = $('<td />',{class:'detachment',text:'DETACHMENT'})
-	
-	//
-	var input = $('<input />',{type:'button',name:'clearall',value:'clear all'})
+	var td1 = $('<td />',{class:'detachment'})
+	var input = $('<input />',{type:'button',class:'clear-btn',name:'clearall',value:'clear all'})
 	input.click(function(){
 		$( "select[class*='rosterselect']" ).children().removeAttr('selected')
 		$( "select[class*='rosterselect'] :first-child" ).attr('selected','selected')
 		getPoints()
 	})
 	td1.html('DETACHMENT<br>').append(input)
-	//
-
-	var td2 = $('<td />',{class:'cp',text:'CP'})
-	var td3 = $('<td />',{class:'hq',text:'HQ'})
-	var td4 = $('<td />',{class:'troops',text:'Troops'})
-	var td5 = $('<td />',{class:'elites',text:'Elites'})
-	var td6 = $('<td />',{class:'fast',text:'Fast'})
-	var td7 = $('<td />',{class:'heavy',text:'Heavy'})
-	var td8 = $('<td />',{class:'flyers',text:'Flyers'})
-	var td9 = $('<td />',{class:'dedicated',text:'Dedicated transport'})
-	var td10 = $('<td />',{class:'low',text:'Lord of war'})
-	var td11 = $('<td />',{class:'fortification',text:'Fortification'})
-	var td12 = $('<td />',{class:'detpoints',text:'DetPts',id:'totalpoints'})
+	var td2 = $('<td />',{class:'detachment-header cp',text:'CP'})
+	var td3 = $('<td />',{class:'detachment-header hq',text:'HQ'})
+	var td4 = $('<td />',{class:'detachment-header troops',text:'Troops'})
+	var td5 = $('<td />',{class:'detachment-header elites',text:'Elites'})
+	var td6 = $('<td />',{class:'detachment-header fast',text:'Fast'})
+	var td7 = $('<td />',{class:'detachment-header heavy',text:'Heavy'})
+	var td8 = $('<td />',{class:'detachment-header flyers',text:'Flyers'})
+	var td9 = $('<td />',{class:'detachment-header dedicated',text:'Dedicated transport'})
+	var td10 = $('<td />',{class:'detachment-header low',text:'Lord of war'})
+	var td11 = $('<td />',{class:'detachment-header fortification',text:'Fortification'})
+	var td12 = $('<td />',{class:'detachment-header detpoints',text:'DetPts',id:'totalpoints'})
 
 	var detachmentsinfo = tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9).append(td10).append(td11).append(td12)
 	$("#detachment").html(detachmentsinfo)
@@ -249,14 +245,14 @@ function detachmentsList () {
 		var thisdetachment = detachments[detachmentsarr[i]]
 		var detselect = []
 		var tr = $('<tr />',{id:detachmentsarr[i]})
-		var td1 = $('<td />',{class:'detachment'})
-		var input = $('<input />',{type:'button',name:detachmentsarr[i],value:'clear'})
+		var td1 = $('<td />',{class:'detachment detachment-header'})
+		var input = $('<input />',{type:'button',class:'clear-btn',name:detachmentsarr[i],value:'clear'})
 		input.click(function(){
 			$( "select[id^='"+this.name+"']" ).children().removeAttr('selected')
 			$( "select[id^='"+this.name+"'] :first-child" ).attr('selected','selected')
 			getPoints()
 		})
-		td1.html(thisdetachment.name+'<br><br>').append(input)
+		td1.html(thisdetachment.name+'<br>').append(input)
 		var td2 = $('<td />',{class:'cp',text:thisdetachment.cp})
 		var detachmentsinfo = tr.append(td1).append(td2)
 		$("#detachment").append(detachmentsinfo)
@@ -1233,25 +1229,9 @@ function getRoster(army){
 		}
 	})
 	$("input:checkbox.floatright").attr('checked','checked')
-	// consoleInfo()
 }
 
-function consoleInfo(){
-	console.log('++++ Show arrays ++++')
-	if(pointsperdetarr){console.log(pointsperdetarr)}
-	if(detrosterarr){console.log(detrosterarr)}
-	if(rosterarr){console.log(rosterarr)}
-	if(selectarr){console.log(selectarr)}
-	if(unitarr){console.log(unitarr)}
-	if(detachmentsarr){console.log(detachmentsarr)}
-	if(specialrulesarr){console.log(specialrulesarr)}
-	if(adaptationarr){console.log(adaptationarr)}
-	if(traitsarr){console.log(traitsarr)}
-	if(relicsarr){console.log(relicsarr)}
-	if(magicarr){console.log(magicarr)}
-	console.log('++++ Stop ++++')
-}
-//	Hide unmakable detachments
+//	Hide impossible to form detachments
 function validatemenu(){
 	$("select:empty").css('display','none')
 	if($("select:empty").parent().hasClass('required')){

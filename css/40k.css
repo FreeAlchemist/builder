@@ -261,6 +261,7 @@ White
 	float: left;
 	margin: 6px;
 	text-align: center;
+	height: 40px;
 	font-size: 12pt;
 	background-color: Linen;
 	color: Linen;
@@ -277,16 +278,25 @@ White
     border-top-width: 2px ;
 }
 
+#armyselect:hover,#pointsystem:hover{cursor: pointer;}
+
 .menubtn{
 	float: left;
-	margin: 3px;
-	padding: 3px;
+	padding: 0px 10px;
+	height: 100%;
+	width: 100%;
 	text-align: center;
 	text-decoration: none;
 	border: 2px solid Black;
-	border-radius: 5px;
+	cursor: pointer;
 	background-color: Dimgray;
 	color: Lightgoldenrodyellow;
+}
+a.menubtn{
+	padding: 3px;
+	height: 80%;
+	width: 80%;
+	line-height: 30px;
 }
 .menubtn:hover{border-color: Linen;}
 #detachments{
@@ -315,7 +325,18 @@ White
 #detachment td.cp{
 	width: 30px;
 }
-.hq{
+.detachment-header{
+	padding-top: 5px;
+	text-transform: uppercase;
+}
+
+.clear-btn{
+	width: 100%;
+	height: 30px;
+	margin-top: 5px;
+	text-transform: uppercase;
+}
+/*.hq{
 	
 }
 .troops{
@@ -341,7 +362,7 @@ White
 }
 .fortification{
 	
-}
+}*/
 .passive{
 	background-color: rgba(64,58,34,1);
 }
