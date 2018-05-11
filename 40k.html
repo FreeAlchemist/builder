@@ -8,6 +8,13 @@
 <body>
 <div id="menu">
 	<div class="menupart">
+		<input type="button" id="roster-btn"  class="menubtn" value="Roster" title="Generate Army Roster" onclick=detToggle()></input>
+	</div>
+	<div class="menupart">
+		<div>Army select</div>
+		<select name="armyselect" id="armyselect" size="1"></select>
+	</div>
+	<div class="menupart">
 		<div>Point system</div>
 		<select name="pointsystem" id="pointsystem" size="1">
 			<!-- <option value="powerpoints"  label="Power Points"></option> -->
@@ -15,14 +22,7 @@
 		</select>
 	</div>
 	<div class="menupart">
-		<div>Army select</div>
-		<select name="armyselect" id="armyselect" size="1"></select>
-	</div>
-	<div class="menupart">
-		<input type="button" id="roster-btn"  class="menubtn" value="Roster" title="Generate Army Roster" onclick=detToggle()></input>
-	</div>
-	<div class="menupart">
-		<a href="index.html" class="menubtn">Main Menu</a>
+		<a href="index.html" class="menubtn">Menu</a>
 	</div>
 </div>
 <div id="detachments">
@@ -34,6 +34,7 @@
 	<p>Contents copyright ©, <a href="http://www.games-workshop.com">Games Workshop</a></p>
 </div> -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
 <script type="text/javascript" src="js/library_40k.js"></script>
 <script type="text/javascript" src="js/40k.js"></script>
 </body>
