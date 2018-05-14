@@ -1,7 +1,12 @@
+// var unitarr = ['vampirelord','batswarms','fellbats','knightofshrouds','cairnwraith','tombbanshee','wightking1','wightking2','sepulcharguard','spirithosts','hexwraiths','mortisengine']
+// var unitarr = ['batswarms','vampirelord','fellbats']
+unitarr = []
+
 var army
 $("#legionselect").change(function(){
 		army = $("select[name='legionselect'] > option:checked").val()
 		getLegion(army)
+		// unitsList()
 })
 function legionsList(legions){
 	var arr = []
@@ -32,7 +37,8 @@ function formTable(ruletype){
 	var rule = ruletype
 		var wrap = $('<div />',{id:rule+"_wrap", class:"wrap noprint",title:rule,text:rule})
 		wrap.click(function(){
-			$("#"+rule+"relicstable tr").toggle()
+			console.log($("#"+rule+"table tr"))
+			$("#"+rule+"table tr").toggle()
 		})
 		var table = $('<table />')
 		table.attr('cellpadding',"0px")
@@ -40,43 +46,76 @@ function formTable(ruletype){
 		table.attr('width','100%')
 		table.attr('class','topborder warscroll')
 		table.attr('id',rule+'table')
-		$('#page').append(table.append(wrap))
+		$('#legionpage').append(table.append(wrap))
 		var arr = []
-		if(rule == 'commandability'){arr = commandabilityarr}
-		if(rule == 'battletraits'){arr = battletraitsarr}
-		if(rule == 'commandtraits'){arr = commandtraitsarr}
-		if(rule == 'artefacts'){arr = artefactsarr}
+		if(rule == 'commandability'){
+			arr = commandabilityarr
+			thisrulename = 'Command Ability'
+		}
+		if(rule == 'battletraits'){
+			arr = battletraitsarr
+			thisrulename = 'Battle traits'
+		}
+		if(rule == 'commandtraits'){
+			arr = commandtraitsarr
+			thisrulename = 'Command Traits'
+		}
+		if(rule == 'artefacts'){
+			arr = artefactsarr
+			thisrulename = 'Artefacts'
+		}
 		var quantity = arr.length
 		var tr = $('<tr />')
 		var input = $('<input />',{type:'checkbox',name:rule+'table',value:rule+'table',class:'noprint floatright'})
-		var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(rule+'<span class="noprint floatright">Print</span>').append(input)
+		var td1 = $('<td />',{colspan:'2', class:'army-header'}).html(thisrulename+'<span class="noprint floatright">Print</span>').append(input)
 		input.change(function(){printToggle()})
 		var info = tr.append(td1)
 		$('#'+rule+'table').append(info)
 		for (var s = 0; s < quantity; s++) {
 			var thisrule = arr[s]
 			var thisruletext
-			if(rule == 'commandability'){thisruletext = legions[army].commandability[thisrule]}
-			if(rule == 'battletraits'){thisruletext = legions[army].battletraits[thisrule]}
-			if(rule == 'commandtraits'){thisruletext = legions[army].commandtraits[thisrule]}
-			if(rule == 'artefacts'){thisruletext = legions[army].artefacts[thisrule]}
+			var thisrulename
+			if(rule == 'commandability'){
+				thisruletext = legions[army].commandability[thisrule]
+			}
+			if(rule == 'battletraits'){
+				thisruletext = legions[army].battletraits[thisrule]
+			}
+			if(rule == 'commandtraits'){
+				thisruletext = legions[army].commandtraits[thisrule]
+			}
+			if(rule == 'artefacts'){
+				thisruletext = legions[army].artefacts[thisrule]
+			}
 			if(getAbility(thisrule)){thisruletext = getAbility(thisrule)}
-			var tr = $('<tr />',{class:'noprint',id:rule+'-'+(s+1)})
-			var input = $('<input />',{type:'checkbox',name:rule+'table',value:rule+'-'+(s+1),class:'noprint'})
-			var td1 = $('<td />',{class:'abilityheader'}).html(thisrule).prepend(input)
-			var td2 = $('<td />',{class:'abilitytext'}).html(thisruletext)
-			var info = tr.append(td1).append(td2)
-			$('#'+rule+'table').append(info)
-			input.change(function(){
-				printToggle()
-			})
+
+			if(rule == 'commandability' || rule == 'battletraits'){
+				var tr = $('<tr />',{id:rule+'-'+(s+1)})
+				var td1 = $('<td />',{class:'abilityheader'}).html(thisrule)
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisruletext)
+				var info = tr.append(td1).append(td2)
+				$('#'+rule+'table').append(info)
+			}
+			else{
+				var tr = $('<tr />',{class:'noprint',id:rule+'-'+(s+1)})
+				var input = $('<input />',{type:'checkbox',name:rule+'table',value:rule+'-'+(s+1),class:'noprint'})
+				var td1 = $('<td />',{class:'abilityheader'}).html(thisrule).prepend(input)
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisruletext)
+				var info = tr.append(td1).append(td2)
+				$('#'+rule+'table').append(info)
+				input.change(function(){
+					printToggle()
+				})
+			}
 		}
+		printToggle()
 }
 
 function getLegion(army){
-
 	if(army){
+		$('#legionpage').html('')
 		$('#page').html('')
+		$( "input:checkbox.unitcheck" ).removeAttr('checked')
 		// console.log(army)
 
 		commandabilityarr = []
@@ -116,20 +155,114 @@ function getLegion(army){
 			formTable('artefacts')
 
 		}	
+		$(".wrap").click(function(){
+			if($(this).hasClass("wrap_closed")){
+				$(this).removeClass("wrap_closed")
+			}
+			else{
+				$(this).addClass("wrap_closed")
+			}
+		})
 	}
 }
 
 function getUnit(unitname){
-	// console.log(units[unitname])
-	return units[unitname]
+	if(units[unitname]){
+		return units[unitname]
+	}
+}
+
+function fillSpell(lorename,unit){
+	if(magic[lorename]){
+		var lorespells = magic[lorename]
+	}
+	else{
+		console.log("NO SUCH LORENAME FOUND: "+lorename)
+	}
+	var spellarr = []
+	for (var c in lorespells) {spellarr.push(c)}
+	var spellquantity = spellarr.length
+	for (var s = 0; s < spellquantity; s++) {
+		if(spellarr[s] == 'magicname'){
+			var name = lorespells.magicname
+			var tr = $('<tr />');
+			var td1 = $('<td />',{colspan:'5',class:'header',text:name})
+			$('#'+unit+'-spelltable').append(tr.append(td1))
+		}
+		else{
+			var name = spellarr[s]
+			var cast = lorespells[name].cast
+			var range = lorespells[name].range
+			var target = lorespells[name].target
+			var effect = lorespells[name].effect
+			var tr = $('<tr />');
+			var td1 = $('<td />',{class:'spell-name',text:name})
+			var td2 = $('<td />',{class:'spell-text'}).html(cast)
+			var td3 = $('<td />',{class:'spell-text'}).html(range)
+			var td4 = $('<td />',{class:'spell-text'}).html(target)
+			var td5 = $('<td />',{class:'spell-text'}).html(effect)
+			$('#'+unit+'-spelltable').append(tr.append(td1).append(td2).append(td3).append(td4).append(td5))				
+		}
+	}
+}
+
+function unitsMenu(){
+	if(units){
+		var unitsmenu = []
+		for (var c in units) {
+			unitsmenu.push(c)
+		}
+		console.log(unitsmenu)
+		var input = $('<input />',{type:'button',class:'warscrolls-btn',name:'showwarscrolls',value:'Show Warscrolls'})
+		//--------------------------
+		input.click(function(){
+			unitarr = []
+			var printarr = $( "input[type=checkbox].unitcheck:checked" )
+			$( "input[type=checkbox].unitcheck:checked" ).parent().css('color','goldenrod')
+			for (var i =0; i < printarr.length; i++) {
+				var unitname = printarr[i].name
+				if(unitname != 'basic'){
+					unitarr.push(unitname)
+				}
+			}
+			unitsList()
+		})
+		//--------------------------------
+		$('#unitsmenu').html(input)
+		var input = $('<input />',{type:'button',class:'cleartall-btn',name:'cleartall',value:'Clear All'})
+		input.click(function(){
+			$( "input:checkbox.unitcheck" ).removeAttr('checked')
+		})
+		input.css('margin-left','30px')
+		$('#unitsmenu').append(input)
+		for (var i =0; i < unitsmenu.length; i++) {
+			if(unitsmenu[i] != 'basic'){
+				var thisunit = getUnit(unitsmenu[i])
+				var role = thisunit.role
+				var name = thisunit.name
+				var points = thisunit.points
+				var par = $('<p />')
+				var input = $('<input />',{type:'checkbox',name:unitsmenu[i],value:unitsmenu[i],class:'noprint floatleft unitcheck'})
+				par.append(input)
+				par.append(role+' | ')
+				par.append(name)
+				par.append('<span class="floatright">'+points+'</span>')
+				par.css('font-size','12pt')
+				// par.css('border-bottom','dashed Linen 0.5px')
+				$('#unitsmenu').append(par)
+			}
+		}
+		$('#unitsmenu').append('<span id="unitpoints" class="noprint floatleft"></span>')
+	}
 }
 
 function unitsList(){
-	var unitarr = ['vampirelord','batswarms','fellbats','knightofshrouds','cairnwraith','tombbanshee','wightking1','wightking2','sepulcharguard','spirithosts','hexwraiths','mortisengine']
 	console.log(unitarr.length)
+	$('#page').html('')
+	var totalpoints = 0
 	for (var i =0; i < unitarr.length; i++) {
-		console.log(i)
-		console.log(unitarr[i])
+		// console.log(i)
+		// console.log(unitarr[i])
 		var thisunit = getUnit(unitarr[i])
 		var name = thisunit.name
 		var move = thisunit.move
@@ -137,6 +270,7 @@ function unitsList(){
 		var bravery = thisunit.bravery
 		var save = thisunit.save
 		var points = thisunit.points
+		totalpoints += parseInt(points)
 		var role = thisunit.role
 		var rolename = name+' ('+role+')'
 		var keywords = thisunit.keywords
@@ -249,12 +383,10 @@ function unitsList(){
 			if(thisunit.abilities){
 				$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-abilities'}))
 				$('#'+unitarr[i]+'-abilities').append($('<div />',{class:'header',text:'ABILITIES'}))
-
 				var abilarr = []
 				for (var c in thisunit.abilities) {
 					abilarr.push(c)
 				}
-
 				var abilquantity = abilarr.length
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
@@ -262,10 +394,10 @@ function unitsList(){
 				table.attr('width','100%')
 				table.attr('class','abiltable')
 				table.attr('id',unitarr[i]+'-abiltable')
-
 				for (var s = 0; s < abilquantity; s++) {
 					var thisability = abilarr[s]
 					var thisabilitytext = thisunit.abilities[thisability]
+					if(getAbility(thisability)){thisabilitytext = getAbility(thisability)}
 					var tr = $('<tr />');
 					var td1 = $('<td />',{class:'abilityheader',text:thisability})
 					var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
@@ -274,128 +406,137 @@ function unitsList(){
 			}
 
 	//SPELL
-	if(thisunit.spell){
-		$('#'+unitarr[i]).append($('<div />',{class:'spell',id:unitarr[i]+'-spell'}))
-		var table = $('<table />')
-		table.attr('cellpadding',"0px")
-		table.attr('cellspacing','0px')
-		table.attr('width','100%')
-		table.attr('class','spelltable')
-		table.attr('id',unitarr[i]+'-spelltable')
-		$('#'+unitarr[i]+'-spell').append(table)
-		var tr = $('<tr />');
-		var td1 = $('<td />',{class:'spell-header-name',text:'SPELL'})
-		var td2 = $('<td />',{class:'spell-header',text:'cast'})
-		var td3 = $('<td />',{class:'spell-header',text:'range'})
-		var td4 = $('<td />',{class:'spell-header',text:'target'})
-		var td5 = $('<td />',{class:'spell-header',text:'effect'})
-		$('#'+unitarr[i]+'-spelltable').append(tr.append(td1).append(td2).append(td3).append(td4).append(td5))
-
-		//Add basic spells
-		var basicunit = getUnit('basic')
-		var spellarr = []
-		for (var c in basicunit.spell) {spellarr.push(c)}
-		var spellquantity = spellarr.length
-		for (var s = 0; s < spellquantity; s++) {
-			var name = spellarr[s]
-			var cast = basicunit.spell[name].cast
-			var range = basicunit.spell[name].range
-			var target = basicunit.spell[name].target
-			var effect = basicunit.spell[name].effect
+		if(thisunit.spell){
+			$('#'+unitarr[i]).append($('<div />',{class:'spell',id:unitarr[i]+'-spell'}))
+			var table = $('<table />')
+			table.attr('cellpadding',"0px")
+			table.attr('cellspacing','0px')
+			table.attr('width','100%')
+			table.attr('class','spelltable')
+			table.attr('id',unitarr[i]+'-spelltable')
+			$('#'+unitarr[i]+'-spell').append(table)
 			var tr = $('<tr />');
-			var td1 = $('<td />',{class:'spell-name',text:name})
-			var td2 = $('<td />',{class:'spell-text'}).html(cast)
-			var td3 = $('<td />',{class:'spell-text'}).html(range)
-			var td4 = $('<td />',{class:'spell-text'}).html(target)
-			var td5 = $('<td />',{class:'spell-text'}).html(effect)
+			var td1 = $('<td />',{class:'spell-header-name',text:'SPELL'})
+			var td2 = $('<td />',{class:'spell-header',text:'cast'})
+			var td3 = $('<td />',{class:'spell-header',text:'range'})
+			var td4 = $('<td />',{class:'spell-header',text:'target'})
+			var td5 = $('<td />',{class:'spell-header',text:'effect'})
 			$('#'+unitarr[i]+'-spelltable').append(tr.append(td1).append(td2).append(td3).append(td4).append(td5))
+
+			//Add lore spells
+			fillSpell('lorebasic',unitarr[i])
+			// fillSpell('loreofdeathmages',unitarr[i])
+			fillSpell('loreofvampires',unitarr[i])
+
+			//Add unit spells
+			var spellarr = []
+			for (var c in thisunit.spell) {spellarr.push(c)}
+			var spellquantity = spellarr.length
+			for (var s = 0; s < spellquantity; s++) {
+				var name = spellarr[s]
+				var cast = thisunit.spell[name].cast
+				var range = thisunit.spell[name].range
+				var target = thisunit.spell[name].target
+				var effect = thisunit.spell[name].effect
+				var tr = $('<tr />');
+				var td1 = $('<td />',{class:'spell-name',text:name})
+				var td2 = $('<td />',{class:'spell-text'}).html(cast)
+				var td3 = $('<td />',{class:'spell-text'}).html(range)
+				var td4 = $('<td />',{class:'spell-text'}).html(target)
+				var td5 = $('<td />',{class:'spell-text'}).html(effect)
+				$('#'+unitarr[i]+'-spelltable').append(tr.append(td1).append(td2).append(td3).append(td4).append(td5))
+			}	
+
 		}
-		//Add special spells
-
-		var spellarr = []
-		for (var c in thisunit.spell) {spellarr.push(c)}
-		var spellquantity = spellarr.length
-		for (var s = 0; s < spellquantity; s++) {
-			var name = spellarr[s]
-			var cast = thisunit.spell[name].cast
-			var range = thisunit.spell[name].range
-			var target = thisunit.spell[name].target
-			var effect = thisunit.spell[name].effect
-			var tr = $('<tr />');
-			var td1 = $('<td />',{class:'spell-name',text:name})
-			var td2 = $('<td />',{class:'spell-text'}).html(cast)
-			var td3 = $('<td />',{class:'spell-text'}).html(range)
-			var td4 = $('<td />',{class:'spell-text'}).html(target)
-			var td5 = $('<td />',{class:'spell-text'}).html(effect)
-			$('#'+unitarr[i]+'-spelltable').append(tr.append(td1).append(td2).append(td3).append(td4).append(td5))
-		}	
-
-	}
 
 	//COMMAND ABILITIES
-	// if(thisunit.general){}
-	if(thisunit.command){
-		$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-command'}))
-		$('#'+unitarr[i]+'-command').append($('<div />',{class:'header',text:'Command ABILITIES'}))
+		// if(thisunit.general){}
+		if(thisunit.command){
+			$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-command'}))
+			$('#'+unitarr[i]+'-command').append($('<div />',{class:'header',text:'Command ABILITIES'}))
 
-	//Add basic command abilities
-	var basicunit = getUnit('basic')
-		var abilarr = []
-		for (var c in basicunit.command) {
-			abilarr.push(c)
+		//Add basic command abilities
+		var basicunit = getUnit('basic')
+			var abilarr = []
+			for (var c in basicunit.command) {
+				abilarr.push(c)
+			}
+			var abilquantity = abilarr.length
+			var table = $('<table />')
+			table.attr('cellpadding',"0px")
+			table.attr('cellspacing','0px')
+			table.attr('width','100%')
+			table.attr('class','abiltable')
+			table.attr('id',unitarr[i]+'-basicabiltable')
+
+			for (var s = 0; s < abilquantity; s++) {
+				var thisability = abilarr[s]
+				var thisabilitytext = basicunit.command[thisability]
+				var tr = $('<tr />');
+				var td1 = $('<td />',{class:'abilityheader',text:thisability})
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
+				$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
+			}
+		//Add Legion command ability
+		if(legions[army].commandability){
+			var precomabil = $('#'+unitarr[i]+'-basicabiltable .abilityheader').html()
+			var arr = []
+			for (var c in legions[army].commandability) {
+				arr.push(c)
+			}
+			arr.push(thisability)
+			var thisability = arr[0]
+			if(precomabil != thisability){
+				var thisabilitytext = getAbility(arr[0])
+				var table = $('<table />')
+				table.attr('cellpadding',"0px")
+				table.attr('cellspacing','0px')
+				table.attr('width','100%')
+				table.attr('class','abiltable')
+				table.attr('id',unitarr[i]+'-legionabiltable')
+				var tr = $('<tr />');
+				var td1 = $('<td />',{class:'abilityheader',text:thisability})
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
+				$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
+			}
 		}
 
-		var abilquantity = abilarr.length
-		var table = $('<table />')
-		table.attr('cellpadding',"0px")
-		table.attr('cellspacing','0px')
-		table.attr('width','100%')
-		table.attr('class','abiltable')
-		table.attr('id',unitarr[i]+'-abiltable')
+		//Add special command abilities
+			var abilarr = []
+			for (var c in thisunit.command) {
+				abilarr.push(c)
+			}
 
-		for (var s = 0; s < abilquantity; s++) {
-			var thisability = abilarr[s]
-			var thisabilitytext = basicunit.command[thisability]
-			var tr = $('<tr />');
-			var td1 = $('<td />',{class:'abilityheader',text:thisability})
-			var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
-			$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
+			var abilquantity = abilarr.length
+			var table = $('<table />')
+			table.attr('cellpadding',"0px")
+			table.attr('cellspacing','0px')
+			table.attr('width','100%')
+			table.attr('class','abiltable')
+			table.attr('id',unitarr[i]+'-abiltable')
+
+			for (var s = 0; s < abilquantity; s++) {
+				var thisability = abilarr[s]
+				var thisabilitytext = thisunit.command[thisability]
+				var tr = $('<tr />');
+				var td1 = $('<td />',{class:'abilityheader',text:thisability})
+				var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
+				$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
+			}
 		}
-
-	//Add special command abilities
-		var abilarr = []
-		for (var c in thisunit.command) {
-			abilarr.push(c)
-		}
-
-		var abilquantity = abilarr.length
-		var table = $('<table />')
-		table.attr('cellpadding',"0px")
-		table.attr('cellspacing','0px')
-		table.attr('width','100%')
-		table.attr('class','abiltable')
-		table.attr('id',unitarr[i]+'-abiltable')
-
-		for (var s = 0; s < abilquantity; s++) {
-			var thisability = abilarr[s]
-			var thisabilitytext = thisunit.command[thisability]
-			var tr = $('<tr />');
-			var td1 = $('<td />',{class:'abilityheader',text:thisability})
-			var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
-			$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
-		}
-	}
-	// if(thisunit.general != 1 || !thisunit.general){$('#'+unitarr[i]+'-command').hide()}
-
-
+		// if(thisunit.general != 1 || !thisunit.general){$('#'+unitarr[i]+'-command').hide()}
 
 	//KEYWORDS
-			$('#'+unitarr[i]).append($('<div />',{class:'header',text:'KEYWORDS'}))
-			$('#'+unitarr[i]).append($('<div />',{class:'keywords',text:keywords}))
+		$('#'+unitarr[i]).append($('<div />',{class:'header',text:'KEYWORDS'}))
+		$('#'+unitarr[i]).append($('<div />',{class:'keywords',text:keywords}))
 	}
+	console.log(totalpoints)
+	$('#unitpoints').html('Total Points: ')
+	$('#unitpoints').append(totalpoints)
 
 }
 
 legionsList(legions)
+unitsMenu()
 getLegion(army)
 // unitsList()
