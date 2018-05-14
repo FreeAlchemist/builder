@@ -244,61 +244,10 @@ Gainsboro
 Whitesmoke
 White
 */
-#menu{
-	position: fixed;
-	top: 10px;
-	right: 10px;
-	float: right;
-	background-color: rgba(30,34,33,1);
-	border:1px solid Black;
-	font-size: 10pt;
-	z-index: 100;
-	box-shadow: Black 1px 1px 3px;
-	box-shadow: #291109 0px 4px 8px
-}
-
-.menupart{
-	float: left;
-	margin: 6px;
-	text-align: center;
-	height: 40px;
-	font-size: 12pt;
-	background-color: Linen;
-	color: Linen;
-	background: rgba(30,34,33,1) ;
-    border: 2px solid rgba(192,167,106,1) ;
-    border-bottom-color: Burlywood ;
-    border-bottom-width: 3px ;
-    border-left-color: Bisque ;
-    border-left-width: 2px ;
-    border-right-color: Burlywood ;
-    border-right-width: 3px ;
-    border-style: groove ;
-    border-top-color: Bisque ;
-    border-top-width: 2px ;
-}
 
 #armyselect:hover,#pointsystem:hover{cursor: pointer;}
 
-.menubtn{
-	float: left;
-	padding: 0px 10px;
-	height: 100%;
-	width: 100%;
-	text-align: center;
-	text-decoration: none;
-	border: 2px solid Black;
-	cursor: pointer;
-	background-color: Dimgray;
-	color: Lightgoldenrodyellow;
-}
-a.menubtn{
-	padding: 3px;
-	height: 80%;
-	width: 80%;
-	line-height: 30px;
-}
-.menubtn:hover{border-color: Linen;}
+
 #detachments{
 	position: absolute;
 	top: 80px;
@@ -336,33 +285,6 @@ a.menubtn{
 	margin-top: 5px;
 	text-transform: uppercase;
 }
-/*.hq{
-	
-}
-.troops{
-	
-}
-.elites{
-	
-}
-.fast{
-	
-}
-.heavy{
-	
-}
-.flyers{
-	
-}
-.dedicated{
-	
-}
-.low{
-	
-}
-.fortification{
-	
-}*/
 .passive{
 	background-color: rgba(64,58,34,1);
 }
@@ -403,51 +325,6 @@ a.menubtn{
 	border-top:0.5mm solid Gray;
 }
 
-
-.wrap{
-width: 0;
-width: 100%;
-height: 0;
-border-style: solid;
-border-width: 0 20px 15px 20px;
-border-color: transparent transparent rgba(118,112,75,1) transparent;
-float: left;
-padding-top: 10px;
-color: rgba(118,112,75,1);
-text-transform: uppercase;
-}
-
-.wrap:hover{
-	border-color: transparent transparent rgb(104, 139, 156)  transparent;
-	color: rgb(104, 139, 156);
-	cursor: pointer;
-}
-.wrap_closed:hover{
-	border-color: transparent transparent rgb(104, 139, 156)  transparent;
-	color: Linen;
-	cursor: pointer;
-}
-
-.wrap:active{
-	border-color: transparent transparent rgb(34, 145, 199)  transparent;
-}
-
-.wrap_closed{
-	width: 94.8%;
-	margin-top: 0px;
-	background-color: rgba(249,206,116,1);
-	color: Linen;
-}
-
-span.wrap_closed,span.wrap{
-	width: 95%;
-}
-
-.floatright{
-	float: right;
-	margin-right: 5px;
-}
-
 .modelsnum{
 	background-color: White;
 }
@@ -455,7 +332,7 @@ span.wrap_closed,span.wrap{
 /*PRINT*/
 	@media print{
 
-		.warscroll,#rostertable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
+		#rostertable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
 			page-break-inside:avoid;
 		}
 		.modelsnum{
@@ -465,7 +342,7 @@ span.wrap_closed,span.wrap{
 			width: 30px;
 			padding: 2px;
 		}
-		#menu,#detachments,.noprint,.wrap_closed,.wrap{
+		#detachments{
 			display: none;
 		}
 	}

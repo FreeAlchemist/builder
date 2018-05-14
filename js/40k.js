@@ -46,23 +46,6 @@ function detToggle2(){
 		$('#roster-btn').attr("title","Generate Army Roster")
 	}
 }
-//	Declare if selected table must be printed
-// function printToggle(){
-// 	var noprintarr = $( "input[type=checkbox]" )
-// 		for (var i =0; i < noprintarr.length; i++) {
-// 		var noprintname = noprintarr[i].value
-// 		if(!$("#"+noprintname).hasClass( "noprint" )){
-// 			$("#"+noprintname).addClass("noprint")
-// 		}
-// 	}
-// 	var printarr = $( "input[type=checkbox]:checked" )
-// 	for (var i =0; i < printarr.length; i++) {
-// 		var printname = printarr[i].value
-// 		if($("#"+printname).hasClass( "noprint" )){
-// 			$("#"+printname).removeClass("noprint")
-// 		}
-// 	}
-// }
 //	Count points per roster
 function counterVal(){
 	var pointsperarmy = 0

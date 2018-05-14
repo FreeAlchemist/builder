@@ -1,8 +1,14 @@
 var ability = {
+	//Basic command ability
+	'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
+	//
 	'Endless Legions' : 'Choose a gravesite within 9\". You may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
-	'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:<i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
+	'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:</i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
 	'Deathless Minions' : 'Roll a dice each time you allocate a wound or mortal wound to a friendly <b>DEATH</b> unit within 6\" of your general or another friendly <b>DEATH HERO</b>. On a 6+ the wound is negated.',
+	'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+	'FLY' : 'This unit can fly.',
 }
+
 var legions = {
 	grandhostofnagash : {
 		armyname : 'GRAND HOST OF NAGASH',
@@ -36,11 +42,8 @@ var legions = {
 		armyname : 'Legion of Sacrament',
 		commandability : {
 			'Endless Legions' : '',
-			// 'Endless Legions' : 'Choose a gravesite within 9\". You may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
 		},
 		battletraits : {
-			// 'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:<i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
-			// 'Deathless Minions' : 'Roll a dice each time you allocate a wound or mortal wound to a friendly <b>DEATH</b> unit within 6\" of your general or another friendly <b>DEATH HERO</b>. On a 6+ the wound is negated.',
 			'The Unquiet Dead' : '',
 			'Deathless Minions' : '',
 			'The Master\'s Teachings' : 'Whenever an enemy unit is destroyed, before removing the last model, you may pick one of your gravesites within 6\" of that model.<br>Roll a dice, then remove the model.<br>On a 4+, you may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
@@ -122,6 +125,9 @@ var legions = {
 	},
 	soulblight : {
 		armyname : 'Allegiance abilities: SOULBLIGHT',
+		commandability : {
+			'Inspiring Presence' : '',
+		},
 		battletraits : {
 			'Deathless Thralls' : '',
 			'The Bloodlines' : '',
@@ -149,6 +155,9 @@ var legions = {
 	},
 	death : {
 		armyname : 'Allegiance abilities: DEATH',
+		commandability : {
+			'Inspiring Presence' : '',
+		},
 		battletraits : {
 			'Deathless Minions' : '',
 		},
@@ -171,7 +180,7 @@ var legions = {
 }
 
 var magic = {
-	basic : {
+	lorebasic : {
 		magicname : 'Basic spells',
 		'Arcane Bolt' : {
 			cast:'5',
@@ -359,10 +368,11 @@ var units = {
 			// },
 		},
 		command : {
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Blood Feast' : 'Pick a friendly <b>Death</b> unit within 15". Models in that unit make one extra attack with each of their melee weapons until your next hero phase.',
 		},
 		general : '1',
-		keywords:'DEATH, VAMPIRE, SOULBLIGHT, HERO, WIZARD, VAMPIRE LORD',
+		keywords:'DEATH, LEGION, VAMPIRE, SOULBLIGHT, HERO, WIZARD, VAMPIRE LORD',
 	},
 	knightofshrouds : {
 		name:'Knight of Shrouds',
@@ -385,14 +395,15 @@ var units = {
 		},
 		abilities : {
 			'FLY' : 'Knight of Shrouds can fly.',
-			'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+			'Ethereal' : '',
 			'Stolen Hours' : 'Each time a wound inflicted by this model\'s Sword of Stolen Hours slays an enemy <b>HERO</b>, heal 1 wound allocated to this model.',
 			},
 		command : {
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Spectral Overseer' : 'In the combat phase of this turn, add 1 to hit rolls for friendly <b>NIGHTHAUNT</b> models while they are within 9" of this model.',
 		},
 		general : '1',
-		keywords:'DEATH, MALIGNANT, NIGHTHAUNT, HERO, KNIGHT OF SHROUDS',
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, KNIGHT OF SHROUDS',
 	},
 	cairnwraith : {
 		name:'CAIRN WRAITH',
@@ -415,12 +426,14 @@ var units = {
 		},
 		abilities : {
 			'FLY' : 'Cairn Wraith can fly.',
-			'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+			'Ethereal' : '',
 			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Reaper Scythe, that attack inflicts 2 mortal wounds instead of the normal damage.',
 			'Reaped Like Corn' : 'If the target unit has 5 or more models, you can re-roll failed hit rolls for this model\'s Reaper Scythe.',
 			},
-		command : {},
-		keywords:'DEATH, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
+		command : {
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+		},
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
 	},
 	tombbanshee : {
 		name:'TOMB BANSHEE',
@@ -452,12 +465,14 @@ var units = {
 		},
 		abilities : {
 			'FLY' : 'Tomb Banshee can fly.',
-			'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+			'Ethereal' : '',
 			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Chill Dagger, that attack inflicts D3 mortal wounds instead of the normal damage (do not make a wound or save roll).',
 			'Ghostly Howl' : 'When making a Ghostly Howl attack, pick a target within range, roll 2D6; if the total is higher than that unit\'s Bravery, it suffers a number of mortal wounds equal to the difference.',
 			},
-		command :{},
-		keywords:'DEATH, MALIGNANT, NIGHTHAUNT, HERO, TOMB BANSHEE',
+		command :{
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+		},
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, TOMB BANSHEE',
 	},
 	wightking1 : {
 		name:'Wight King (Tomb Blade)',
@@ -483,10 +498,11 @@ var units = {
 			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
 		},
 		command : {
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
 		},
 		general : '1',
-		keywords:'DEATH, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
+		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
 	},
 	wightking2 : {
 		name:'Wight King (Black Axe)',
@@ -513,10 +529,11 @@ var units = {
 			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
 		},
 		command : {
+			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
 		},
 		general : '1',
-		keywords:'DEATH, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
+		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
 	},
 	sepulcharguard : {
 		name:'THE SEPULCHAR GUARD',
@@ -582,6 +599,57 @@ var units = {
 		},
 		keywords:'DEATH, SKELETON, DEATHRATTLE, SKELETON WARRIORS, THE SEPULCHAR GUARD',
 	},
+	batswarms : {
+		name:'Bat Swarms (2-8)',
+		role:'',
+		move:'12',
+		wounds:'5',
+		bravery:'10',
+		save:'-',
+		points:'80',
+		weapon : {
+			'Razor-sharp Teeth' : {
+				type:'melee',
+				range:'3',
+				attacks:'5',
+				tohit:'5+',
+				towound:'5+',
+				rend:'-',
+				damage:'1',
+			},
+		},
+		abilities : {
+			'FLY' : 'Bat Swarms can fly.',
+			'Cloud of Horror' : 'Substract 1 from hit rolls for enemy units that are within 12" of any Bat Swarms in the Shooting phase.',
+			'Blood Suckers' : 'At the end of any combat phase in which this unit caused any wounds to be allocated to any enemy models, you can heal all wounds that have been allocated to this unit.',
+			},
+		keywords:'DEATH, LEGION, SOULBLIGHT, SUMMONABLE, BAT SWARMS',
+	},
+	fellbats : {
+		name:'Fell Bats (3-12)',
+		role:'',
+		move:'14',
+		wounds:'3',
+		bravery:'10',
+		save:'6+',
+		points:'80',
+		weapon : {
+			'Elongated Fangs' : {
+				type:'melee',
+				range:'1',
+				attacks:'2',
+				tohit:'4+',
+				towound:'4+',
+				rend:'-',
+				damage:'1',
+			},
+		},
+		abilities : {
+			'FLY' : 'Bat Swarms can fly.',
+			'Scent of Gore' : 'If an enemy model is slain within 6" of this unit, increase the Attacks characteristic of this unit\'s Elongated Fangs to 6 for the rest of the battle.',
+			},
+		keywords:'DEATH, LEGION, SOULBLIGHT, SUMMONABLE, FELL BATS',
+	},
 	spirithosts : {
 		name:'Spirit Hosts (3-12)',
 		role:'Battleline Nighthaunt',
@@ -603,10 +671,56 @@ var units = {
 		},
 		abilities : {
 			'FLY' : 'Spirit Hosts can fly.',
-			'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+			'Ethereal' : '',
 			'Frightful Touch' : 'If the hit roll for an attack made by a Spirit Host is 6+, immediately inflict 1 mortal wound instead of its normal damage.',
 			},
-		keywords:'DEATH, MALIGNANT, NIGHTHAUNT, SUMMONABLE, SPIRIT HOSTS',
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, SPIRIT HOSTS',
+	},
+	hexwraiths : {
+		name:'Hexwraiths (5-20)',
+		role:'Battleline Nighthaunt',
+		move:'12',
+		wounds:'2',
+		bravery:'10',
+		save:'4+',
+		points:'160',
+		weapon : {
+			'Hellwraith\'s Spectral Scythe' : {
+				type:'melee',
+				range:'1',
+				attacks:'3',
+				tohit:'4+',
+				towound:'3+',
+				rend:'-1',
+				damage:'1',
+			},
+			'Spectral Scythe' : {
+				type:'melee',
+				range:'1',
+				attacks:'2',
+				tohit:'4+',
+				towound:'3+',
+				rend:'-1',
+				damage:'1',
+			},
+			'Skeletal Steed\'s Hooves and Teeth' : {
+				type:'melee',
+				range:'1',
+				attacks:'3',
+				tohit:'4+',
+				towound:'5+',
+				rend:'-',
+				damage:'1',
+			},
+		},
+		abilities : {
+			'HELLWRAITH' : 'The leader of this unit is Hellwraith. Add 1 to the Attacks characteristic of a Hellwraith\'s Spectral Scythe.',
+			'FLY' : 'Hexwraiths can fly.',
+			'Ethereal' : '',
+			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Scythe, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
+			'Spectrum Hunter\'s' : 'In the movement phase, immediately after this unit has moved, you can pick an enemy unit that was passed across by any models from this unit. If you do so, roll a dice for each Hexwraith that passed across that enemy unit. For each roll of 5+, that enemy unit suffers 1 mortal wound.',
+			},
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, HEXWRAITHS',
 	},
 	mortisengine : {
 		name:'Mortis Engine',
@@ -662,103 +776,6 @@ var units = {
 			'The Reliquary' : 'Once per battle, in hero phase roll 4D6. Each unit within that many inches affected. <b>Death</b> units heal D3 wounds, but any other unit suffers D3 mortal wounds.',
 			'Bound Necromancer' : 'Add 1 to casting rolls for Death Wizards within 12" of any Mortis Engines. Substract 1 from casting rolls for Order, Destruction and Chaos Wizards within 12" of any Mortis Engines.',
 			},
-		keywords:'DEATH, MALIGNANT, DEATHMAGES, MORTIS ENGINE',
-	},
-	hexwraiths : {
-		name:'Hexwraiths (5-20)',
-		role:'Battleline Nighthaunt',
-		move:'12',
-		wounds:'2',
-		bravery:'10',
-		save:'4+',
-		points:'160',
-		weapon : {
-			'Hellwraith\'s Spectral Scythe' : {
-				type:'melee',
-				range:'1',
-				attacks:'3',
-				tohit:'4+',
-				towound:'3+',
-				rend:'-1',
-				damage:'1',
-			},
-			'Spectral Scythe' : {
-				type:'melee',
-				range:'1',
-				attacks:'2',
-				tohit:'4+',
-				towound:'3+',
-				rend:'-1',
-				damage:'1',
-			},
-			'Skeletal Steed\'s Hooves and Teeth' : {
-				type:'melee',
-				range:'1',
-				attacks:'3',
-				tohit:'4+',
-				towound:'5+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'HELLWRAITH' : 'The leader of this unit is Hellwraith. Add 1 to the Attacks characteristic of a Hellwraith\'s Spectral Scythe.',
-			'FLY' : 'Hexwraiths can fly.',
-			'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
-			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Scythe, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
-			'Spectrum Hunter\'s' : 'In the movement phase, immediately after this unit has moved, you can pick an enemy unit that was passed across by any models from this unit. If you do so, roll a dice for each Hexwraith that passed across that enemy unit. For each roll of 5+, that enemy unit suffers 1 mortal wound.',
-			},
-		keywords:'DEATH, MALIGNANT, NIGHTHAUNT, SUMMONABLE, HEXWRAITHS',
-	},
-	batswarms : {
-		name:'Bat Swarms (2-8)',
-		role:'',
-		move:'12',
-		wounds:'5',
-		bravery:'10',
-		save:'-',
-		points:'80',
-		weapon : {
-			'Razor-sharp Teeth' : {
-				type:'melee',
-				range:'3',
-				attacks:'5',
-				tohit:'5+',
-				towound:'5+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'FLY' : 'Bat Swarms can fly.',
-			'Cloud of Horror' : 'Substract 1 from hit rolls for enemy units that are within 12" of any Bat Swarms in the Shooting phase.',
-			'Blood Suckers' : 'At the end of any combat phase in which this unit caused any wounds to be allocated to any enemy models, you can heal all wounds that have been allocated to this unit.',
-			},
-		keywords:'DEATH, LEGION OF SACRAMENT, SOULBLIGHT, SUMMONABLE, BAT SWARMS',
-	},
-	fellbats : {
-		name:'Fell Bats (3-12)',
-		role:'',
-		move:'14',
-		wounds:'3',
-		bravery:'10',
-		save:'6+',
-		points:'80',
-		weapon : {
-			'Elongated Fangs' : {
-				type:'melee',
-				range:'1',
-				attacks:'2',
-				tohit:'4+',
-				towound:'4+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'FLY' : 'Bat Swarms can fly.',
-			'Scent of Gore' : 'If an enemy model is slain within 6" of this unit, increase the Attacks characteristic of this unit\'s Elongated Fangs to 6 for the rest of the battle.',
-			},
-		keywords:'DEATH, LEGION OF SACRAMENT, SOULBLIGHT, SUMMONABLE, FELL BATS',
+		keywords:'DEATH, LEGION, MALIGNANT, DEATHMAGES, MORTIS ENGINE',
 	},
 }
