@@ -4153,7 +4153,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					weapon : ['Thunder hammer','Frag grenade','Krak grenade','Incinerator'],
+					weapon : ['Power maul','Frag grenade','Krak grenade','Incinerator'],
 					abilities : {
 						'Authority of the Inquisition' : 'Units with this ability can embark onto any <b>IMPERIUM TRANSPORT</b>, even though the transport in question might normally only permit models with other Faction keywords to do so. All other restrictions apply normally, and <b>INQUISITOR TERMINATOR</b> models can only embark upon <b>TRANSPORTS</b> that specifically allow Terminator models to do so.',
 						'Unquestionable Wisdom' : 'All friendly <b>IMPERIUM</b> units within 6" of this model can use its Leadership characteristic instead of their own.',

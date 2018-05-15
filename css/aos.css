@@ -16,14 +16,16 @@
 .warscroll{
 	border:1mm solid;
 	width:20cm;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
+	margin-top: 20px;
 	font-size: 10pt;
 	background-color: black;
 	page-break-inside:avoid;
 }
 table.warscroll{
 	background-color: white;
-	margin-bottom: 10px;
+	margin-bottom: -3px;
+	margin-top: 0px;
 }
 .chars{
 	min-height: 1cm;
@@ -172,6 +174,7 @@ table.warscroll{
 	text-transform: uppercase;
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
+	border-top:1mm solid Black;
 }
 .spell-header-name,.spell-name{
 	width:3.5cm;
@@ -202,9 +205,27 @@ table.warscroll{
 	background-color: Gainsboro;
 	text-transform: uppercase;
 	padding-left: 3mm;
+	padding-right: 3mm;
 	text-align: left;
 	border:solid Gray;
 	border-width: 0.5mm;
+}
+.army-text{
+	background-color: white;
+	/*text-transform: uppercase;*/
+	padding-left: 3mm;
+	text-align: left;
+	border:solid Gray;
+	border-width: 0.5mm;
+}
+
+.unitnum{
+	width: 30px;
+	padding: 2px;
+}
+
+.legionname{
+	width: 200px;
 }
 /*PRINT*/
 	@media print{
@@ -212,7 +233,14 @@ table.warscroll{
 		.warscroll{
 			page-break-inside:avoid;
 		}
-		#menu,.noprint,.wrap_closed,.wrap{
+		#menu,#unitsmenu,.noprint,.wrap_closed,.wrap{
 			display: none;
 		}
 	}
+
+	.smallstat{
+	width:1cm;
+}
+.xsmallstat{
+	width:0.5cm;
+}
