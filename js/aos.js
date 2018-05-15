@@ -219,6 +219,10 @@ function fillSpell(lorename,unit){
 
 function unitsMenu(){
 	$('#page').html('')
+	$('#rosterpoints').html('')
+	$('#rostertotalunits').html('')
+	$('#rosterunits').html('')
+	unitarr = []
 	if(units){
 		var unitsmenu = []
 		for (var c in units) {
@@ -251,7 +255,7 @@ function unitsMenu(){
 						var unitval = parseInt(printarr[i].value)
 						if(unitname != 'basic' && unitval > 0){
 							unitarr.push(unitname)
-							$(printarr[i]).css('background-color','rgba(255,245,165,1)')
+							$(printarr[i]).css('background-color','rgba(205,205,165,1)')
 						}
 						else{
 							$(printarr[i]).css('background-color','white')

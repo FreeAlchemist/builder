@@ -27,7 +27,10 @@ background-color: rgba(,,,1);
 background-color: rgba(,,,1);
 background-color: rgba(,,,1);
 */
-
+body{
+	background-color: rgba(239, 238, 237, 1);
+	font-family: Calibri, Arial;
+}
 
 #menu{
 	position: fixed;
@@ -110,7 +113,7 @@ text-transform: uppercase;
 .wrap_closed{
 	width: 94.8%;
 	margin-top: 0px;
-	background-color: rgba(249,206,116,1);
+	background-color: rgb(234, 230, 225);
 	color: Linen;
 }
 span.wrap_closed,span.wrap{
@@ -125,6 +128,12 @@ span.wrap_closed,span.wrap{
 	margin-left: 5px;
 	margin-right: 5px;
 }
+.smallstat{
+	width:1cm;
+}
+.xsmallstat{
+	width:0.5cm;
+}
 /*PRINT*/
 	@media print{
 
@@ -133,5 +142,9 @@ span.wrap_closed,span.wrap{
 		}
 		#menu,.noprint,.wrap_closed,.wrap{
 			display: none;
+		}
+		body{
+			background-color: white;
+			font-family: Calibri, Arial;
 		}
 	}

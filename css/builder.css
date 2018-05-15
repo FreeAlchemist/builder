@@ -1,12 +1,24 @@
+body{
+	background-color: rgba(239, 238, 237, 1);
+	font-family: Calibri, Arial;
+}
+
 .menu{
 	position: fixed;
 	    top: 50px;
 	    left: 100px;
 	    background-color: Linen;
-	    border: 1px solid Black;
+	    /*border: 1px solid Black;*/
 	    font-size: 20pt;
 	    z-index: 100;
 	    box-shadow: grey 1px 1px 3px;
+
+	    /*width: 100%;*/
+	    background-color: rgba(255,255,255,1);
+	    /*margin-top: 11px;*/
+	    /*margin-bottom: 20px;*/
+	    /*-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);*/
+	    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
 }
 
 .menubtn{
@@ -15,8 +27,25 @@
 	padding: 5px;
 	text-align: center;
 	text-decoration: none;
-	border: 2px solid Black;
-	border-radius: 5px;
-	background-color: dimgray;
-	color: lightgoldenrodyellow;
+	/*border: 2px solid Black;*/
+	/*border-radius: 5px;*/
+	/*background-color: dimgray;*/
+	/*color: lightgoldenrodyellow;*/
+
+	/*width: 115px;*/
+	/*height: 36px;*/
+	/*margin-top: 20px;*/
+	/*margin-left: 9px;*/
+	background-color: rgba(151,144,137,1);
+	color: white;
+	border-radius: 3px;
+	/*float: right;*/
+	font-weight: bold;
+	line-height: 36px;
+	text-align: center;
+	font-size: 14pt;
+}
+
+.menubtn:hover{
+	background-color: rgba(220,190,105,1);
 }

@@ -3,24 +3,24 @@
 	top: 100px;
 	right: 10px;
 	float: right;
-	background-color: rgba(30,34,33,1);
+	background-color: rgb(234, 230, 225);
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;
 	width: 350px;
-	box-shadow: Black 1px 1px 3px;
 	box-shadow: #291109 0px 4px 8px;
-	color:Linen;
+	color:Black;
 }
 #legionselect:hover{cursor: pointer;}
 .warscroll{
-	border:1mm solid;
+	border:0.5mm solid;
+	/*border-radius: 5px;*/
 	width:20cm;
-	/*margin-bottom: 20px;*/
 	margin-top: 20px;
 	font-size: 10pt;
 	background-color: black;
 	page-break-inside:avoid;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
 }
 table.warscroll{
 	background-color: white;
@@ -201,8 +201,17 @@ table.warscroll{
 .name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords{background-color: Linen;}
 .name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords{background-color: white;}
 
+#rostertable{
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+}
+
 .army-header{
-	background-color: Gainsboro;
+	/*background-color: Gainsboro;*/
+	/*background-color: rgba(249, 248, 247, 1);*/
+	background-color: rgb(234, 230, 225);
 	text-transform: uppercase;
 	padding-left: 3mm;
 	padding-right: 3mm;
@@ -212,11 +221,13 @@ table.warscroll{
 }
 .army-text{
 	background-color: white;
-	/*text-transform: uppercase;*/
 	padding-left: 3mm;
 	text-align: left;
 	border:solid Gray;
 	border-width: 0.5mm;
+	color: rgba(124,144,82,1);
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .unitnum{
@@ -236,11 +247,39 @@ table.warscroll{
 		#menu,#unitsmenu,.noprint,.wrap_closed,.wrap{
 			display: none;
 		}
+		.army-header{
+			background-color: Gainsboro;
+			text-transform: uppercase;
+			padding-left: 3mm;
+			padding-right: 3mm;
+			text-align: left;
+			border:solid Gray;
+			border-width: 0.5mm;
+		}
+		.army-text{
+			color: black;
+			font-weight: normal;
+			font-size: 14px;
+			background-color: white;
+			padding-left: 3mm;
+			text-align: left;
+			border:solid Gray;
+			border-width: 0.5mm;
+		}
+		#rostertable{
+			box-shadow: none;
+			margin-bottom: 0px;
+			border-radius: 0px;
+		}
+		.warscroll{
+			border:1mm solid;
+			border-radius: 0px;
+			width:20cm;
+			margin-top: 20px;
+			font-size: 10pt;
+			background-color: black;
+			page-break-inside:avoid;
+			box-shadow: none;
+		}
 	}
 
-	.smallstat{
-	width:1cm;
-}
-.xsmallstat{
-	width:0.5cm;
-}
