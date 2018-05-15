@@ -11,7 +11,7 @@ var ability = {
 
 var legions = {
 	grandhostofnagash : {
-		armyname : 'GRAND HOST OF NAGASH',
+		armyname : 'Grand Host of Nagash',
 		commandability : {
 			'Endless Legions' : '',
 		},
@@ -124,7 +124,7 @@ var legions = {
 		},
 	},
 	soulblight : {
-		armyname : 'Allegiance abilities: SOULBLIGHT',
+		armyname : 'Allegiance: SOULBLIGHT',
 		commandability : {
 			'Inspiring Presence' : '',
 		},
@@ -154,7 +154,7 @@ var legions = {
 		},
 	},
 	death : {
-		armyname : 'Allegiance abilities: DEATH',
+		armyname : 'Allegiance: DEATH',
 		commandability : {
 			'Inspiring Presence' : '',
 		},
@@ -238,7 +238,7 @@ var magic = {
 		magicname : 'LORE OF THE VAMPIRES',
 		'BLADES OF SHYISH' : {
 			cast:'5',
-			range:'12',
+			range:'( 12 )',
 			target:'Each enemy unit',
 			effect:'Roll a dice for each enemy unit within 12\" of the caster. On a 5+ that unit suffers 1 mortal wound.',
 		},
@@ -368,7 +368,7 @@ var units = {
 			// },
 		},
 		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Blood Feast' : 'Pick a friendly <b>Death</b> unit within 15". Models in that unit make one extra attack with each of their melee weapons until your next hero phase.',
 		},
 		general : '1',
@@ -399,41 +399,72 @@ var units = {
 			'Stolen Hours' : 'Each time a wound inflicted by this model\'s Sword of Stolen Hours slays an enemy <b>HERO</b>, heal 1 wound allocated to this model.',
 			},
 		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			'Spectral Overseer' : 'In the combat phase of this turn, add 1 to hit rolls for friendly <b>NIGHTHAUNT</b> models while they are within 9" of this model.',
 		},
 		general : '1',
 		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, KNIGHT OF SHROUDS',
 	},
-	cairnwraith : {
-		name:'CAIRN WRAITH',
+	wightking1 : {
+		name:'Wight King (Tomb Blade)',
 		role:'Leader',
-		move:'6',
-		wounds:'4',
+		move:'4',
+		wounds:'5',
 		bravery:'10',
-		save:'4+',
-		points:'60',
+		save:'3+',
+		points:'120',
 		weapon : {
-			'Reaper Scythe' : {
+			'Baleful Tomb Blade' : {
 				type:'melee',
-				range:'2',
-				attacks:'3',
-				tohit:'4+',
+				range:'1',
+				attacks:'4',
+				tohit:'3+',
 				towound:'3+',
 				rend:'-1',
-				damage:'2',
+				damage:'1',
 			},
 		},
 		abilities : {
-			'FLY' : 'Cairn Wraith can fly.',
-			'Ethereal' : '',
-			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Reaper Scythe, that attack inflicts 2 mortal wounds instead of the normal damage.',
-			'Reaped Like Corn' : 'If the target unit has 5 or more models, you can re-roll failed hit rolls for this model\'s Reaper Scythe.',
-			},
-		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			'Beheading Strike' : 'If the wound roll for an attack made with a Baleful Tomb Blade is 6+, that attack has a Damage characteristic of D3.',
+			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
 		},
-		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
+		command : {
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
+		},
+		general : '1',
+		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
+	},
+	wightking2 : {
+		name:'Wight King (Black Axe)',
+		role:'Leader',
+		move:'4',
+		wounds:'5',
+		bravery:'10',
+		save:'3+',
+		points:'120',
+		weapon : {
+			'Black Axe' : {
+				type:'melee',
+				range:'1',
+				attacks:'4',
+				tohit:'3+',
+				towound:'3+',
+				rend:'-1',
+				damage:'1',
+			},
+		},
+		abilities : {
+			'Black Axe' : 'If a model is allocated any wounds from attacks made using the Black Axe but is not slain, roll a dice after the Wight King has finished making all of its attacks. On a 6+ that model is slain.',
+			'Barrow Armour' : 'Halve the number of wounds allocated to this model from each attack, rounding up (the remainder are negated).',
+			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
+		},
+		command : {
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
+		},
+		general : '1',
+		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
 	},
 	tombbanshee : {
 		name:'TOMB BANSHEE',
@@ -470,70 +501,169 @@ var units = {
 			'Ghostly Howl' : 'When making a Ghostly Howl attack, pick a target within range, roll 2D6; if the total is higher than that unit\'s Bravery, it suffers a number of mortal wounds equal to the difference.',
 			},
 		command :{
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 		},
 		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, TOMB BANSHEE',
 	},
-	wightking1 : {
-		name:'Wight King (Tomb Blade)',
+	cairnwraith : {
+		name:'CAIRN WRAITH',
 		role:'Leader',
-		move:'4',
-		wounds:'5',
+		move:'6',
+		wounds:'4',
 		bravery:'10',
-		save:'3+',
-		points:'120',
+		save:'4+',
+		points:'60',
 		weapon : {
-			'Baleful Tomb Blade' : {
+			'Reaper Scythe' : {
 				type:'melee',
-				range:'1',
-				attacks:'4',
-				tohit:'3+',
+				range:'2',
+				attacks:'3',
+				tohit:'4+',
 				towound:'3+',
 				rend:'-1',
-				damage:'1',
+				damage:'2',
 			},
 		},
 		abilities : {
-			'Beheading Strike' : 'If the wound roll for an attack made with a Baleful Tomb Blade is 6+, that attack has a Damage characteristic of D3.',
-			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
-		},
+			'FLY' : 'Cairn Wraith can fly.',
+			'Ethereal' : '',
+			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Reaper Scythe, that attack inflicts 2 mortal wounds instead of the normal damage.',
+			'Reaped Like Corn' : 'If the target unit has 5 or more models, you can re-roll failed hit rolls for this model\'s Reaper Scythe.',
+			},
 		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
-			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
+			// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 		},
-		general : '1',
-		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
 	},
-	wightking2 : {
-		name:'Wight King (Black Axe)',
-		role:'Leader',
-		move:'4',
-		wounds:'5',
+
+	hexwraiths : {
+		name:'Hexwraiths (5-20)',
+		role:'Battleline Nighthaunt',
+		move:'12',
+		wounds:'2',
 		bravery:'10',
-		save:'3+',
-		points:'120',
+		save:'4+',
+		points:'160',
 		weapon : {
-			'Black Axe' : {
+			'Hellwraith\'s Spectral Scythe' : {
 				type:'melee',
 				range:'1',
-				attacks:'4',
-				tohit:'3+',
+				attacks:'3',
+				tohit:'4+',
 				towound:'3+',
 				rend:'-1',
 				damage:'1',
 			},
+			'Spectral Scythe' : {
+				type:'melee',
+				range:'1',
+				attacks:'2',
+				tohit:'4+',
+				towound:'3+',
+				rend:'-1',
+				damage:'1',
+			},
+			'Skeletal Steed\'s Hooves and Teeth' : {
+				type:'melee',
+				range:'1',
+				attacks:'3',
+				tohit:'4+',
+				towound:'5+',
+				rend:'-',
+				damage:'1',
+			},
 		},
 		abilities : {
-			'Black Axe' : 'If a model is allocated any wounds from attacks made using the Black Axe but is not slain, roll a dice after the Wight King has finished making all of its attacks. On a 6+ that model is slain.',
-			'Barrow Armour' : 'Halve the number of wounds allocated to this model from each attack, rounding up (the remainder are negated).',
-			'Deathly Invocation' : 'At the start of your hero phase, pick up to 2 different friendly <b>SUMMONABLE</b> units within 6" of this model. You can heal D3 wounds that have been allocated to each unit you picked (roll separately for each unit). If no wounds are currently allocated to a unit you have picked, you may instead return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
+			'HELLWRAITH' : 'The leader of this unit is Hellwraith. Add 1 to the Attacks characteristic of a Hellwraith\'s Spectral Scythe.',
+			'FLY' : 'Hexwraiths can fly.',
+			'Ethereal' : '',
+			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Scythe, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
+			'Spectrum Hunter\'s' : 'In the movement phase, immediately after this unit has moved, you can pick an enemy unit that was passed across by any models from this unit. If you do so, roll a dice for each Hexwraith that passed across that enemy unit. For each roll of 5+, that enemy unit suffers 1 mortal wound.',
+			},
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, HEXWRAITHS',
+	},
+	spirithosts : {
+		name:'Spirit Hosts (3-12)',
+		role:'Battleline Nighthaunt',
+		move:'6',
+		wounds:'3',
+		bravery:'10',
+		save:'4+',
+		points:'120',
+		weapon : {
+			'Spectral Claws and Daggers' : {
+				type:'melee',
+				range:'1',
+				attacks:'6',
+				tohit:'5+',
+				towound:'4+',
+				rend:'-',
+				damage:'1',
+			},
 		},
-		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
-			'Lord of Bones' : 'Pick a friendly <b>DEATHRATTLE</b> unit within 18". Until your next hero phase, add 1 to the Attacks characteristic of that unit\'s melee weapons.',
+		abilities : {
+			'FLY' : 'Spirit Hosts can fly.',
+			'Ethereal' : '',
+			'Frightful Touch' : 'If the hit roll for an attack made by a Spirit Host is 6+, immediately inflict 1 mortal wound instead of its normal damage.',
+			},
+		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, SPIRIT HOSTS',
+	},
+
+	mortisengine : {
+		name:'Mortis Engine',
+		role:'Behemoth',
+		move:'14 | 12 | 10 | 8 | 4',
+		wounds:'2|3-4|5-7|8-9|10-12',
+		bravery:'10',
+		save:'4+',
+		points:'180',
+				/*
+		degradation table
+		wailrg attacks move dmg
+		9		12 		14 	0-2
+		8		10 		12 	3-4
+		7		8 		10 	5-7
+		6		6 		8 	8-9
+		5		4 		4 	10+
+				*/
+		weapon : {
+			'Wail of the Damned' : {
+				/*see below*/
+				type:'missile',
+				range:'9 | 8 | 7 | 6 | 5',
+				attacks:'*',
+				tohit:'*',
+				towound:'*',
+				rend:'*',
+				damage:'*',
+			},
+			'Corpsemaster\'s Mortis Staff' : {
+				type:'melee',
+				range:'1',
+				attacks:'1',
+				tohit:'4+',
+				towound:'3+',
+				rend:'-1',
+				damage:'D3',
+			},
+			'Spectral Host\'s Ethereal Weapons' : {
+				type:'melee',
+				range:'1',
+				attacks:'12 | 10 | 8 | 6 | 4',
+				tohit:'5+',
+				towound:'4+',
+				rend:'-',
+				damage:'1',
+			},
 		},
-		general : '1',
-		keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, HERO, WIGHT KING',
+		abilities : {
+			'FLY' : 'Mortis Engines can fly.',
+			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Host\'s Ethereal Weapons, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
+			'Wail of the Damned' : 'When making a Wail of the Damned attack, roll 2D6 for each enemy unit within the range shown on the damage table. If the total is higher than that unit\'s Bravery, it suffers D3 mortal wounds.',
+			'The Reliquary' : 'Once per battle, in hero phase roll 4D6. Each unit within that many inches affected. <b>Death</b> units heal D3 wounds, but any other unit suffers D3 mortal wounds.',
+			'Bound Necromancer' : 'Add 1 to casting rolls for Death Wizards within 12" of any Mortis Engines. Substract 1 from casting rolls for Order, Destruction and Chaos Wizards within 12" of any Mortis Engines.',
+			},
+		keywords:'DEATH, LEGION, MALIGNANT, DEATHMAGES, MORTIS ENGINE',
 	},
 	sepulcharguard : {
 		name:'THE SEPULCHAR GUARD',
@@ -649,133 +779,5 @@ var units = {
 			'Scent of Gore' : 'If an enemy model is slain within 6" of this unit, increase the Attacks characteristic of this unit\'s Elongated Fangs to 6 for the rest of the battle.',
 			},
 		keywords:'DEATH, LEGION, SOULBLIGHT, SUMMONABLE, FELL BATS',
-	},
-	spirithosts : {
-		name:'Spirit Hosts (3-12)',
-		role:'Battleline Nighthaunt',
-		move:'6',
-		wounds:'3',
-		bravery:'10',
-		save:'4+',
-		points:'120',
-		weapon : {
-			'Spectral Claws and Daggers' : {
-				type:'melee',
-				range:'1',
-				attacks:'6',
-				tohit:'5+',
-				towound:'4+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'FLY' : 'Spirit Hosts can fly.',
-			'Ethereal' : '',
-			'Frightful Touch' : 'If the hit roll for an attack made by a Spirit Host is 6+, immediately inflict 1 mortal wound instead of its normal damage.',
-			},
-		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, SPIRIT HOSTS',
-	},
-	hexwraiths : {
-		name:'Hexwraiths (5-20)',
-		role:'Battleline Nighthaunt',
-		move:'12',
-		wounds:'2',
-		bravery:'10',
-		save:'4+',
-		points:'160',
-		weapon : {
-			'Hellwraith\'s Spectral Scythe' : {
-				type:'melee',
-				range:'1',
-				attacks:'3',
-				tohit:'4+',
-				towound:'3+',
-				rend:'-1',
-				damage:'1',
-			},
-			'Spectral Scythe' : {
-				type:'melee',
-				range:'1',
-				attacks:'2',
-				tohit:'4+',
-				towound:'3+',
-				rend:'-1',
-				damage:'1',
-			},
-			'Skeletal Steed\'s Hooves and Teeth' : {
-				type:'melee',
-				range:'1',
-				attacks:'3',
-				tohit:'4+',
-				towound:'5+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'HELLWRAITH' : 'The leader of this unit is Hellwraith. Add 1 to the Attacks characteristic of a Hellwraith\'s Spectral Scythe.',
-			'FLY' : 'Hexwraiths can fly.',
-			'Ethereal' : '',
-			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Scythe, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
-			'Spectrum Hunter\'s' : 'In the movement phase, immediately after this unit has moved, you can pick an enemy unit that was passed across by any models from this unit. If you do so, roll a dice for each Hexwraith that passed across that enemy unit. For each roll of 5+, that enemy unit suffers 1 mortal wound.',
-			},
-		keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, SUMMONABLE, HEXWRAITHS',
-	},
-	mortisengine : {
-		name:'Mortis Engine',
-		role:'Behemoth',
-		move:'14 | 12 | 10 | 8 | 4',
-		wounds:'2|3-4|5-7|8-9|10-12',
-		bravery:'10',
-		save:'4+',
-		points:'180',
-				/*
-		degradation table
-		wailrg attacks move dmg
-		9		12 		14 	0-2
-		8		10 		12 	3-4
-		7		8 		10 	5-7
-		6		6 		8 	8-9
-		5		4 		4 	10+
-				*/
-		weapon : {
-			'Wail of the Damned' : {
-				/*see below*/
-				type:'missile',
-				range:'9 | 8 | 7 | 6 | 5',
-				attacks:'*',
-				tohit:'*',
-				towound:'*',
-				rend:'*',
-				damage:'*',
-			},
-			'Corpsemaster\'s Mortis Staff' : {
-				type:'melee',
-				range:'1',
-				attacks:'1',
-				tohit:'4+',
-				towound:'3+',
-				rend:'-1',
-				damage:'D3',
-			},
-			'Spectral Host\'s Ethereal Weapons' : {
-				type:'melee',
-				range:'1',
-				attacks:'12 | 10 | 8 | 6 | 4',
-				tohit:'5+',
-				towound:'4+',
-				rend:'-',
-				damage:'1',
-			},
-		},
-		abilities : {
-			'FLY' : 'Mortis Engines can fly.',
-			'Frightful Touch' : 'Each time you make a hit roll of 6+ for a Spectral Host\'s Ethereal Weapons, that attack inflicts 1 mortal wound instead of the normal damage (do not make a wound or save roll).',
-			'Wail of the Damned' : 'When making a Wail of the Damned attack, roll 2D6 for each enemy unit within the range shown on the damage table. If the total is higher than that unit\'s Bravery, it suffers D3 mortal wounds.',
-			'The Reliquary' : 'Once per battle, in hero phase roll 4D6. Each unit within that many inches affected. <b>Death</b> units heal D3 wounds, but any other unit suffers D3 mortal wounds.',
-			'Bound Necromancer' : 'Add 1 to casting rolls for Death Wizards within 12" of any Mortis Engines. Substract 1 from casting rolls for Order, Destruction and Chaos Wizards within 12" of any Mortis Engines.',
-			},
-		keywords:'DEATH, LEGION, MALIGNANT, DEATHMAGES, MORTIS ENGINE',
 	},
 }

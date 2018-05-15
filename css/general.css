@@ -1,9 +1,41 @@
+/*
+green
+background-color: rgba(55,60,55,1);
+background-color: rgba(80,95,75,1);
+background-color: rgba(110,125,95,1);
+background-color: rgba(175,190,125,1);
+background-color: rgba(205,205,165,1);
+
+ohre
+background-color: rgba(185,160,85,1);
+background-color: rgba(200,175,90,1);
+background-color: rgba(200,180,100,1);
+background-color: rgba(220,190,105,1);
+background-color: rgba(255,245,165,1);
+
+brown-orange
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+background-color: rgba(,,,1);
+*/
+
+
 #menu{
 	position: fixed;
 	top: 10px;
 	right: 10px;
 	float: right;
 	background-color: rgba(30,34,33,1);
+	background-color: rgba(80,95,75,1);
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;

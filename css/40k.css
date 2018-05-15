@@ -331,7 +331,6 @@ White
 
 /*PRINT*/
 	@media print{
-
 		#rostertable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
 			page-break-inside:avoid;
 		}
