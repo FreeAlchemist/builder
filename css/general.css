@@ -39,6 +39,7 @@ body{
 	float: right;
 	background-color: rgba(30,34,33,1);
 	background-color: rgba(80,95,75,1);
+	background-color: rgb(234, 230, 225);
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;

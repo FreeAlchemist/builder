@@ -1,15 +1,17 @@
 #unitsmenu{
 	position: fixed;
-	top: 100px;
-	right: 10px;
-	float: right;
-	background-color: rgb(234, 230, 225);
-	border:1px solid Black;
-	font-size: 10pt;
-	z-index: 100;
-	width: 350px;
-	box-shadow: #291109 0px 4px 8px;
-	color:Black;
+    top: 100px;
+    right: 10px;
+    float: right;
+    background-color: rgb(234, 230, 225);
+    border: 1px solid Black;
+    font-size: 10pt;
+    z-index: 100;
+    width: 400px;
+    max-height: 750px;
+    overflow: auto;
+    box-shadow: #291109 0px 4px 8px;
+    color: Black;
 }
 #legionselect:hover{cursor: pointer;}
 .warscroll{
@@ -233,6 +235,12 @@ table.warscroll{
 .unitnum{
 	width: 30px;
 	padding: 2px;
+}
+
+#unitpoints{
+	position: absolute;
+    top: 0px;
+    right: 20px;
 }
 
 .legionname{

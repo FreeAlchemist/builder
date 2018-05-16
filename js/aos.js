@@ -297,8 +297,8 @@ function unitsList(){
 	$('#rosterunits').html('')
 
 	//// var unitarr = ['vampirelord','batswarms','fellbats','knightofshrouds','cairnwraith','tombbanshee','wightking1','wightking2','sepulcharguard','spirithosts','hexwraiths','mortisengine']
-	// unitarr = ['tombbanshee','vampirelord','batswarms','fellbats','spirithosts']
-	// unitarr = ['fellbats','vampirelord']
+	// unitarr = ['batswarms','vampirelord','necromancer','cairnwraith','spirithosts','hexwraiths']
+	// unitarr = ['batswarms','fellbats','vampirelord']
 	for (var i =0; i < unitarr.length; i++) {
 		var thisunit = getUnit(unitarr[i])
 		var name = thisunit.name
@@ -464,8 +464,10 @@ function unitsList(){
 
 				//Add lore spells
 				fillSpell('lorebasic',unitarr[i])
+				if(thisunit.loreofdeathmages){fillSpell('loreofdeathmages',unitarr[i])}
+				if(thisunit.loreofvampires){fillSpell('loreofvampires',unitarr[i])}
 				// fillSpell('loreofdeathmages',unitarr[i])
-				fillSpell('loreofvampires',unitarr[i])
+				// fillSpell('loreofvampires',unitarr[i])
 
 				//Add unit spells
 				var spellarr = []
