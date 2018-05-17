@@ -1,10 +1,11 @@
 var ability = {
-	//Basic command ability
+	//	Basic command ability
 	'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
-	//
+	//	Legion abilities
 	'Endless Legions' : 'Choose a gravesite within 9\". You may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
 	'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:</i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
 	'Deathless Minions' : 'Roll a dice each time you allocate a wound or mortal wound to a friendly <b>DEATH</b> unit within 6\" of your general or another friendly <b>DEATH HERO</b>. On a 6+ the wound is negated.',
+	//	Unit abilities
 	'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
 	'FLY' : 'This unit can fly.',
 	'The Hunger' : 'At the end of any combat phase in which this model slew any enemy models, you can heal 1 wound that has been allocated to it.',
@@ -282,58 +283,92 @@ var magic = {
 }
 
 var units = {
-	basic : {
-		name:'NAME',
-		role:'ROLE',
-		move:'MOVE',
-		wounds:'WOUNDS',
-		bravery:'BRAVERY',
-		save:'SAVE',
-		points:'PTS',
-		weapon : {
-			'WEAPON_NAME_1' : {
-				type:'TYPE',
-				range:'RANGE',
-				attacks:'ATTACKS',
-				tohit:'TOHIT',
-				towound:'TOWOUND',
-				rend:'REND',
-				damage:'DMG',
+		basic : {
+			name:'NAME',
+			role:'ROLE',
+			move:'MOVE',
+			wounds:'WOUNDS',
+			bravery:'BRAVERY',
+			save:'SAVE',
+			points:'PTS',
+			weapon : {
+				'WEAPON_NAME_1' : {
+					type:'TYPE',
+					range:'RANGE',
+					attacks:'ATTACKS',
+					tohit:'TOHIT',
+					towound:'TOWOUND',
+					rend:'REND',
+					damage:'DMG',
+				},
+				'WEAPON_NAME_2' : {
+					type:'TYPE',
+					range:'RANGE',
+					attacks:'ATTACKS',
+					tohit:'TOHIT',
+					towound:'TOWOUND',
+					rend:'REND',
+					damage:'DMG',
+				},
 			},
-			'WEAPON_NAME_2' : {
-				type:'TYPE',
-				range:'RANGE',
-				attacks:'ATTACKS',
-				tohit:'TOHIT',
-				towound:'TOWOUND',
-				rend:'REND',
-				damage:'DMG',
+			abilities : {
+				'ABILITY_1' : 'ABILITY_1_TEXT',
+				'ABILITY_2' : 'ABILITY_2_TEXT',
 			},
-		},
-		abilities : {
-			'ABILITY_1' : 'ABILITY_1_TEXT',
-			'ABILITY_2' : 'ABILITY_2_TEXT',
-		},
-		spell : {
-			'Arcane Bolt' : {
-				cast:'5',
-				range:'18 in LoS',
-				target:'enemy unit',
-				effect:'The unit you pick up suffers D3 mortal wounds.',
+			spell : {
+				'Arcane Bolt' : {
+					cast:'5',
+					range:'18 in LoS',
+					target:'enemy unit',
+					effect:'The unit you pick up suffers D3 mortal wounds.',
+				},
+				'Mystic Shield' : {
+					cast:'6',
+					range:'18 in LoS',
+					target:'caster or friendly unit',
+					effect:'You can add 1 to all save rolls for the unit you pick until the start of your next hero phase.',
+				},
 			},
-			'Mystic Shield' : {
-				cast:'6',
-				range:'18 in LoS',
-				target:'caster or friendly unit',
-				effect:'You can add 1 to all save rolls for the unit you pick until the start of your next hero phase.',
+			command : {
+				'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
 			},
+			keywords:'KEYWORD_1, KEYWORD_2',
 		},
-		command : {
-			'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
-		},
-		keywords:'KEYWORD_1, KEYWORD_2',
-	},
-	//LEADER
+		// basilio : {
+		// 	bravery:'BRAVERY',
+		// 	save:'SAVE',
+		// 	points:'PTS',
+		// 	weapon : {
+		// 		'WEAPON_NAME_1' : {
+		// 			type:'TYPE',
+
+		// 			attacks:'ATTACKS',
+
+		// 			rend:'REND',
+		// 			damage:'DMG',
+		// 		},
+		// 		'WEAPON_NAME_2' : {
+		// 			type:'TYPE',
+		// 			range:'RANGE',
+		// 			attacks:'ATTACKS',
+		// 			tohit:'TOHIT',
+		// 			towound:'TOWOUND',
+		// 			rend:'REND',
+		// 			damage:'DMG',
+		// 		},
+		// 	},
+		// 	abilities : {
+
+		// 		'' : 'ABILITY_2_TEXT',
+		// 	},
+
+
+		// 	command : {
+		// 		'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
+		// 	},
+		// 	keywords:'',
+		// },
+	//	LEADER
 		vampirelord : {
 			name:'Vampire Lord',
 			role:'Leader',
@@ -565,7 +600,7 @@ var units = {
 			},
 			keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
 		},
-	//BATTLELINE	
+	//	BATTLELINE	
 		direwolves : {
 			name:'Dire Wolves (5-30)',
 			role:'Battleline',
@@ -835,7 +870,7 @@ var units = {
 				},
 			keywords:'DEATH, LEGION, SKELETON, DEATHRATTLE, SUMMONABLE, GRAVE GUARD',
 		},
-	//BEHEMOTH
+	//	BEHEMOTH
 		mortisengine : {
 			name:'Mortis Engine',
 			role:'Behemoth',
@@ -844,7 +879,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'180',
-					/*
+			/*
 			degradation table
 			wailrg attacks move dmg
 			9		12 		14 	0-2
@@ -852,7 +887,7 @@ var units = {
 			7		8 		10 	5-7
 			6		6 		8 	8-9
 			5		4 		4 	10+
-					*/
+			*/
 			weapon : {
 				'Wail of the Damned' : {
 					/*see below*/

@@ -31,14 +31,11 @@ body{
 	background-color: rgba(239, 238, 237, 1);
 	font-family: Calibri, Arial;
 }
-
 #menu{
 	position: fixed;
 	top: 10px;
 	right: 10px;
 	float: right;
-	background-color: rgba(30,34,33,1);
-	background-color: rgba(80,95,75,1);
 	background-color: rgb(234, 230, 225);
 	border:1px solid Black;
 	font-size: 10pt;
@@ -97,7 +94,6 @@ padding-top: 10px;
 color: rgba(118,112,75,1);
 text-transform: uppercase;
 }
-
 .wrap:hover{
 	border-color: transparent transparent rgb(104, 139, 156)  transparent;
 	color: rgb(104, 139, 156);
@@ -135,7 +131,8 @@ span.wrap_closed,span.wrap{
 .xsmallstat{
 	width:0.5cm;
 }
-/*PRINT*/
+.alert{background-color: Coral;}
+/*--- PRINT ---*/
 	@media print{
 
 		.warscroll{
