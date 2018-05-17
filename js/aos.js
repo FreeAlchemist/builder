@@ -1,9 +1,11 @@
-var unitarr = []
 var army
+var unitarr = []
+//	Get selected option value for Legion
 $("#legionselect").change(function(){
-		army = $("select[name='legionselect'] > option:checked").val()
-		getLegion(army)
+	army = $("select[name='legionselect'] > option:checked").val()
+	getLegion(army)
 })
+//	Add all legions select options to menu
 function legionsList(legions){
 	var arr = []
 	for (p in legions){
@@ -22,13 +24,13 @@ function legionsList(legions){
 		}
 	}
 }
-
+//	Get particular ability from library	
 function getAbility(abilityname){
 	if(ability[abilityname]){
 		return ability[abilityname]
 	}
 }
-
+//	Form legion abilites into tables
 function formTable(ruletype){
 	var rule = ruletype
 	var wrap = $('<div />',{id:rule+"_wrap", class:"wrap noprint",title:rule,text:rule})
@@ -105,7 +107,7 @@ function formTable(ruletype){
 	}
 	printToggle()
 }
-
+//	Get abilities list for selected legion
 function getLegion(army){
 	if(army){
 		$('#legionpage').html('')
@@ -176,13 +178,13 @@ function getLegion(army){
 		})
 	}
 }
-
+//	Get particular unit from library
 function getUnit(unitname){
 	if(units[unitname]){
 		return units[unitname]
 	}
 }
-
+//	Get lore of magic
 function fillSpell(lorename,unit){
 	if(magic[lorename]){
 		var lorespells = magic[lorename]
@@ -216,7 +218,7 @@ function fillSpell(lorename,unit){
 		}
 	}
 }
-
+//	Add all unit select options to menu
 function unitsMenu(){
 	$('#page').html('')
 	$('#rosterpoints').html('')
@@ -228,17 +230,19 @@ function unitsMenu(){
 		for (var c in units) {
 			unitsmenu.push(c)
 		}
-		var input = $('<input />',{type:'button',class:'warscrolls-btn',name:'showwarscrolls',value:'Show Warscrolls'})
-		input.click(function(){
+		var input1 = $('<input />',{type:'button',class:'warscrolls-btn',name:'showwarscrolls',value:'Show Warscrolls'})
+		input1.click(function(){
 			unitsList()
 		})
-		$('#unitsmenu').html(input)
-		var input = $('<input />',{type:'button',class:'cleartall-btn',name:'cleartall',value:'Clear All'})
-		input.click(function(){
+		var input2 = $('<input />',{type:'button',class:'cleartall-btn',name:'cleartall',value:'Clear All'})
+		input2.click(function(){
 			unitsMenu()
 		})
-		input.css('margin-left','30px')
-		$('#unitsmenu').append(input)
+		input2.css('margin-left','30px')
+		var div1 = $('<div />')
+		var div2 = $('<div />',{id:'unitsmenulist'})
+		div1.html(input1).append(input2)
+		$('#unitsmenu').html(div1).append(div2)
 		for (var i =0; i < unitsmenu.length; i++) {
 			if(unitsmenu[i] != 'basic'){
 				var thisunit = getUnit(unitsmenu[i])
@@ -264,26 +268,38 @@ function unitsMenu(){
 					unitPoints()
 				})
 				par.append(input)
-				par.append(role+' | ')
-				par.append(name)
-				par.append('<span class="floatright">'+points+'</span>')
+				if(role){par.append(role+' | ')}
+				if(name){par.append(name)}
+				else{par.append('<span class="alert">Name</span>')}
+				if(points && $.isNumeric(points) == true){
+					par.append('<span class="floatright">'+points+'</span>')
+				}
+				else{
+					par.append('<span class="floatright alert">Pts</span>')
+				}
 				par.css('font-size','12pt')
-				$('#unitsmenu').append(par)
+				$('#unitsmenulist').append(par)
 			}
 		}
 		$('#unitsmenu').append('<span id="unitpoints" class="noprint floatleft"></span>')
 	}
 }
-
+//	Get points for all selected units
 function unitPoints(){
 	var totalpoints = 0
 	var totalunits = 0
 	for (var i =0; i < unitarr.length; i++) {
 		var thisunit = getUnit(unitarr[i])
 		var points = thisunit.points
+		var pointsarenum = $.isNumeric(points)
 		var pointsunitnum = $( "input[name="+unitarr[i]+"].unitnum" ).val()
 		Print(pointsunitnum)
-		totalpoints += (parseInt(points)*parseInt(pointsunitnum))
+		if(points && $.isNumeric(points) == true && pointsunitnum){
+			totalpoints += (parseInt(points)*parseInt(pointsunitnum))
+		}
+		else{
+			console.log('No points found for: '+thisunit.name)
+		}
 		totalunits += parseInt(pointsunitnum)
 	}
 	$('#unitpoints').html('Total Points: ')
@@ -291,7 +307,7 @@ function unitPoints(){
 	$('#rosterpoints').html(totalpoints)
 	$('#rostertotalunits').html(totalunits)
 }
-
+//	Form warscrolls for all selected units
 function unitsList(){
 	$('#page').html('')
 	$('#rosterunits').html('')
@@ -317,17 +333,22 @@ function unitsList(){
 		if(thisunit.role){rolename = name+' ('+role+')'}
 			else{rolename = name}
 		$('#page').append($('<div />',{class:'warscroll',id:unitarr[i]}))
-		//CHARACTERISTICS
-				$('#'+unitarr[i]).append(
-					$('<div />',{class:'chars'})
-					.append($('<div />',{class:'name',text:rolename}))
-					.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'MOVE'})).append($('<div />',{class:'statstext',text:move})))
-					.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'WOUNDS'})).append($('<div />',{class:'statstext',text:wounds})))
-					.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'BRAVERY'})).append($('<div />',{class:'statstext',text:bravery})))
-					.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'SAVE'})).append($('<div />',{class:'statstext',text:save})))
-					.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'PTS'})).append($('<div />',{class:'statstext',text:points})))
-				)
-		//WEAPON
+		//	CHARACTERISTICS
+				var div = $('<div />',{class:'chars'})
+				if(name){div.append($('<div />',{class:'name',text:rolename}))}
+					else{div.append($('<div />',{class:'name alert',text:'Name'}))}
+				var statstextdiv = $('<div />',{class:'statstext'})
+				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'MOVE'})).append(statstextdiv.html(move)))
+				var statstextdiv = $('<div />',{class:'statstext'})
+				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'WOUNDS'})).append(statstextdiv.html(wounds)))
+				var statstextdiv = $('<div />',{class:'statstext'})
+				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'BRAVERY'})).append(statstextdiv.html(bravery)))
+				var statstextdiv = $('<div />',{class:'statstext'})
+				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'SAVE'})).append(statstextdiv.html(save)))
+				var statstextdiv = $('<div />',{class:'statstext'})
+				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'PTS'})).append(statstextdiv.html(points)))
+				$('#'+unitarr[i]).append(div)
+		//	WEAPON
 				if(thisunit.weapon){
 					$('#'+unitarr[i]).append($('<div />',{class:'weapon',id:unitarr[i]+'-weapon'}))
 
@@ -418,7 +439,7 @@ function unitsList(){
 					else{$('#'+unitarr[i]+'-melee').hide()}
 				}
 
-		//ABILITIES
+		//	ABILITIES
 				if(thisunit.abilities){
 					$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-abilities'}))
 					$('#'+unitarr[i]+'-abilities').append($('<div />',{class:'header',text:'ABILITIES'}))
@@ -444,7 +465,7 @@ function unitsList(){
 					}
 				}
 
-		//SPELL
+		//	SPELL
 			if(thisunit.spell){
 				$('#'+unitarr[i]).append($('<div />',{class:'spell',id:unitarr[i]+'-spell'}))
 				var table = $('<table />')
@@ -490,7 +511,7 @@ function unitsList(){
 
 			}
 
-		//COMMAND ABILITIES
+		//	COMMAND ABILITIES
 			if(thisunit.command){
 				$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-command'}))
 				$('#'+unitarr[i]+'-command').append($('<div />',{class:'header',text:'Command ABILITIES'}))
@@ -563,7 +584,7 @@ function unitsList(){
 				}
 			}
 
-		//KEYWORDS
+		//	KEYWORDS
 			$('#'+unitarr[i]).append($('<div />',{class:'header',text:'KEYWORDS'}))
 			$('#'+unitarr[i]).append($('<div />',{class:'keywords',text:keywords}))
 	}

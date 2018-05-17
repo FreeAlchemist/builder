@@ -82,11 +82,11 @@ function counterVal(){
 		}
 		pointsperunit += parseInt(counterpoints)
 		pointsperdetarr.push(parseInt(pointsperunit))
-		//-----------REWRITE POINTS PER UNIT
+		//	REWRITE POINTS PER UNIT
 		$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(pointsperunit)
 		pointsperarmy += pointsperunit
 	}
-	//-----------REWRITE POINTS PER DETACHMENT
+	//	REWRITE POINTS PER DETACHMENT
 	for (var i =0; i < detachmentsarr.length; i++) {
 		var thisdetpoints = 0
 		for (var j =0; j < rosterarrdet.length; j++) {
@@ -544,7 +544,7 @@ function getRoster(army){
 				var input = $('<input />',{type:'checkbox',name:'relicstable',value:'relic-'+(s+1),class:'noprint'})
 				var td1 = $('<td />',{class:'abilityheader'}).html(thisrelic).prepend(input)
 				var td2 = $('<td />',{class:'abilitytext'}).html(thisrelictext)
-				//if found same weapon profile add it to the table
+				//	if found same weapon profile add it to the table
 					if(library[army].weapons[thisrelic]){
 						var wtable = $('<table />')
 						wtable.attr('cellpadding',"2px")
@@ -1213,7 +1213,6 @@ function getRoster(army){
 	})
 	$("input:checkbox.floatright").attr('checked','checked')
 }
-
 //	Hide impossible to form detachments
 function validatemenu(){
 	$("select:empty").css('display','none')
@@ -1221,7 +1220,6 @@ function validatemenu(){
 		$("tr:has(td[class*='required']:has(select:empty))").css('display','none')
 	}
 }
-
 armyList(library)
 detachmentsList ()
 getPoints()
