@@ -134,7 +134,6 @@ span.wrap_closed,span.wrap{
 .alert{background-color: Coral;}
 /*--- PRINT ---*/
 	@media print{
-
 		.warscroll{
 			page-break-inside:avoid;
 		}

@@ -20,23 +20,17 @@ function legionsList(legions){
 				army = arr[i]
 			}
 			option.attr('label',legions[arr[i]].armyname)
-				option.appendTo($('#legionselect'))
+			option.appendTo($('#legionselect'))
 		}
 	}
 }
 //	Get particular ability from library	
-function getAbility(abilityname){
-	if(ability[abilityname]){
-		return ability[abilityname]
-	}
-}
+function getAbility(abilityname){if(ability[abilityname]){return ability[abilityname]}}
 //	Form legion abilites into tables
 function formTable(ruletype){
 	var rule = ruletype
 	var wrap = $('<div />',{id:rule+"_wrap", class:"wrap noprint",title:rule,text:rule})
-	wrap.click(function(){
-		$("#"+rule+"table tr").toggle()
-	})
+	wrap.click(function(){$("#"+rule+"table tr").toggle()})
 	var table = $('<table />')
 	table.attr('cellpadding',"0px")
 	table.attr('cellspacing','0px')
@@ -72,20 +66,11 @@ function formTable(ruletype){
 		var thisrule = arr[s]
 		var thisruletext
 		var thisrulename
-		if(rule == 'commandability'){
-			thisruletext = legions[army].commandability[thisrule]
-		}
-		if(rule == 'battletraits'){
-			thisruletext = legions[army].battletraits[thisrule]
-		}
-		if(rule == 'commandtraits'){
-			thisruletext = legions[army].commandtraits[thisrule]
-		}
-		if(rule == 'artefacts'){
-			thisruletext = legions[army].artefacts[thisrule]
-		}
+		if(rule == 'commandability'){thisruletext = legions[army].commandability[thisrule]}
+		if(rule == 'battletraits'){thisruletext = legions[army].battletraits[thisrule]}
+		if(rule == 'commandtraits'){thisruletext = legions[army].commandtraits[thisrule]}
+		if(rule == 'artefacts'){thisruletext = legions[army].artefacts[thisrule]}
 		if(getAbility(thisrule)){thisruletext = getAbility(thisrule)}
-
 		if(rule == 'commandability' || rule == 'battletraits'){
 			var tr = $('<tr />',{id:rule+'-'+(s+1)})
 			var td1 = $('<td />',{class:'abilityheader'}).html(thisrule)
@@ -145,53 +130,33 @@ function getLegion(army){
 		$('#legionpage').append(table.append(table))
 
 		if(legion.commandability){
-			for (var c in legion.commandability) {
-				commandabilityarr.push(c)
-			}
+			for (var c in legion.commandability) {commandabilityarr.push(c)}
 			formTable('commandability')
 		}
 		if(legion.battletraits){
-			for (var c in legion.battletraits) {
-				battletraitsarr.push(c)
-			}
+			for (var c in legion.battletraits) {battletraitsarr.push(c)}
 			formTable('battletraits')
 		}
 		if(legion.commandtraits){
-			for (var c in legion.commandtraits) {
-				commandtraitsarr.push(c)
-			}
+			for (var c in legion.commandtraits) {commandtraitsarr.push(c)}
 			formTable('commandtraits')
 		}
 		if(legion.artefacts){
-			for (var c in legion.artefacts) {
-				artefactsarr.push(c)
-			}
+			for (var c in legion.artefacts) {artefactsarr.push(c)}
 			formTable('artefacts')
 		}	
 		$(".wrap").click(function(){
-			if($(this).hasClass("wrap_closed")){
-				$(this).removeClass("wrap_closed")
-			}
-			else{
-				$(this).addClass("wrap_closed")
-			}
+			if($(this).hasClass("wrap_closed")){$(this).removeClass("wrap_closed")}
+			else{$(this).addClass("wrap_closed")}
 		})
 	}
 }
 //	Get particular unit from library
-function getUnit(unitname){
-	if(units[unitname]){
-		return units[unitname]
-	}
-}
+function getUnit(unitname){if(units[unitname]){return units[unitname]}}
 //	Get lore of magic
 function fillSpell(lorename,unit){
-	if(magic[lorename]){
-		var lorespells = magic[lorename]
-	}
-	else{
-		console.log("NO SUCH LORENAME FOUND: "+lorename)
-	}
+	if(magic[lorename]){var lorespells = magic[lorename]}
+	else{console.log("NO SUCH LORENAME FOUND: "+lorename)}
 	var spellarr = []
 	for (var c in lorespells) {spellarr.push(c)}
 	var spellquantity = spellarr.length
@@ -231,13 +196,9 @@ function unitsMenu(){
 			unitsmenu.push(c)
 		}
 		var input1 = $('<input />',{type:'button',class:'warscrolls-btn',name:'showwarscrolls',value:'Show Warscrolls'})
-		input1.click(function(){
-			unitsList()
-		})
 		var input2 = $('<input />',{type:'button',class:'cleartall-btn',name:'cleartall',value:'Clear All'})
-		input2.click(function(){
-			unitsMenu()
-		})
+		input1.click(function(){unitsList()})
+		input2.click(function(){unitsMenu()})
 		input2.css('margin-left','30px')
 		var div1 = $('<div />')
 		var div2 = $('<div />',{id:'unitsmenulist'})
@@ -261,9 +222,7 @@ function unitsMenu(){
 							unitarr.push(unitname)
 							$(printarr[i]).css('background-color','rgba(205,205,165,1)')
 						}
-						else{
-							$(printarr[i]).css('background-color','white')
-						}
+						else{$(printarr[i]).css('background-color','white')}
 					}
 					unitPoints()
 				})
@@ -271,12 +230,8 @@ function unitsMenu(){
 				if(role){par.append(role+' | ')}
 				if(name){par.append(name)}
 				else{par.append('<span class="alert">Name</span>')}
-				if(points && $.isNumeric(points) == true){
-					par.append('<span class="floatright">'+points+'</span>')
-				}
-				else{
-					par.append('<span class="floatright alert">Pts</span>')
-				}
+				if(points && $.isNumeric(points) == true){par.append('<span class="floatright">'+points+'</span>')}
+				else{par.append('<span class="floatright alert">Pts</span>')}
 				par.css('font-size','12pt')
 				$('#unitsmenulist').append(par)
 			}
@@ -294,12 +249,8 @@ function unitPoints(){
 		var pointsarenum = $.isNumeric(points)
 		var pointsunitnum = $( "input[name="+unitarr[i]+"].unitnum" ).val()
 		Print(pointsunitnum)
-		if(points && $.isNumeric(points) == true && pointsunitnum){
-			totalpoints += (parseInt(points)*parseInt(pointsunitnum))
-		}
-		else{
-			console.log('No points found for: '+thisunit.name)
-		}
+		if(points && $.isNumeric(points) == true && pointsunitnum){totalpoints += (parseInt(points)*parseInt(pointsunitnum))}
+		else{console.log('No points found for: '+thisunit.name)}
 		totalunits += parseInt(pointsunitnum)
 	}
 	$('#unitpoints').html('Total Points: ')
@@ -311,8 +262,7 @@ function unitPoints(){
 function unitsList(){
 	$('#page').html('')
 	$('#rosterunits').html('')
-
-	//// var unitarr = ['vampirelord','batswarms','fellbats','knightofshrouds','cairnwraith','tombbanshee','wightking1','wightking2','sepulcharguard','spirithosts','hexwraiths','mortisengine']
+	// var unitarr = ['vampirelord','batswarms','fellbats','knightofshrouds','cairnwraith','tombbanshee','wightking1','wightking2','sepulcharguard','spirithosts','hexwraiths','mortisengine']
 	// unitarr = ['batswarms','vampirelord','necromancer','cairnwraith','spirithosts','hexwraiths']
 	// unitarr = ['batswarms','fellbats','vampirelord']
 	for (var i =0; i < unitarr.length; i++) {
@@ -329,7 +279,6 @@ function unitsList(){
 		// var totalthisunit = 0
 		var pointsunitnum = $( "input[name="+unitarr[i]+"].unitnum" ).val()
 		$('#rosterunits').append(name+' x '+pointsunitnum+'; ')
-
 		if(thisunit.role){rolename = name+' ('+role+')'}
 			else{rolename = name}
 		$('#page').append($('<div />',{class:'warscroll',id:unitarr[i]}))
@@ -337,21 +286,51 @@ function unitsList(){
 				var div = $('<div />',{class:'chars'})
 				if(name){div.append($('<div />',{class:'name',text:rolename}))}
 					else{div.append($('<div />',{class:'name alert',text:'Name'}))}
-				var statstextdiv = $('<div />',{class:'statstext'})
-				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'MOVE'})).append(statstextdiv.html(move)))
-				var statstextdiv = $('<div />',{class:'statstext'})
-				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'WOUNDS'})).append(statstextdiv.html(wounds)))
-				var statstextdiv = $('<div />',{class:'statstext'})
-				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'BRAVERY'})).append(statstextdiv.html(bravery)))
-				var statstextdiv = $('<div />',{class:'statstext'})
-				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'SAVE'})).append(statstextdiv.html(save)))
-				var statstextdiv = $('<div />',{class:'statstext'})
-				div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'PTS'})).append(statstextdiv.html(points)))
+				if(move){
+					var statstextdiv = $('<div />',{class:'statstext'})
+					div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'MOVE'})).append(statstextdiv.html(move)))
+				}
+					else{
+						var statstextdiv = $('<div />',{class:'statstext alert'})
+						div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'MOVE'})).append(statstextdiv.html('move')))
+					}
+				if(wounds){
+					var statstextdiv = $('<div />',{class:'statstext'})
+					div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'WOUNDS'})).append(statstextdiv.html(wounds)))
+				}
+					else{
+						var statstextdiv = $('<div />',{class:'statstext alert'})
+						div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'WOUNDS'})).append(statstextdiv.html('wounds')))
+					}
+				if(bravery){
+					var statstextdiv = $('<div />',{class:'statstext'})
+					div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'BRAVERY'})).append(statstextdiv.html(bravery)))
+				}
+					else{
+						var statstextdiv = $('<div />',{class:'statstext alert'})
+						div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'BRAVERY'})).append(statstextdiv.html('bravery')))
+					}
+				if(save){
+					var statstextdiv = $('<div />',{class:'statstext'})
+					div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'SAVE'})).append(statstextdiv.html(save)))
+				}
+					else{
+						var statstextdiv = $('<div />',{class:'statstext alert'})
+						div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'SAVE'})).append(statstextdiv.html('save')))
+					}
+				if(points && $.isNumeric(points) == true){
+					var statstextdiv = $('<div />',{class:'statstext'})
+					div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'PTS'})).append(statstextdiv.html(points)))
+				}
+					else{
+						var statstextdiv = $('<div />',{class:'statstext alert'})
+						div.append($('<div />',{class:'stats'}).append($('<div />',{class:'statsheader',text:'PTS'})).append(statstextdiv.html('Pts')))
+					}
 				$('#'+unitarr[i]).append(div)
+
 		//	WEAPON
 				if(thisunit.weapon){
 					$('#'+unitarr[i]).append($('<div />',{class:'weapon',id:unitarr[i]+'-weapon'}))
-
 					var table1 = $('<table />')
 					table1.attr('cellpadding',"0px")
 					table1.attr('cellspacing','0px')
@@ -360,7 +339,6 @@ function unitsList(){
 					table1.attr('id',unitarr[i]+'-weapontable-missile')
 					$('#'+unitarr[i]+'-weapon').append($('<div />',{id:unitarr[i]+'-missile'}))
 					$('#'+unitarr[i]+'-missile').append(table1)
-
 					var table2 = $('<table />')
 					table2.attr('cellpadding',"0px")
 					table2.attr('cellspacing','0px')
@@ -369,16 +347,11 @@ function unitsList(){
 					table2.attr('id',unitarr[i]+'-weapontable-melee')
 					$('#'+unitarr[i]+'-weapon').append($('<div />',{id:unitarr[i]+'-melee'}))
 					$('#'+unitarr[i]+'-melee').append(table2)
-
 					var hasmissile = 0
 					var hasmelee = 0
-					
 					var weaponarr = []
-					for (var c in thisunit.weapon) {
-						weaponarr.push(c)
-					}
+					for (var c in thisunit.weapon) {weaponarr.push(c)}
 					var weaponquantity = weaponarr.length
-
 					for (var s = 0; s < weaponquantity; s++) {
 						var name = weaponarr[s]
 						var type = thisunit.weapon[name].type
@@ -388,7 +361,6 @@ function unitsList(){
 						var towound = thisunit.weapon[name].towound
 						var rend = thisunit.weapon[name].rend
 						var damage = thisunit.weapon[name].damage
-						
 						var tr = $('<tr />');
 						var td1 = $('<td />',{class:'weapon-name',text:name})
 						var td2 = $('<td />',{class:'weapon-stats-text',text:range})
@@ -444,9 +416,7 @@ function unitsList(){
 					$('#'+unitarr[i]).append($('<div />',{class:'abilities',id:unitarr[i]+'-abilities'}))
 					$('#'+unitarr[i]+'-abilities').append($('<div />',{class:'header',text:'ABILITIES'}))
 					var abilarr = []
-					for (var c in thisunit.abilities) {
-						abilarr.push(c)
-					}
+					for (var c in thisunit.abilities) {abilarr.push(c)}
 					var abilquantity = abilarr.length
 					var table = $('<table />')
 					table.attr('cellpadding',"0px")
@@ -459,8 +429,10 @@ function unitsList(){
 						var thisabilitytext = thisunit.abilities[thisability]
 						if(getAbility(thisability)){thisabilitytext = getAbility(thisability)}
 						var tr = $('<tr />');
-						var td1 = $('<td />',{class:'abilityheader',text:thisability})
-						var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)
+						if(thisability){var td1 = $('<td />',{class:'abilityheader',text:thisability})}
+							else{var td1 = $('<td />',{class:'abilityheader alert',text:'Ability'})}
+						if(thisabilitytext){var td2 = $('<td />',{class:'abilitytext'}).html(thisabilitytext)}
+							else{var td2 = $('<td />',{class:'abilitytext alert'}).html('Ability Text')}
 						$('#'+unitarr[i]+'-abilities').append(table.append(tr.append(td1).append(td2)))
 					}
 				}
@@ -487,8 +459,6 @@ function unitsList(){
 				fillSpell('lorebasic',unitarr[i])
 				if(thisunit.loreofdeathmages){fillSpell('loreofdeathmages',unitarr[i])}
 				if(thisunit.loreofvampires){fillSpell('loreofvampires',unitarr[i])}
-				// fillSpell('loreofdeathmages',unitarr[i])
-				// fillSpell('loreofvampires',unitarr[i])
 
 				//Add unit spells
 				var spellarr = []
@@ -519,9 +489,7 @@ function unitsList(){
 			//Add basic command abilities
 			var basicunit = getUnit('basic')
 				var abilarr = []
-				for (var c in basicunit.command) {
-					abilarr.push(c)
-				}
+				for (var c in basicunit.command) {abilarr.push(c)}
 				var abilquantity = abilarr.length
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
@@ -542,9 +510,7 @@ function unitsList(){
 			if(legions[army].commandability){
 				var precomabil = $('#'+unitarr[i]+'-basicabiltable .abilityheader').html()
 				var arr = []
-				for (var c in legions[army].commandability) {
-					arr.push(c)
-				}
+				for (var c in legions[army].commandability) {arr.push(c)}
 				arr.push(thisability)
 				var thisability = arr[0]
 				if(precomabil != thisability){
@@ -564,9 +530,7 @@ function unitsList(){
 
 			//Add special command abilities
 				var abilarr = []
-				for (var c in thisunit.command) {
-					abilarr.push(c)
-				}
+				for (var c in thisunit.command) {abilarr.push(c)}
 				var abilquantity = abilarr.length
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
@@ -583,10 +547,10 @@ function unitsList(){
 					$('#'+unitarr[i]+'-command').append(table.append(tr.append(td1).append(td2)))
 				}
 			}
-
 		//	KEYWORDS
 			$('#'+unitarr[i]).append($('<div />',{class:'header',text:'KEYWORDS'}))
-			$('#'+unitarr[i]).append($('<div />',{class:'keywords',text:keywords}))
+			if(keywords){$('#'+unitarr[i]).append($('<div />',{class:'keywords',text:keywords}))}
+				else{$('#'+unitarr[i]).append($('<div />',{class:'keywords alert',text:'keywords'}))}
 	}
 }
 legionsList(legions)

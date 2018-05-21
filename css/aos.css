@@ -64,12 +64,7 @@ table.warscroll{
 	border:solid black;
 	border-width: 1mm 0.5mm 1mm 0.5mm;
 }
-.weapon{
-	min-height: 0.5cm;
-}
-.weapon2{
-	min-height: 0.5cm;
-}
+.weapon,.weapon2{min-height: 0.5cm;}
 .weapon-stats-header,.weapon-stats-text{
 	margin: 0px;
 	position: relative;
@@ -78,7 +73,6 @@ table.warscroll{
 	text-align: center;
 	border:solid Gray;
 	border-width: 0.5mm;
-
 }
 .weapon-name,.weapon-type{
 	padding-left: 3mm;
@@ -89,12 +83,7 @@ table.warscroll{
 	border-right-width: 0.5mm;
 	border-width: 0.5mm;
 }
-.weapon-name{
-	border-color: gray;
-}
-#unitsmenu,.weapon-type,.weapon-stats-header,.header,.spell-header-name,.spell-header,.army-header{
-	background-color: rgb(234, 230, 225);
-}
+.weapon-name{border-color: gray;}
 .weapon-stats-text{
 	border-color: gray;
 	float:none;
@@ -104,10 +93,7 @@ table.warscroll{
 	background-color: black;
 	font-size: 10pt;
 }
-.weapon-stats-header{
-	text-transform: uppercase;
-	float:none;
-}
+.weapon-stats-header{float:none;}
 .abilities{
 	width:100%;
 	font-size: 10pt;
@@ -118,7 +104,6 @@ table.warscroll{
 	height: 0.5cm;
 	text-align: left;
 	border-top:1mm solid Black;
-	text-transform: uppercase;
 }
 .ability{
 	border-top:1mm solid Gray;
@@ -130,7 +115,6 @@ table.warscroll{
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 	width:3.5cm;
-	text-transform: uppercase;
 }
 .abilitytext{
 	padding-left: 3mm;
@@ -138,7 +122,6 @@ table.warscroll{
 	border-top:0.5mm solid Gray;
 }
 .spell-header-name,.spell-header{
-	text-transform: uppercase;
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 	border-top:1mm solid Black;
@@ -163,11 +146,6 @@ table.warscroll{
 	min-height: 0.6cm;
 	line-height: 0.6cm;
 }
-
-.name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,.army-text,table.warscroll{
-	background-color: white;
-}
-
 #rostertable{
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	margin-bottom: 20px;
@@ -175,7 +153,6 @@ table.warscroll{
 	border: none;
 }
 .army-header{
-	text-transform: uppercase;
 	padding-left: 3mm;
 	padding-right: 3mm;
 	text-align: left;
@@ -200,9 +177,17 @@ table.warscroll{
     top: 0px;
     right: 20px;
 }
-.legionname{
-	width: 200px;
+.legionname{width: 200px;}
+.name,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,.army-text,table.warscroll{
+	background-color: white;
 }
+#unitsmenu,.weapon-type,.weapon-stats-header,.header,.spell-header-name,.spell-header,.army-header{
+	background-color: rgb(234, 230, 225);
+}
+.weapon-stats-header,.header,.abilityheader,.spell-header-name,.spell-header,.army-header{
+	text-transform: uppercase;
+}
+
 /*--- PRINT ---*/
 	@media print{
 		#menu,#unitsmenu,.noprint,.wrap_closed,.wrap{
@@ -212,7 +197,7 @@ table.warscroll{
 			background-color: Gainsboro;
 		}
 		.army-header{
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			padding-left: 3mm;
 			padding-right: 3mm;
 			text-align: left;
