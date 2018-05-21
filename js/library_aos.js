@@ -360,6 +360,7 @@ var units = {
 		// 	abilities : {
 
 		// 		'' : 'ABILITY_2_TEXT',
+		// 		'^_^' : '',
 		// 	},
 
 
@@ -815,8 +816,7 @@ var units = {
 		},
 		graveguard : {
 			name:'Grave Guard (5-30)',
-			role:'Battleline if army has GRAND HOST OF NAGASH allegiance.',
-			role:'Battleline GRAND HOST OF NAGASH',
+			role:'Battleline Host of Nagash',
 			move:'4',
 			wounds:'1',
 			bravery:'10',

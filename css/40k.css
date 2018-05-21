@@ -6,7 +6,6 @@
 	width: 19.8cm;
 	font-size: 10pt;
 	font-size: 8pt;
-	background-color: black;
 	page-break-inside:avoid;
 }
 #rostertable,#traitstable,#relicstable,#magictable,#specialrulestable,#adaptationtable{
@@ -27,14 +26,11 @@
 }
 .chars{
 	min-height: 1cm;
-	background-color: black;
 }
 .name{
 	padding-left: 3mm;
 	line-height: 10mm;
 	font-size: 12pt;
-	text-transform: uppercase;
-	background-color: black;
 	color: White;
 }
 .stats{
@@ -48,7 +44,6 @@
 .statsheader{
 	border:solid black;
 	border-bottom-width: 0.5mm;
-	background-color: black;
 	color: White;
 	border-width: 1mm 0.5mm 1mm 0.5mm;
 }
@@ -84,10 +79,6 @@
 	font-size: 8pt;
 	padding: 1mm;
 }
-.weapon-type{
-	background-color: Gainsboro;
-	text-transform: uppercase;
-}
 .weapon-stats-text{
 	border-color: gray;
 	float:none;
@@ -100,12 +91,9 @@
 }
 .weapon-stats{
 	min-height: 0.5cm;
-	background-color: black;
 	font-size: 10pt;
 }
 .weapon-stats-header{
-	background-color: Gainsboro;
-	text-transform: uppercase;
 	float:none;
 }
 .army-header,.army-text{
@@ -114,8 +102,6 @@
 	border-width: 0.5mm;
 }
 .army-header{
-	background-color: Gainsboro;
-	text-transform: uppercase;
 	padding-left: 3mm;
 }
 .army-text{
@@ -137,19 +123,15 @@
 .table-header{
 	padding-left: 3mm;
 	text-align: left;
-	text-transform: uppercase;
-	background-color: Gainsboro;
 }
 .topborder{
 	border-top:1mm solid Black;
 }
 .header{
-	background-color: Gainsboro;
 	padding-left: 3mm;
 	height: 0.5cm;
 	text-align: left;
 	border-top:1mm solid Black;
-	text-transform: uppercase;
 }
 .ability{
 	border-top:1mm solid Gray;
@@ -161,7 +143,6 @@
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 	width:3.5cm;
-	text-transform: uppercase;
 	font-size: 8pt;
 }
 .abilitytext{
@@ -170,8 +151,6 @@
 	font-size: 8pt;
 }
 .spell-header-name,.spell-header{
-	background-color: Gainsboro;
-	text-transform: uppercase;
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 }
@@ -189,18 +168,12 @@
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 }
-.keywords-header{
-	background-color: Gainsboro;
-	text-transform: uppercase;
-}
 .keywords{
 	border-top:0.5mm solid Gray;
 	padding-left: 3mm;
 	min-height: 0.6cm;
 	line-height: 0.6cm;
 }
-.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable,#magictable,#specialrulestable,#adaptationtable{background-color: white;}
-/*.alert{background-color: Coral;}*/
 .level{
 	float: right;
 	margin-right: 1mm;
@@ -222,10 +195,6 @@
 }
 .relicprofile td{
 	border:1px solid Black;
-}
-.relicprofileheader td{
-	background-color: Gainsboro;
-	text-transform: uppercase;
 }
 /*
 Black
@@ -262,13 +231,11 @@ White
 }
 .detachment-header{
 	padding-top: 5px;
-	text-transform: uppercase;
 }
 .clear-btn{
 	width: 100%;
 	height: 30px;
 	margin-top: 5px;
-	text-transform: uppercase;
 }
 .passive{
 	background-color: rgba(64,58,34,1);
@@ -289,8 +256,6 @@ White
 	display: none;
 }
 .spell-header-name,.spell-header{
-	background-color: Gainsboro;
-	text-transform: uppercase;
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 }
@@ -308,8 +273,14 @@ White
 	border-right:0.5mm solid Gray;
 	border-top:0.5mm solid Gray;
 }
-.modelsnum{
-	background-color: White;
+.modelsnum,.statstext,.weapon-name,.weapon-stats-text,.abilities,.spell-name,.spell-text,.keywords,#relicstable,#traitstable,#magictable,#specialrulestable,#adaptationtable{
+	background-color: white;
+}
+.warscroll,.chars,.name,.statsheader,.weapon-stats{background-color: black;}
+.name,.abilityheader,.detachment-header,.clear-btn{text-transform: uppercase;}
+.weapon-type,.weapon-stats-header,.army-header,.table-header,.header,.spell-header-name,.spell-header,.keywords-header,.relicprofileheader td,.spell-header-name,.spell-header{
+	background-color: Gainsboro;
+	text-transform: uppercase;
 }
 /*--- PRINT ---*/
 	@media print{
