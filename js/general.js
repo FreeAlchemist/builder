@@ -1,8 +1,6 @@
-function Print(info){
-	console.log(info)
-}
-
-//	Declare if selected table must be printed
+function Print(info){console.log(info)}
+function getRandomInt(min, max){return Math.floor(Math.random() * (max - min + 1)) + min;}
+/*Declare if selected table must be printed*/
 function printToggle(){
 	var noprintarr = $( "input[type=checkbox]" )
 		for (var i =0; i < noprintarr.length; i++) {
@@ -19,5 +17,3 @@ function printToggle(){
 		}
 	}
 }
-
-

@@ -1,18 +1,18 @@
 var ability = {
 	//	Basic command ability
-	'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
+		'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero pse.',
 	//	Legion abilities
-	'Endless Legions' : 'Choose a gravesite within 9\". You may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
-	'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:</i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
-	'Deathless Minions' : 'Roll a dice each time you allocate a wound or mortal wound to a friendly <b>DEATH</b> unit within 6\" of your general or another friendly <b>DEATH HERO</b>. On a 6+ the wound is negated.',
+		'Endless Legions' : 'Choose a gravesite within 9\". You may pick a friendly <b>SUMMONABLE</b> unit that has been destroyed and set it up again wholly within 9\" of that gravesite and more than 9\" from any enemy models.',
+		'The Unquiet Dead' : 'After territories have been determined, but before any units have been set up, you may pick up to 2 points in your territory and up to 2 points anywhere on the battlefield to be gravesites. You may wish to place suitable markers on these points. Instead of setting up a <b>SUMMONABLE</b> unit on the battlefield, you can place it to one side and say that it is set up in the grave. You can do this with as many units as you wish.<p>At the end of your movement phase, for each <b>DEATH HERO</b> within 9\" of a gravesite, you may pick a single unit in the grave and set it up wholly within 9" of that gravesite and more than 9\" from any enemy models. Any model that is unable to be set up in this way is slain. If a unit is still in the grave at the end of the battle, it is considered to be slain.</p><i>Gravesites have the following ability:</i><br><b>Invigorating Aura</b>: At the start of your hero phase, pick a friendly <b>SUMMONABLE</b> unit within 9\" of this gravesite. You can either heal D3 wounds that have been allocated to it or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D3.',
+		'Deathless Minions' : 'Roll a dice each time you allocate a wound or mortal wound to a friendly <b>DEATH</b> unit within 6\" of your general or another friendly <b>DEATH HERO</b>. On a 6+ the wound is negated.',
 	//	Unit abilities
-	'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
-	'FLY' : 'This unit can fly.',
-	'The Hunger' : 'At the end of any combat phase in which this model slew any enemy models, you can heal 1 wound that has been allocated to it.',
-	'Standard Bearer' : 'Models in this unit may be Standard Bearers. Substract 1 from the Bravery characteristic of enemy units whilst they are within 6\" of any <b>DEATH</b> Standard Bearers.',
-	'Hornblower' : 'Models in this unit may be Hornblowers. A unit that includes any Hornblowers can always move up to 6\" when it charges, unless its charge roll is higher.',
-	'Crypt Shields' : 'Add 1 to the save rolls for a unit carrying Crypt Shields against attacks that have a Rend characteristic of "-".',
-	'Serve in Death' : 'You can add 1 to hit rolls for this unit if it is wholly within 18" of any friendly <b>Death Heroes</b>.',
+		'Ethereal' : 'Ignore modifiers (positive or negative) when making save rolls for this model.',
+		'FLY' : 'This unit can fly.',
+		'The Hunger' : 'At the end of any combat phase in which this model slew any enemy models, you can heal 1 wound that has been allocated to it.',
+		'Standard Bearer' : 'Models in this unit may be Standard Bearers. Substract 1 from the Bravery characteristic of enemy units whilst they are within 6\" of any <b>DEATH</b> Standard Bearers.',
+		'Hornblower' : 'Models in this unit may be Hornblowers. A unit that includes any Hornblowers can always move up to 6\" when it charges, unless its charge roll is higher.',
+		'Crypt Shields' : 'Add 1 to the save rolls for a unit carrying Crypt Shields against attacks that have a Rend characteristic of "-".',
+		'Serve in Death' : 'You can add 1 to hit rolls for this unit if it is wholly within 18" of any friendly <b>Death Heroes</b>.',
 }
 
 var legions = {

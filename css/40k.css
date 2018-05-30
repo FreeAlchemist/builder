@@ -15,6 +15,17 @@
 	background-color: Beige;
 	page-break-inside:avoid;
 }
+@media screen{
+	#rostertable{
+		position: fixed;
+		z-index: 100;
+		top: 90px;
+		right: 0px;
+		width: 430px;
+		box-shadow: black 1px 1px 3px;
+	}
+}
+
 .rosterselect{
 	max-width: 150px;
 	height: 26.5px;
