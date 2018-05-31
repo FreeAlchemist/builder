@@ -30,8 +30,8 @@ function getAbility(abilityname){if(ability[abilityname]){return ability[ability
 function formTable(ruletype){
 	var rule = ruletype
 	var wrap = $('<div />',{id:rule+"_wrap", class:"wrap noprint",title:rule,text:rule})
-	// wrap.click(function(){$("#"+rule+"table tr").toggle()})
-	wrap.click(function(){$("#"+rule+"table tr").fadeToggle()})
+	wrap.click(function(){$("#"+rule+"table tr").toggle()})
+	// wrap.click(function(){$("#"+rule+"table tr").fadeToggle()})
 	var table = $('<table />')
 	table.attr('cellpadding',"0px")
 	table.attr('cellspacing','0px')

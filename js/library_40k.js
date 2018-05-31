@@ -5460,6 +5460,8 @@ var library = {
 			// 'RAVEN' : '',
 			// 'RAVEN' : '',
 			// 'RAVEN' : '',
+			// 'RAVEN' : '',
+			// 'RAVEN' : '',
 		},
 		// traits : {
 		// 	'Monitor Malevolus' : 'Once per battle, you can re-roll a single hit roll, wound roll or damage roll made for your Warlord.',
@@ -5475,6 +5477,8 @@ var library = {
 		// 	'AGRIPINAA' : 'Reinforced Exosceleton: All damage suffered by your Warlord is reduced by 1 (to a minimum of 1).',
 		// 	'STYGIES VIII' : 'Xenarite Studies: Add 1 to any wound rolls made for your Warlord against units that do not have the <b>CHAOS</b>, <b>IMPERIUM</b> or <b>UNALIGNED</b> Faction keywords.',
 		// 	'RYZA' : 'First-hand Field Testing: When setting up your Warlord, choose one of their weapons (this cannot be an Arcana Mechanicum); increase the Strength and Damage characteristics of that weapon by 1.',
+		// 'RAVEN' : '',
+		// 'RAVEN' : '',
 		// },
 		// relics : {
 		// 	'Pater Cog-tooth' : 'Model with an Omnissian Axe only. Pater Cog-tooth replaces the bearer\'s Omnissian Axe and has appropriate profile:',
