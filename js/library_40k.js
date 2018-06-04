@@ -4931,13 +4931,22 @@ var library = {
 					ability:'-',
 					points:'0',
 				},
-				'Reaper chain-cleaver' : {
+				'Reaper chain-cleaver (Strike)' : {
 					range:'Melee',
 					type:'Melee',
 					strength:'x2',
 					ap:'-3',
 					damage:'3',
 					ability:'-',
+					points:'0',
+				},
+				'Reaper chain-cleaver (Sweep)' : {
+					range:'Melee',
+					type:'Melee',
+					strength:'User',
+					ap:'-2',
+					damage:'1',
+					ability:'Make 2 hit rolls for each attack made with this weapon, instead of 1.',
 					points:'0',
 				},
 				'Reaper chainsword' : {
@@ -5109,7 +5118,7 @@ var library = {
 					powerpoints:'12',
 					models : [1,3],
 					pointspermodel:'223',
-					weaponbasic : ['Reaper chain-cleaver','Thermal spear','Heavy stubber'],
+					weaponbasic : ['Reaper chain-cleaver (Strike)','Reaper chain-cleaver (Sweep)','Thermal spear','Heavy stubber'],
 					weaponoption : ['Meltagun'],
 					abilities : {
 						'Vehicle Squadron' : 'The first time this unit is set up, all of its models must be placed within 6" of at least one other model in their unit. Then, each operates independently and is treated as a separate unit.',
@@ -5136,7 +5145,7 @@ var library = {
 					powerpoints:'12',
 					models : [1,3],
 					pointspermodel:'223',
-					weaponbasic : ['Reaper chain-cleaver','Thermal spear','Meltagun'],
+					weaponbasic : ['Reaper chain-cleaver (Strike)','Reaper chain-cleaver (Sweep)','Thermal spear','Meltagun'],
 					abilities : {
 						'Vehicle Squadron' : 'The first time this unit is set up, all of its models must be placed within 6" of at least one other model in their unit. Then, each operates independently and is treated as a separate unit.',
 						'Explodes' : 'If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+  each unit within 6" suffers D3 mortal wounds.',
