@@ -184,6 +184,31 @@ var legions = {
 			'Ring of Immortality' : 'The first time the bearer is slain, before removing them from the battlefield, roll a dice. On a 3+ the bearer is not slain and D3 wounds allocated to them are healed (any excess damage is negated). Then, remove the bearer from the battlefield and set them up again within 18\" of their original location and more than 3\" from any enemy models.',
 		},
 	},
+	nighthaunt : {
+		armyname : 'Allegiance: NIGHTHAUNT',
+		commandability : {
+			'Inspiring Presence' : '#',
+		},
+		// battletraits : {
+		// 	'Deathless Minions' : '#',
+		// },
+		// commandtraits : {
+		// 	'Ruler of the Night' : 'Friendly <b>DEATH</b> units are affected by the Deathless Minions battle trait if they are within 12\" of this general rather than only 6\".',
+		// 	'Predator of the Shadows' : 'Add 1 to hit and wound rolls for this general if they are in cover.',
+		// 	'Death Incarnate' : 'In your hero phase, pick an enemy unit within 3\" of this general and roll two dice. If the total rolled equals or exceeds the enemy unit\’s  Bravery, it suffers D3 mortal wounds.',
+		// 	'Master of the Black Arts' : 'This general is a <b>WIZARD</b> who knows the Arcane Bolt and Mystic Shield spells. If this general is already a <b>WIZARD</b>, add 1 to all of their casting and unbinding rolls.',
+		// 	'Red Fury' : 'Roll a dice after this general attacks in the combat phase. On a 5+ they can immediately pile in and attack again (any such attacks do not generate further attacks in this way).',
+		// 	'Supernatural Horror' : 'Double the number of models that flee from enemy units if they are within 12\" of this general in the battleshock phase.',
+		// },
+		// artefacts : {
+		// 	'Cursed Book' : 'Subtract 1 from the hit rolls of any unit within 3\" of the bearer unless it has the <b>DEATH</b> keyword.',
+		// 	'Cloak of Mists and Shadows' : 'In the combat phase, instead of piling in and attacking with the bearer, you can remove them from the battlefield and set them up again within 12\" of their original location and more than 3\" from any enemy models. If this is impossible, the bearer remains in their current location.',
+		// 	'Blade of Dark Summons' : 'Once per battle, in your hero phase, you can set up a <b>SUMMONABLE DEATH</b> unit wholly within 12\" of the bearer and more than 3\" from any enemy models, and add it to your army. The models in the unit must have a combined Wounds characteristic of no more than a 2D6 roll.',
+		// 	'Black Amulet' : 'Once per battle, in your hero phase, the bearer can unleash the magic stored in the Black Amulet. When it does so, pick an enemy unit within 12\" of the bearer. The unit you pick suffers a number of mortal wounds equal to the number of the current battle round. You cannot pick a unit with the <b>DEATH</b> keyword.',
+		// 	'Tomb Blade' : 'Pick one of the bearer’s melee weapons. For each wound roll of 6+ you make for this weapon, you can heal 1 wound allocated to the bearer or a friendly <b>DEATH</b> model within 6\" of the bearer.',
+		// 	'Ring of Immortality' : 'The first time the bearer is slain, before removing them from the battlefield, roll a dice. On a 3+ the bearer is not slain and D3 wounds allocated to them are healed (any excess damage is negated). Then, remove the bearer from the battlefield and set them up again within 18\" of their original location and more than 3\" from any enemy models.',
+		// },
+	},
 }
 
 var magic = {
@@ -378,6 +403,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'140',
+			icon:'soulblight',
 			weapon : {
 				'Spirit-possesed Blades' : {
 					type:'melee',
@@ -413,6 +439,7 @@ var units = {
 			bravery:'10',
 			save:'6+',
 			points:'110',
+			icon:'deathmages',
 			weapon : {
 				'Necromancer\'s Staff' : {
 					type:'melee',
@@ -451,6 +478,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'120',
+			icon:'nighthaunt',
 			weapon : {
 				'Sword of Stolen Hours' : {
 					type:'melee',
@@ -481,6 +509,7 @@ var units = {
 			bravery:'10',
 			save:'3+',
 			points:'120',
+			icon:'deathrattle',
 			weapon : {
 				'Baleful Tomb Blade' : {
 					type:'melee',
@@ -510,6 +539,7 @@ var units = {
 			bravery:'10',
 			save:'3+',
 			points:'120',
+			icon:'deathrattle',
 			weapon : {
 				'Black Axe' : {
 					type:'melee',
@@ -540,6 +570,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'80',
+			icon:'nighthaunt',
 			weapon : {
 				'Ghostly Howl' : {
 					type:'missile',
@@ -579,6 +610,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'60',
+			icon:'nighthaunt',
 			weapon : {
 				'Reaper Scythe' : {
 					type:'melee',
@@ -600,6 +632,118 @@ var units = {
 				// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
 			},
 			keywords:'DEATH, LEGION, MALIGNANT, NIGHTHAUNT, HERO, CAIRN WRAITH',
+		},
+
+		/*NIGHTHAUNT*/
+		guardianofsouls : {
+			name:'Guardian of Souls',
+			role:'Leader',
+			move:'6',
+			wounds:'5',
+			bravery:'10',
+			save:'4+',
+			points:'',
+			icon:'nighthaunt',
+			weapon : {
+				'Chill Blade' : {
+					type:'melee',
+					range:'1',
+					attacks:'3',
+					tohit:'3+',
+					towound:'3+',
+					rend:'-1',
+					damage:'1',
+				},
+			},
+			abilities : {
+				'FLY' : '#',
+				'Ethereal' : '#',
+				'Nightmare Lantern' : 'Add 1 to wound rolls for melee weapons wielded by friendly <b>NIGHTHAUNT</b> models that are within 9\" of this model.',
+				'Wizard' : 'Can attempt to cast one spell in your hero phase, and attempt to unbind one spell in the enemy hero phase.',
+				},
+			spell:{
+				'Spectral Lure' : {
+					cast:'6',
+					range:'18',
+					target:'friendly <b>SUMMONABLE NIGHTHAUNT</b> unit',
+					effect:'Pick a friendly <b>SUMMONABLE NIGHTHAUNT</b> unit wholly within 18\" of the caster. You can either heal D6 wounds that have been allocated to that unit or, if no wounds are currently allocated to the unit, you may return a number of slain models to it that have a combined Wounds characteristic equal to or less than the roll of a D6.',
+				},
+			},
+			command : {
+				// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+				// 'Spectral Overseer' : 'In the combat phase of this turn, add 1 to hit rolls for friendly <b>NIGHTHAUNT</b> models while they are within 9" of this model.',
+			},
+			keywords:'DEATH, MALIGNANT, NIGHTHAUNT, HERO, WIZARD, GUARDIAN OF SOULS',
+		},
+		lordexecutioner : {
+			name:'Lord Executioner',
+			role:'Leader',
+			move:'6',
+			wounds:'5',
+			bravery:'10',
+			save:'4+',
+			points:'',
+			icon:'nighthaunt',
+			weapon : {
+				'Decapitating Greataxe' : {
+					type:'melee',
+					range:'1',
+					attacks:'3',
+					tohit:'3+',
+					towound:'3+',
+					rend:'-2',
+					damage:'1',
+				},
+			},
+			abilities : {
+				'FLY' : '#',
+				'Ethereal' : '#',
+				'Beheading Strike' : 'If a wound roll for a Decapitating Greataxe is 6+, add 2 to the Damage characteristic of the weapon for that attack.',
+				'Staring Death in the Face' : 'At the start of the combat phase, you can pick an enemy <b>Hero</b> within 3\" of this model. Substract 1 from hit rolls for attacks made by that <b>Hero</b> in that combat phase.',
+				'Disembodied Skulls' : 'Roll a D6 each time this model suffers a mortal wound. On a 5+, the wound is negated.',
+				},
+			command : {
+				// 'Inspiring Presence' : 'Pick a unit from your army that is within 12" of your general. That unit does not have to take battleshock tests until your next hero phase.',
+				// 'Spectral Overseer' : 'In the combat phase of this turn, add 1 to hit rolls for friendly <b>NIGHTHAUNT</b> models while they are within 9" of this model.',
+			},
+			keywords:'DEATH, MALIGNANT, NIGHTHAUNT, HERO, LORD EXECUTIONER',
+		},
+		chainrasphorde : {
+			name:'Chainrasp Horde (-)',
+			// role:'Battleline Nighthaunt',
+			move:'6',
+			wounds:'1',
+			bravery:'6',
+			save:'5+',
+			points:'',
+			icon:'nighthaunt',
+			weapon : {
+				'Dreadwarden\'s Malignant Weapon' : {
+					type:'melee',
+					range:'1',
+					attacks:'3',
+					tohit:'4+',
+					towound:'4+',
+					rend:'-',
+					damage:'1',
+				},
+				'Malignant Weapon' : {
+					type:'melee',
+					range:'1',
+					attacks:'2',
+					tohit:'4+',
+					towound:'4+',
+					rend:'-',
+					damage:'1',
+				},
+			},
+			abilities : {
+				'DREADWARDEN' : 'The leader of this unit is Dreadwarden. Add 1 to the Attacks characteristic of a Dreadwarden\'s Malignant Weapon. In addition, a Chainrasp Horde has a Bravery characteristic of 10 instead of 6 while it includes a Dreadwarden.',
+				'FLY' : '#',
+				'Ethereal' : '#',
+				'Chilling Horde' : 'Re-roll wound rolls of 1 for this unit while it has more than 10 models.',
+				},
+			keywords:'DEATH, MALIGNANT, NIGHTHAUNT, SUMMONABLE, CHAINRASP HORDE',
 		},
 	//	BATTLELINE	
 		direwolves : {
@@ -646,6 +790,7 @@ var units = {
 			bravery:'10',
 			save:'6+',
 			points:'80',
+			icon:'deathrattle',
 			// points:'280',
 			weapon : {
 				'Skeleton champion\'s Ancient Blade' : {
@@ -703,6 +848,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'160',
+			icon:'nighthaunt',
 			weapon : {
 				'Hellwraith\'s Spectral Scythe' : {
 					type:'melee',
@@ -749,6 +895,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'120',
+			icon:'nighthaunt',
 			weapon : {
 				'Spectral Claws and Daggers' : {
 					type:'melee',
@@ -775,6 +922,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'260',
+			icon:'soulblight',
 			weapon : {
 				'Kastellan\'s Templar Lance or Blade' : {
 					type:'melee',
@@ -822,6 +970,7 @@ var units = {
 			bravery:'10',
 			save:'5+',
 			points:'80',
+			icon:'deathrattle',
 			// points:'420',
 			weapon : {
 				'Seneschal\'s Wight Blade' : {
@@ -879,6 +1028,7 @@ var units = {
 			bravery:'10',
 			save:'4+',
 			points:'180',
+			icon:'deathmages',
 			/*
 			degradation table
 			wailrg attacks move dmg
@@ -935,6 +1085,7 @@ var units = {
 		bravery:'10',
 		save:'6+',
 		points:'80',
+		icon:'deathrattle',
 		weapon : {
 			'Sepulchar Warden\'s Ancient Spear' : {
 				type:'melee',
@@ -999,6 +1150,7 @@ var units = {
 		bravery:'10',
 		save:'-',
 		points:'80',
+		icon:'soulblight',
 		weapon : {
 			'Razor-sharp Teeth' : {
 				type:'melee',
@@ -1025,6 +1177,7 @@ var units = {
 		bravery:'10',
 		save:'6+',
 		points:'80',
+		icon:'soulblight',
 		weapon : {
 			'Elongated Fangs' : {
 				type:'melee',
@@ -1050,6 +1203,7 @@ var units = {
 		bravery:'10',
 		save:'5+',
 		points:'160',
+		icon:'soulblight',
 		weapon : {
 			'Vargoyle\'s Murderous Fangs and Talons' : {
 				type:'melee',
