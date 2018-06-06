@@ -6,7 +6,7 @@
     border: 1px solid Black;
     font-size: 10pt;
     z-index: 100;
-    width: 400px;
+    width: 440px;
     box-shadow: #291109 0px 4px 8px;
     color: Black;
 }
@@ -187,6 +187,27 @@ table.warscroll{
 .weapon-stats-header,.header,.abilityheader,.spell-header-name,.spell-header,.army-header{
 	text-transform: uppercase;
 }
+
+.icon{
+	width: 25px;
+	height: 25px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.soulblight{background-image:url(../img/soulblight.svg);}
+.deathrattle{background-image:url(../img/deathrattle.svg);}
+.death{background-image:url(../img/death.svg);}
+.deathmages{background-image:url(../img/deathmages.svg);}
+.deadwalkers{background-image:url(../img/deadwalkers.svg);}
+.nighthaunt{background-image:url(../img/nighthaunt.svg);}
+/*
+icon:'soulblight',
+icon:'deathrattle',
+icon:'deathmages',
+icon:'death',
+icon:'deadwalkers',
+icon:'nighthaunt',
+*/
 
 /*--- PRINT ---*/
 	@media print{

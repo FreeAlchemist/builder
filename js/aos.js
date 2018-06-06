@@ -211,6 +211,7 @@ function unitsMenu(){
 				var role = thisunit.role
 				var name = thisunit.name
 				var points = thisunit.points
+				var icon = thisunit.icon
 				var par = $('<p />')
 				var input = $('<input />',{type:'number',name:unitsmenu[i],value:0,min:0,class:'noprint floatleft unitnum'})
 				input.change(function(){
@@ -228,6 +229,9 @@ function unitsMenu(){
 					unitPoints()
 				})
 				par.append(input)
+				//
+				if(icon){par.append('<span class="floatleft icon '+icon+'"></span>')}
+				//
 				if(role){par.append(role+' | ')}
 				if(name){par.append(name)}
 				else{par.append('<span class="alert">Name</span>')}
