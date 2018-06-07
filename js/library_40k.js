@@ -2312,6 +2312,44 @@ var library = {
 	skitarii : {
 		armyname : 'Skitarii',
 		weapons : {
+			/* ------------------------- */
+			'Cypher\'s bolt pistol' : {
+				range:'16',
+				type:'Pistol 3',
+				strength:'4',
+				ap:'-1',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'Cypher\'s plasma pistol' : {
+				range:'12',
+				type:'Pistol 2',
+				strength:'8',
+				ap:'-3',
+				damage:'2',
+				ability:'-',
+				points:'0',
+			},
+			'Frag grenade' : {
+				range:'6',
+				type:'Grenade D6',
+				strength:'3',
+				ap:'0',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'Krak grenade' : {
+				range:'6',
+				type:'Grenade 1',
+				strength:'6',
+				ap:'-1',
+				damage:'D3',
+				ability:'-',
+				points:'0',
+			},
+			/* ------------------------- */
 			/*
 			SPECIAL
 			['Arc rifle','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Transuranic arquebus']
@@ -2926,6 +2964,34 @@ var library = {
 			'The eye of XI-Lexum' : '<b>AGRIPINAA</b> model only. At the start of each of your Shooting phases, pick one enemy <b>VEHICLE</b> unit within 18" of the bearer. You can re-roll wound rolls of 1 for friendly <b>AGRIPINAA</b> units that target the unit you picked for the rest of the phase. If the unit you picked is a <b>CHAOS VEHICLE</b>, you can instead re-roll failed wound rolls for friendly <b>AGRIPINAA</b> units that target the unit.',
 		},
 		units : {
+			/* ------------------------- */
+			cypher : {
+				name:'Cypher',
+				role:'HQ',
+				move:'7',
+				ws:'2+',
+				bs:'2+',
+				strength:'4',
+				toughness:'4',
+				wounds:'5',
+				degradate : ['5'],
+				attacks:'4',
+				leadership:'9',
+				save:'3+',
+				invulsave:'4+',
+				powerpoints:'6',
+				pointspermodel:'110',
+				weaponbasic : ['Basic melee','Frag grenade','Krak grenade','Cypher\'s bolt pistol','Cypher\'s plasma pistol'],
+				abilities : {
+					'Blazing weapons' : 'Cypher can use his pistols in your Shooting phase even if he has Advanced or Fallen Back in the same turn.',
+					'Lord Cypher' : 'You can re-roll hit rolls of 1 made for friendly FALLEN units within 6" of Cypher.',
+					'Mysterious Protection' : 'Cypher has a 4+ invulnerable save. In addition, roll a D6 if Cypher is slain, on roll of 2+, Cypher\'s model is still removed from play, but he is not considered to have been slain for the purposes of any mission victory conditions.',
+					'No-one\'s Puppet' : 'Cypher cannot use the Daemonic Ritual ability, even though he has the Chaos and Character keywords.',
+					},
+				factionkeywords : 'IMPERIUM, CHAOS, FALLEN',
+				keywords:'CHARACTER, INFANTRY, CYPHER',
+			},
+			/* ------------------------- */
 			//HQ
 				techpriestdominus : {
 					name:'Tech-Priest Dominus',
@@ -3455,6 +3521,44 @@ var library = {
 	inquisition : {
 		armyname : 'Inquisition',
 		weapons : {
+			/* ------------------------- */
+			'Cypher\'s bolt pistol' : {
+				range:'16',
+				type:'Pistol 3',
+				strength:'4',
+				ap:'-1',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'Cypher\'s plasma pistol' : {
+				range:'12',
+				type:'Pistol 2',
+				strength:'8',
+				ap:'-3',
+				damage:'2',
+				ability:'-',
+				points:'0',
+			},
+			'Frag grenade' : {
+				range:'6',
+				type:'Grenade D6',
+				strength:'3',
+				ap:'0',
+				damage:'1',
+				ability:'-',
+				points:'0',
+			},
+			'Krak grenade' : {
+				range:'6',
+				type:'Grenade 1',
+				strength:'6',
+				ap:'-1',
+				damage:'D3',
+				ability:'-',
+				points:'0',
+			},
+			/* ------------------------- */
 			//inqisition melee weapons
 				//['Nemesis Daemon hammer','Chainsword','Null rod','Power fist','Power maul','Power sword','Thunder hammer']
 				'Master-crafted power sword' : {
@@ -3941,6 +4045,34 @@ var library = {
 			},
 		},
 		units : {
+			/* ------------------------- */
+			cypher : {
+				name:'Cypher',
+				role:'HQ',
+				move:'7',
+				ws:'2+',
+				bs:'2+',
+				strength:'4',
+				toughness:'4',
+				wounds:'5',
+				degradate : ['5'],
+				attacks:'4',
+				leadership:'9',
+				save:'3+',
+				invulsave:'4+',
+				powerpoints:'6',
+				pointspermodel:'110',
+				weaponbasic : ['Basic melee','Frag grenade','Krak grenade','Cypher\'s bolt pistol','Cypher\'s plasma pistol'],
+				abilities : {
+					'Blazing weapons' : 'Cypher can use his pistols in your Shooting phase even if he has Advanced or Fallen Back in the same turn.',
+					'Lord Cypher' : 'You can re-roll hit rolls of 1 made for friendly FALLEN units within 6" of Cypher.',
+					'Mysterious Protection' : 'Cypher has a 4+ invulnerable save. In addition, roll a D6 if Cypher is slain, on roll of 2+, Cypher\'s model is still removed from play, but he is not considered to have been slain for the purposes of any mission victory conditions.',
+					'No-one\'s Puppet' : 'Cypher cannot use the Daemonic Ritual ability, even though he has the Chaos and Character keywords.',
+					},
+				factionkeywords : 'IMPERIUM, CHAOS, FALLEN',
+				keywords:'CHARACTER, INFANTRY, CYPHER',
+			},
+			/* ------------------------- */
 			//HQ
 				inquisitorgreyfax : {
 					name:'Inquisitor Greyfax',
