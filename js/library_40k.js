@@ -2312,7 +2312,7 @@ var library = {
 	skitarii : {
 		armyname : 'Skitarii',
 		weapons : {
-			/* ------------------------- */
+			/* -------ALLIED UNITS---------- */
 			'Cypher\'s bolt pistol' : {
 				range:'16',
 				type:'Pistol 3',
@@ -2964,7 +2964,7 @@ var library = {
 			'The eye of XI-Lexum' : '<b>AGRIPINAA</b> model only. At the start of each of your Shooting phases, pick one enemy <b>VEHICLE</b> unit within 18" of the bearer. You can re-roll wound rolls of 1 for friendly <b>AGRIPINAA</b> units that target the unit you picked for the rest of the phase. If the unit you picked is a <b>CHAOS VEHICLE</b>, you can instead re-roll failed wound rolls for friendly <b>AGRIPINAA</b> units that target the unit.',
 		},
 		units : {
-			/* ------------------------- */
+			/* -------ALLIED UNITS---------- */
 			cypher : {
 				name:'Cypher',
 				role:'HQ',
@@ -3521,7 +3521,7 @@ var library = {
 	inquisition : {
 		armyname : 'Inquisition',
 		weapons : {
-			/* ------------------------- */
+			/* -------ALLIED UNITS---------- */
 			'Cypher\'s bolt pistol' : {
 				range:'16',
 				type:'Pistol 3',
@@ -4045,7 +4045,7 @@ var library = {
 			},
 		},
 		units : {
-			/* ------------------------- */
+			/* -------ALLIED UNITS---------- */
 			cypher : {
 				name:'Cypher',
 				role:'HQ',
@@ -5013,15 +5013,6 @@ var library = {
 		armyname : 'Imperial Knights',
 		weapons : {
 			/*
-			SPECIAL
-			['Arc rifle','Plasma caliver (Standard)','Plasma caliver (Supercharge)','Transuranic arquebus']
-
-			PISTOL
-			['Arc pistol','Phosphor blast pistol','Radium pistol']
-
-			MELEE
-			['Arc maul','Power sword','Taser goad']
-
 			CARAPACE
 			['Twin Icarus autocannon','Stormspear rocked pod','Ironstorm missile pod']
 			*/
@@ -5507,6 +5498,15 @@ var library = {
 					points:'25',
 				},
 			//melee
+				'Basic melee' : {
+					range:'Melee',
+					type:'Melee',
+					strength:'User',
+					ap:'0',
+					damage:'1',
+					ability:'-',
+					points:'0',
+				},
 				'Acid maw' : {
 					range:'Melee',
 					type:'Melee',
@@ -5833,6 +5833,15 @@ var library = {
 					ability:'Genestealers with extended carapaces have a Save characteristic of 4+ but lose the Swift and Deadly ability.',
 					points:'2',
 				},
+				'Spore Node' : {
+					range:'9',
+					type:'Heavy 1',
+					strength:'-',
+					ap:'-',
+					damage:'-',
+					ability:'See Spore Node below.',
+					points:'0',
+				},
 				'Toxin sacs (Hormagaunt)' : {
 					range:'-',
 					type:'-',
@@ -5883,6 +5892,8 @@ var library = {
 			'Synapse' : '<b>HIVE FLEET</b> units automatically pass Morale tests if they are within 12\" of any friendly <b>HIVE FLEET</b> units with this ability.',
 			'Instinctive Behaviour' : 'Unless a <b>HIVE FLEET</b> unit with this ability is with 24\" of any friendly <b>HIVE FLEET SYNAPSE</b> unit, you must substract 1 from any hit rolls made for it when shooting any target other than the nearest visible enemy unit, and you must substract 2 from its charge roll if it declares a charge against any unit other than the nearest enemy unit.',
 			'Shadow in the warp' : 'Enemy <b>PSYKERS</b> must substract 1 from any Psychic tests they make if they are within 18\" of any units with this ability. <b>TYRANID PSYKERS</b> are not affected.',
+			'Float Down' : 'During deployment, you can set up a unit in the upper atmosphere instead of on the battlefield. At the end of any Movement phases, it can float down to the battlefield - set it up anywhere that is more than 12" from any enemy models.',
+			'Living Bombs' : 'Unit automatically pass Morale tests. Furthermore, unit are discounted for the purposes of any victory conditions - their destruction never awards victory points, they do not count towards the number of models controlling an objective, and they do not count when determing if a player has any models left on the battlefield. If you are playing a matched play game, the creation of a new such unit by another unit (e.g. from a Sporocyst\'s Spore Node ability) is free, and this units points cost does not come out of your pool of reinforcement points.',
 		},
 		traits : {
 			'Alien cunning' : 'At the start of the first battle round but before the first turn begins, you can remove your Warlord from the battlefield and set them up again. If both players have units that can do this, roll off. The player that wins the roll-off decides who sets up their unit(s) first.',
@@ -6090,6 +6101,61 @@ var library = {
 					factionkeywords : 'TYRANIDS, HIVE FLEET',
 					keywords:'CHARACTER, MONSTER, FLY, PSYKER, SYNAPSE, HIVE TYRANT',
 				},
+				tyranidprime : {
+					name:'Tyranid Prime',
+					role:'HQ',
+					move:'6',
+					ws:'2+',
+					bs:'3+',
+					strength:'5',
+					toughness:'5',
+					wounds:'6',
+					attacks:'4',
+					leadership:'10',
+					save:'3+',
+					invulsave:'-',
+					powerpoints:'6',
+					pointspermodel:'100',
+					weaponbasic : ['Scything talons','Devourer'],
+					weaponoption : ['Scything talons','Rending claws','Boneswords','Lash whip and bonesword','Spinefists (Tyranid warrior)','Deathspitter','Barbed strangler','Venom cannon','Flesh hooks','Adrenal glands','Toxin sacs (Tyranid warrior)'],
+					abilities : {
+						'Synapse' : '#',
+						'Shadow in the warp' : '#',
+						'Alpha Warrior' :'You can add 1 to hit rolls for all <b>HIVE FLEET TYRANID WARRIOR</b> units that are within 6\" of any friendly <b>HIVE FLEET TYRANID PRIMES</b>.',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'INFANTRY, SYNAPSE, TYRANID PRIME',
+				},
+				neurothrope : {
+					name:'Neurothrope',
+					role:'HQ',
+					move:'5',
+					ws:'4+',
+					bs:'3+',
+					strength:'4',
+					toughness:'4',
+					wounds:'5',
+					attacks:'1',
+					leadership:'9',
+					save:'5+',
+					invulsave:'3+',
+					powerpoints:'4',
+					pointspermodel:'70',
+					weaponbasic : ['Claws and teeth'],
+					abilities : {
+						'Synapse' : '#',
+						'Shadow in the warp' : '#',
+						'Spirit Leech' : 'Each time a Neurothrope slays a model using the Smite psychic power, you can heal a wound on a friendly <b>HIVE FLEET ZOANTHROPE</b> within 6\".',
+						'Warp Siphon' : 'You can re-roll rolls of 1 when taking Psychic tests for friendly <b>HIVE FLEET ZOANTHROPE</b> units within 6\" of this model.',
+						'Warp Field' : 'This model has a 3+ invulnerable save.',
+						'PSYKER' : 'A Neurothrope can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the <i>Smite</i> power and one psychic power from the Hive Mind discipline.',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'CHARACTER, FLY, INFANTRY, ZOANTHROPE, PSYKER, SYNAPSE, NEUROTHROPE',
+				},
+
 			//Troops
 				tyranidwarriors : {
 					name:'Tyranid Warriors',
@@ -6280,11 +6346,95 @@ var library = {
 					factionkeywords : 'TYRANIDS, HIVE FLEET',
 					keywords:'INFANTRY, RAVENERS',
 				},
+				mucolidspores : {
+					name:'Mucolid Spore',
+					role:'Fast',
+					move:'3',
+					ws:'-',
+					bs:'-',
+					strength:'1',
+					toughness:'3',
+					wounds:'3',
+					attacks:'1',
+					leadership:'10',
+					save:'6+',
+					invulsave:'-',
+					models:[1,3],
+					powerpoints:'1',
+					pointspermodel:'20',
+					abilities : {
+						'Instinctive Behaviour' : '#',
+						'Float Down' : '#',
+						'Floating Death' : 'A Mucolid Spore explodes if it is within 3\" of any enemy units at the end of any Charge phase. Each time a Mucolid Spore explodes, roll a D6; on a 1 it fails to inflict any harm, on a 2-5 it inflicts D3 mortal wounds on the nearest enemy unit, and on a 6 it inflicts D6 mortal wounds on that unit. The Mucolid Spore is then destroyed.',
+						'Living Bombs' : '#',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'FLY, MUCOLID SPORES',
+				},
+				sporemines : {
+					name:'Spore Mines',
+					role:'Fast',
+					move:'3',
+					ws:'-',
+					bs:'-',
+					strength:'1',
+					toughness:'1',
+					wounds:'1',
+					attacks:'1',
+					leadership:'10',
+					save:'7+',
+					invulsave:'-',
+					models:[3,9],
+					powerpoints:'2',
+					pointspermodel:'10',
+					abilities : {
+						'Instinctive Behaviour' : '#',
+						'Float Down' : '#',
+						'Floating Death' : 'A Spore Mine explodes if it is within 3\" of any enemy units at the end of any Charge phase. Each time a Spore Mine explodes, roll a D6; on a 1 it fails to inflict any harm, on a 2-5 it inflicts 1 mortal wound on the nearest enemy unit, and on a 6 it inflicts D3 mortal wounds on that unit. The Spore Mine is then destroyed.',
+						'Living Bombs' : '#',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'FLY, SPORE MINES',
+				},
 			//Heavy
 			//Flyers
 			//Dedicated Transport
 			//Lord of War
 			//Fortification
+				sporocyst : {
+					name:'Sporocyst',
+					role:'Fortification',
+					move:'-',
+					ws:'5+',
+					bs:'5+',
+					strength:'[ 5 ][ 4 ][ 3 ]',
+					toughness:'6',
+					wounds:'[ 0-6 ][ 7-9 ][ 10-12 ]',
+					degradate : ['6','3','3'],
+					attacks:'[ D6 ][ D3 ][ 1 ]',
+					leadership:'7',
+					save:'4+',
+					invulsave:'-',
+					powerpoints:'7',
+					pointspermodel:'79',
+					weaponbasic : ['Basic melee','Spore Node','Deathspitter','Deathspitter','Deathspitter','Deathspitter','Deathspitter'],
+					weaponoption : ['Barbed strangler','Venom cannon'],
+					abilities : {
+						'Instinctive Behaviour' : '#',
+						'Bombartment Organism' : 'During deployment, you can set up a Sporocyst in its hive ship instead of placing it on the battlefield. If you do so, at the beginning of the first battle round but before the first turn begins, the hive ship can launch the Sporocyst - set it up anywhere on the battlefield that is more than 9\" away from any enemy models.',
+						'Bio-fortress' : 'A Sporocyst can shoot with its weapons even if there are enemies within 1\" of it.',
+						'Psychic Resonator' : 'Whilst a Sporocyst is  within 12\" of a friendly <b>HIVE FLEET SYNAPSE</b> unit, it has the <b>SYNAPSE</b> keyword and the Synapse ability.',
+						'Spawn Spore Mines' : 'At the end of your Movement phase, a Sporocyst can spawn spore mines. If it does so, add a new unit of 3 Spore Mines or 1 Mucolid Spore to your army and set it up on the battlefield so that it is wholly within 6\" of the Sporocyst and more than 1\" from the enemy.',
+						'Spore Node' : '<p>Each time a spore node attack hits its target, roll a D6 to find out how much damage is inflicted on the unit; on a 1 the mines fail to inflict any harm, on a 2-5 they inflict D3 mortal wounds, and on a 6 they inflict D6 mortal wounds.</p>Each time a spore node attack misses its target, set up a single Mucolid Spore or a unit of 3 Spore Mines, anywhere within 6\" of the target unit and more than 3\" from any enemy model (any models that cannot be placed are destroyed). These then follow the rules for Mucolid Spores or Spore Mines that are part of your army, but they canot move or charge during the turn they were set up. This weapon cannot be used to fire Overwatch.',
+						'Death Throes' : 'If this model is reduxed to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6, each unit within 3\" suffers D3 mortal wounds.',
+						'Immobile' : 'A Sporocyst cannot move for any reason.',
+						'Hive Fleet' :'',
+						},
+					factionkeywords : 'TYRANIDS, HIVE FLEET',
+					keywords:'MONSTER, SPOROCYST',
+				},
 		}
 	},
 	necrons : {

@@ -215,7 +215,8 @@ icon:'nighthaunt',
 			display: none;
 		}
 		.weapon-type,.weapon-stats-header,.header,.spell-header-name,.spell-header,.army-header{
-			background-color: Gainsboro;
+			/*background-color: Gainsboro;*/
+			background-color: rgba(211, 204, 199, 1);
 		}
 		.army-header{
 			/*text-transform: uppercase;*/
