@@ -40,10 +40,12 @@ body{
 	border:1px solid Black;
 	font-size: 10pt;
 	z-index: 100;
-	box-shadow: Black 1px 1px 3px;
-	box-shadow: #291109 0px 4px 8px
+	/*box-shadow: Black 1px 1px 3px;*/
+	/*box-shadow: #291109 0px 4px 8px;*/
+	background-color: Oldlace;
+	box-shadow: inset rgb(43, 47, 63) 0px 1px 8px;
 }
-.menupart{
+/*.menupart{
 	float: left;
 	margin: 6px;
 	text-align: center;
@@ -62,7 +64,30 @@ body{
     border-style: groove ;
     border-top-color: Bisque ;
     border-top-width: 2px ;
+}*/
+
+.menupart{
+	float: left;
+    margin: 6px;
+    text-align: center;
+    height: 40px;
+    font-size: 12pt;
+    /* background-color: Linen; */
+    color: Linen;
+    background: rgba(30,34,33,1);
+    border-radius: 0px 5px;
+    /* border: 2px solid rgba(192,167,106,1); */
+    /* border-bottom-color: Burlywood; */
+    /* border-bottom-width: 3px; */
+    /* border-left-color: Bisque; */
+    /* border-left-width: 2px; */
+    /* border-right-color: Burlywood; */
+    /* border-right-width: 3px; */
+    /* border-style: groove; */
+    /* border-top-color: Bisque; */
+    /* border-top-width: 2px; */
 }
+
 .menubtn{
 	float: left;
 	padding: 0px 10px;
@@ -71,6 +96,7 @@ body{
 	text-align: center;
 	text-decoration: none;
 	border: 2px solid Black;
+	border-radius: 0px 5px;
 	cursor: pointer;
 	background-color: Dimgray;
 	color: Lightgoldenrodyellow;
