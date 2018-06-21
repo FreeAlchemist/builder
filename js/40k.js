@@ -56,12 +56,15 @@ function counterVal(){
 	}
 	for (var i =0; i < rosterarr.length; i++) { 
 		var weaponnumberarr = $('#'+rosterarr[i]+'-'+i+' input[type=number]')
+		// if(weaponnumberarr){Print('found weapons')}
+		// 	else{Print('No weapons found')}
 		var modelsvalue = $('#'+rosterarr[i]+'-'+i+'-modelsnum').val()
 		var pointsperunit = pointsarr[i]
 		if(modelsvalue){
 			pointsperunit = parseInt(pointsarr[i])*parseInt(modelsvalue)
 		}
 		var counterpoints = 0
+		// Print(counterpoints+' 0')
 		for (var j =0; j < weaponnumberarr.length; j++) {
 			var countername = weaponnumberarr[j].name
 			var countervalue = weaponnumberarr[j].value
@@ -78,7 +81,9 @@ function counterVal(){
 			}
 			if(library[army].weapons[countername] && library[army].weapons[countername].points){
 				counterpoints += parseInt(countervalue)*parseInt(library[army].weapons[countername].points)
+				// Print(counterpoints+' 1')
 			}
+			// Print(counterpoints+' 2')
 		}
 		pointsperunit += parseInt(counterpoints)
 		pointsperdetarr.push(parseInt(pointsperunit))
@@ -635,6 +640,7 @@ function getRoster(army){
 
 		for (var i =0; i < rosterarr.length; i++) {
 			var unit = rosterarr[i]
+			// Print(unit)
 			var thisunit = library[army].units[unit]
 			var name = thisunit.name
 			var move = thisunit.move
@@ -700,7 +706,10 @@ function getRoster(army){
 				else{
 					$('#'+rosterarr[i]+'-'+i+'-chars').append($('<div />',{class:'name'}).html(rolename))
 				}
-				$('#'+rosterarr[i]+'-'+i+'-modelsnum').change(function(){counterVal()})
+				$('#'+rosterarr[i]+'-'+i+'-modelsnum').change(function(){
+					// Print('Counting points # 1')
+					counterVal()
+				})
 				var table = $('<table />')
 				table.attr('cellpadding',"0px")
 				table.attr('cellspacing','0px')
@@ -839,7 +848,10 @@ function getRoster(army){
 								if(thisunit.models && minmodels){
 									counter.attr('value',minmodels)
 								}
-								counter.change(function(){counterVal()})
+								counter.change(function(){
+									// Print('Counting points # 2')
+									counterVal()
+								})
 								var td9 = $('<td />',{class:'weapon-stats-text xsmallstat noprint'}).html(counter)
 							}
 							else{
@@ -951,7 +963,10 @@ function getRoster(army){
 									//	Add counter for each weapon option
 									var counter = $('<input />',{type:'number',name:name,min:'0',max:'5',value:'0'})
 									if(thisunit.models && maxmodels){counter.attr('max',maxmodels)}
-									counter.change(function(){counterVal()})
+									counter.change(function(){
+										// Print('Counting points # 3')
+										counterVal()
+									})
 									var td9 = $('<td />',{class:'weapon-stats-text xsmallstat noprint'}).html(counter)
 								}
 								else{
@@ -995,6 +1010,7 @@ function getRoster(army){
 						var totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)
 						$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(totalunitpoints)
 					}
+					// Print('Counting points # 4')
 					counterVal()
 				}
 				else if(thisunit.weapon){
@@ -1096,7 +1112,10 @@ function getRoster(army){
 								//	Add counter for each weapon option
 								var counter = $('<input />',{type:'number',name:name,min:'0',max:'5',value:'1',id:rosterarr[i]+'-'+i+'-input-'+s})
 								if(thisunit.models && maxmodels){counter.attr('max',maxmodels)}
-								counter.change(function(){counterVal()})
+								counter.change(function(){
+									// Print('Counting points # 5')
+									counterVal()
+								})
 								var td9 = $('<td />',{class:'weapon-stats-text xsmallstat noprint'}).html(counter)
 							}
 							else{
@@ -1150,7 +1169,13 @@ function getRoster(army){
 						var totalunitpoints = parseInt(pointspermodel)*parseInt(minmodels)
 						$('#'+rosterarr[i]+'-'+i+'-totalunitpoints').html(totalunitpoints)
 					}
+					// Print('Counting points # 6')
 					counterVal()
+				}
+				else{
+					// Print('Counting points # without weapons')
+					counterVal()
+
 				}
 
 			//	ABILITIES
