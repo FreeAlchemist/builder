@@ -4260,7 +4260,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					pointspermodel:'55',
-					weapon : ['Force axe','Frag grenade','Krak grenade','Inferno pistol'],
+					weapon : ['Force sword','Frag grenade','Krak grenade','Inferno pistol'],
 					abilities : {
 						'Authority of the Inquisition' : '#',
 						'Unquestionable Wisdom' : '#',
