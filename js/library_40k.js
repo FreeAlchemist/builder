@@ -1280,7 +1280,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'5',
-					pointspermodel:'85',
+					pointspermodel:'80',
 					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol'],
 					weaponoption : ['Chainsword','Lightning claw','Power axe','Power fist','Power maul','Power sword','Thunder hammer','Boltgun','Plasma pistol (Standard)','Plasma pistol (Supercharge)','Grav-pistol','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter'],
 					abilities : {
@@ -1309,7 +1309,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'5',
-					pointspermodel:'85',
+					pointspermodel:'80',
 					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol','Power fist'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1337,7 +1337,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'6',
-					pointspermodel:'85',
+					pointspermodel:'80',
 					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol'],
 					weaponoption : ['Chainsword','Lightning claw','Power axe','Power fist','Power maul','Power sword','Thunder hammer','Boltgun','Plasma pistol (Standard)','Plasma pistol (Supercharge)','Grav-pistol','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter'],
 					abilities : {
@@ -1367,7 +1367,7 @@ var library = {
 					save:'2+',
 					invulsave:'4+',
 					powerpoints:'6',
-					pointspermodel:'125',
+					pointspermodel:'100',
 					weaponbasic : ['Crozius arcanum','Storm bolter'],
 					weaponoption : ['Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)'],
 					abilities : {
@@ -1452,7 +1452,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'8',
-					pointspermodel:'120',
+					pointspermodel:'102',
 					weaponbasic : ['Force stave'],
 					weaponoption : ['Force axe','Force sword','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter'],
 					abilities : {
@@ -1481,7 +1481,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'8',
-					pointspermodel:'120',
+					pointspermodel:'102',
 					weaponbasic : ['Force sword','Combi-melta','- Boltgun','- Meltagun'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1723,7 +1723,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'13',
 					models : [2,5],
-					pointspermodel:'16',
+					pointspermodel:'14',
 					weaponbasic : ['Chainsword','Frag grenade','Krak grenade','Bolt pistol'],
 					weaponoption : ['Basic melee','Power sword','Power maul','Power fist','Flamer','Plasma pistol (Standard)','Plasma pistol (Supercharge)','Plasma gun (Standard)','Plasma gun (Supercharge)','Meltagun','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter','Heavy bolter','Combat shield'],
 					abilities : {
@@ -1749,7 +1749,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'13',
 					models : [3,5],
-					pointspermodel:'16',
+					pointspermodel:'14',
 					weapon : ['Chainsword','Power sword','Frag grenade','Krak grenade','Bolt pistol','Plasma pistol (Standard)','Plasma pistol (Supercharge)'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1774,7 +1774,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'13',
 					models : [2,5],
-					pointspermodel:'16',
+					pointspermodel:'14',
 					weapon : ['Basic melee','Power sword','Power maul','Flamer','Plasma pistol (Standard)','Plasma pistol (Supercharge)'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1854,7 +1854,7 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'13',
 					models : [5,10],
-					pointspermodel:'26',
+					pointspermodel:'23',
 					weaponbasic : ['Power sword','Power fist','Storm bolter'],
 					weaponoption : ['Chain fist','Lightning claws (pair)','Thunder hammer','Storm shield','Assault cannon','Plasma cannon (Standard)','Plasma cannon (Supercharge)','Heavy flamer','Cyclone missile launcher - Frag missile','Cyclone missile launcher - Krak missile','Watcher in the Dark'],
 					abilities : {
@@ -1882,7 +1882,7 @@ var library = {
 					invulsave:'5+',
 					powerpoints:'13',
 					models : [5,10],
-					pointspermodel:'26',
+					pointspermodel:'23',
 					weapon : ['Power sword','Power fist','Power fist','Power fist','Chain fist','Storm bolter','Storm bolter','Storm bolter','Storm bolter','Assault cannon','Watcher in the Dark'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1909,7 +1909,7 @@ var library = {
 					invulsave:'3+',
 					powerpoints:'12',
 					models : [5,10],
-					pointspermodel:'45',
+					pointspermodel:'35',
 					weapon : ['Flail of the Unforgiven','Mace of Absolution','Storm shield','Watcher in the Dark'],
 					weaponbasic : ['Flail of the Unforgiven','Mace of Absolution','Storm shield'],
 					weaponoption : ['Watcher in the Dark'],
@@ -1938,7 +1938,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'8',
-					pointspermodel:'90',
+					pointspermodel:'80',
 					weaponbasic : ['Dreadnought combat weapon','Storm bolter','Assault cannon'],
 					weaponoption : ['Basic melee','Heavy flamer','Multi-melta','Heavy plasma cannon (Standard)','Heavy plasma cannon (Supercharge)','Twin lascannon','Missile launcher - Frag missile','Missile launcher - Krak missile'],
 					abilities : {
@@ -1965,7 +1965,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'8',
-					pointspermodel:'90',
+					pointspermodel:'80',
 					weapon : ['Dreadnought combat weapon','Heavy flamer','Heavy plasma cannon (Standard)','Heavy plasma cannon (Supercharge)'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1991,7 +1991,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'8',
-					pointspermodel:'90',
+					pointspermodel:'80',
 					weapon : ['Basic melee','Twin lascannon','Missile launcher - Frag missile','Missile launcher - Krak missile'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -2123,7 +2123,7 @@ var library = {
 					save:'2+',
 					invulsave:'-',
 					powerpoints:'16',
-					pointspermodel:'244',
+					pointspermodel:'200',
 					weaponbasic : ['Basic melee','Hurricane bolter','Hurricane bolter','Twin assault cannon'],
 					weaponoption : ['Storm bolter','Multi-melta','Hunter-killer missile'],
 					abilities : {
@@ -2151,7 +2151,7 @@ var library = {
 					save:'2+',
 					invulsave:'-',
 					powerpoints:'16',
-					pointspermodel:'244',
+					pointspermodel:'200',
 					weapon : ['Basic melee','Hurricane bolter','Hurricane bolter','Twin assault cannon','Storm bolter'],
 					abilities : {
 						'Power of the Machine Spirit' : 'This model does not suffer the penalty to hit rolls for moving and firing Heavy weapons.',
@@ -3008,7 +3008,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'115',
+					pointspermodel:'80',
 					weaponbasic : ['Omnissian Axe','Macrostubber','Volkite Blaster'],
 					weaponoption : ['Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
@@ -3036,7 +3036,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'115',
+					pointspermodel:'80',
 					weaponoption : ['Macrostubber','Volkite Blaster'],
 					weaponbasic : ['Omnissian Axe','Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
@@ -3064,7 +3064,7 @@ var library = {
 					save:'3+',
 					invulsave:'6+',
 					powerpoints:'7',
-					pointspermodel:'35',
+					pointspermodel:'30',
 					weaponbasic : ['Omnissian Axe','Servo-arm','Laspistol'],
 					abilities : {
 						'Canticles of the Omnissiah' : '#',
@@ -3226,7 +3226,7 @@ var library = {
 					invulsave:'6+',
 					powerpoints:'6',
 					models : [5,10],
-					pointspermodel:'16',
+					pointspermodel:'12',
 					weaponbasic : ['Power sword','Stubcarbine'],
 					weaponoption : ['Taser goad','Flechette blaster'],
 					abilities : {
@@ -3254,7 +3254,7 @@ var library = {
 					invulsave:'6+',
 					powerpoints:'6',
 					models : [5,10],
-					pointspermodel:'16',
+					pointspermodel:'12',
 					weaponbasic : ['Taser goad','Flechette blaster'],
 					// weaponoption : ['Power sword','Stubcarbine'],
 					abilities : {
@@ -3308,7 +3308,7 @@ var library = {
 					save:'3+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'90',
+					pointspermodel:'70',
 					weaponbasic : ['Basic melee','Eradication beamer','Eradication beamer *'],
 					weaponoption : ['Cognis heavy stubber','Twin heavy phosphor blaster','Neutron laser','Icarus array:','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon','Broad Spectrum Data-tether','Smoke Launchers'],
 					abilities : {
@@ -3335,7 +3335,7 @@ var library = {
 					save:'3+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'90',
+					pointspermodel:'70',
 					weapon : ['Basic melee','Cognis heavy stubber','Icarus array:','* Daedalus missile launcher','* Gatling rocket launcher','* Twin Icarus autocannon','Broad Spectrum Data-tether'],
 					abilities : {
 						'Canticles of the Omnissiah' : '#',
@@ -3479,7 +3479,7 @@ var library = {
 					save:'3+',
 					invulsave:'5+ against shooting',
 					powerpoints:'25',
-					pointspermodel:'320',
+					pointspermodel:'285',
 					weaponbasic : ['Titanic feet','Reaper chainsword','Heavy flamer','Heavy stubber','Avenger gatling cannon'],
 					weaponoption : ['Thunderstrike gauntlet','Meltagun','Ironstorm missile pod','Stormspear rocked pod','Twin Icarus autocannon'],
 					abilities : {
@@ -6030,7 +6030,7 @@ var library = {
 					ap:'-2',
 					damage:'3',
 					ability:'-',
-					points:'25',
+					points:'18',
 				},
 			//	Monstrous bio-weapons
 				'Monstrous rending claws' : {
@@ -6123,7 +6123,7 @@ var library = {
 					ap:'-2',
 					damage:'D3',
 					ability:'-',
-					points:'20',
+					points:'12',
 				},
 			//	Melee bio-weapons
 				'Rending claws' : {
@@ -6442,7 +6442,7 @@ var library = {
 					save:'4+',
 					invulsave:'5+',
 					powerpoints:'8',
-					pointspermodel:'162',
+					pointspermodel:'115',
 					weaponbasic : ['Monstrous rending claws'],
 					abilities : {
 						'Synapse' : '#',
@@ -6500,7 +6500,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'11',
-					pointspermodel:'170',
+					pointspermodel:'190',
 					weaponbasic : ['Monstrous scything talons (Hive Tyrant)','Monstrous scything talons (Hive Tyrant)','Prehensile pincer tail'],
 					weaponoption : ['Monstrous rending claws','Monstrous boneswords','Lash whip and monstrous bonesword','Two deathspitters with slimer maggots','Two devourers with brainleech worms','Stranglethorn cannon','Heavy venom cannon'],
 					abilities : {
@@ -6531,7 +6531,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'11',
-					pointspermodel:'170',
+					pointspermodel:'190',
 					weapon : ['Monstrous scything talons (Hive Tyrant)','Two deathspitters with slimer maggots','Prehensile pincer tail'],
 					abilities : {
 						'Synapse' : '#',
@@ -6591,7 +6591,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'6',
-					pointspermodel:'100',
+					pointspermodel:'70',
 					weaponbasic : ['Scything talons','Devourer'],
 					weaponoption : ['Scything talons','Rending claws','Boneswords','Lash whip and bonesword','Spinefists (Tyranid warrior)','Deathspitter','Barbed strangler','Venom cannon','Flesh hooks','Adrenal glands','Toxin sacs (Tyranid warrior)'],
 					abilities : {
