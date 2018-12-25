@@ -253,7 +253,7 @@ var library = {
 					ap:'-4',
 					damage:'2',
 					ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
-					points:'22',
+					points:'11',
 				},
 				'Combat knife' : {
 					range:'Melee',
@@ -271,7 +271,7 @@ var library = {
 					ap:'-3',
 					damage:'3',
 					ability:'-',
-					points:'40',
+					points:'30',
 				},
 				'Force axe' : {
 					range:'Melee',
@@ -343,7 +343,7 @@ var library = {
 					ap:'-3',
 					damage:'2',
 					ability:'-',
-					points:'10',
+					points:'6',
 				},
 				'Power fist' : {
 					range:'Melee',
@@ -352,7 +352,7 @@ var library = {
 					ap:'-3',
 					damage:'D3',
 					ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
-					points:'12',
+					points:'9',
 				},
 				'Power axe' : {
 					range:'Melee',
@@ -533,7 +533,7 @@ var library = {
 					ap:'-',
 					damage:'-',
 					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
-					points:'11',
+					points:'8',
 				},
 				'Combi-grav' : {
 					range:'-',
@@ -542,7 +542,7 @@ var library = {
 					ap:'-',
 					damage:'-',
 					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
-					points:'17',
+					points:'13',
 				},
 				'Combi-melta' : {
 					range:'-',
@@ -551,7 +551,7 @@ var library = {
 					ap:'-',
 					damage:'-',
 					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
-					points:'19',
+					points:'15',
 				},
 				'Combi-plasma' : {
 					range:'-',
@@ -560,7 +560,7 @@ var library = {
 					ap:'-',
 					damage:'-',
 					ability:'When attacking with this weapon, choose one or both of the profiles below. If you choose both, substract 1 from all hit rolls made for this weapon.',
-					points:'15',
+					points:'11',
 				},
 				'- Boltgun' : {
 					range:'24',
@@ -623,7 +623,7 @@ var library = {
 					ap:'0',
 					damage:'1',
 					ability:'-',
-					points:'50',
+					points:'38',
 				},
 				'Cyclone missile launcher - Krak missile' : {
 					range:'36',
@@ -650,7 +650,7 @@ var library = {
 					ap:'0',
 					damage:'1',
 					ability:'This weapon automatically hits its target.',
-					points:'9',
+					points:'6',
 				},
 				'Flamestorm cannon' : {
 					range:'8',
@@ -704,7 +704,7 @@ var library = {
 					ap:'-3',
 					damage:'1',
 					ability:'If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.',
-					points:'8',
+					points:'12',
 				},
 				'Heavy bolter' : {
 					range:'36',
@@ -722,7 +722,7 @@ var library = {
 					ap:'-1',
 					damage:'1',
 					ability:'This weapon automatically hits its target.',
-					points:'17',
+					points:'14',
 				},
 				'Heavy onslaught gatling cannon' : {
 					range:'30',
@@ -731,7 +731,7 @@ var library = {
 					ap:'-1',
 					damage:'1',
 					ability:'-',
-					points:'36',
+					points:'30',
 				},
 				'Heavy plasma cannon (Standard)' : {
 					range:'36',
@@ -740,7 +740,7 @@ var library = {
 					ap:'-3',
 					damage:'1',
 					ability:'-',
-					points:'17',
+					points:'16',
 				},
 				'Heavy plasma cannon (Supercharge)' : {
 					range:'36',
@@ -866,7 +866,7 @@ var library = {
 					ap:'-4',
 					damage:'D6',
 					ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
-					points:'17',
+					points:'14',
 				},
 				'Multi-melta' : {
 					range:'24',
@@ -1337,7 +1337,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'6',
-					pointspermodel:'80',
+					pointspermodel:'95',
 					weaponbasic : ['Crozius arcanum','Frag grenade','Krak grenade','Bolt pistol'],
 					weaponoption : ['Chainsword','Lightning claw','Power axe','Power fist','Power maul','Power sword','Thunder hammer','Boltgun','Plasma pistol (Standard)','Plasma pistol (Supercharge)','Grav-pistol','Combi-flamer','- Boltgun','- Flamer','Combi-grav','- Boltgun','- Grav-gun','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter'],
 					abilities : {
@@ -1452,7 +1452,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'8',
-					pointspermodel:'102',
+					pointspermodel:'120',
 					weaponbasic : ['Force stave'],
 					weaponoption : ['Force axe','Force sword','Combi-flamer','- Boltgun','- Flamer','Combi-melta','- Boltgun','- Meltagun','Combi-plasma','- Boltgun','- Plasma gun (Standard)','- Plasma gun (Supercharge)','Storm bolter'],
 					abilities : {
@@ -1481,7 +1481,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'8',
-					pointspermodel:'102',
+					pointspermodel:'120',
 					weaponbasic : ['Force sword','Combi-melta','- Boltgun','- Meltagun'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1564,7 +1564,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'7',
-					pointspermodel:'102',
+					pointspermodel:'90',
 					weaponbasic : ['Master-crafted power sword','Boltstorm gauntlet (melee)','Boltstorm gauntlet (shooting)'],
 					abilities : {
 						'Grim Resolve' : '#',
@@ -1644,7 +1644,7 @@ var library = {
 					invulsave:'-',
 					powerpoints:'5',
 					models : [5,10],
-					pointspermodel:'18',
+					pointspermodel:'17',
 					weaponbasic : ['Basic melee','Frag grenade','Krak grenade','Bolt pistol','Bolt rifle'],
 					weaponoption : ['Power sword','Auto bolt rifle','Stalker bolt rifle','Auxilary grenade launcher'],
 					abilities : {
@@ -2017,7 +2017,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'10',
-					pointspermodel:'140',
+					pointspermodel:'105',
 					weaponbasic : ['Redemptor fist','Heavy flamer','Fragstorm grenade launcher','Fragstorm grenade launcher','Heavy onslaught gatling cannon'],
 					weaponoption : ['Basic melee','Onslaught gatling cannon','Macro plasma Incinerator (Standard)','Macro plasma Incinerator (Supercharge)','Storm bolter','Storm bolter','Icarus rocket pod'],
 					abilities : {
@@ -2178,7 +2178,7 @@ var library = {
 					save:'2+',
 					invulsave:'-',
 					powerpoints:'18',
-					pointspermodel:'244',
+					pointspermodel:'200',
 					weaponbasic : ['Basic melee','Flamestorm cannon','Flamestorm cannon','Twin assault cannon'],
 					weaponoption : ['Storm bolter','Multi-melta','Hunter-killer missile'],
 					abilities : {
@@ -2207,7 +2207,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'8',
-					pointspermodel:'140',
+					pointspermodel:'180',
 					weaponbasic : ['Basic melee','Hurricane bolter','Hurricane bolter','Rift cannon'],
 					abilities : {
 						'Jink' : '#',
@@ -2294,7 +2294,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'5',
-					pointspermodel:'83',
+					pointspermodel:'63',
 					weaponbasic : ['Storm bolter'],
 					weaponoption : ['Deathwind launcher'],
 					abilities : {
@@ -2453,7 +2453,7 @@ var library = {
 				ap:'-3',
 				damage:'3',
 				ability:'-',
-				points:'35',
+				points:'25',
 			},
 			'Omnissian Axe' : {
 				range:'Melee',
@@ -2471,7 +2471,7 @@ var library = {
 				ap:'-3',
 				damage:'D3',
 				ability:'When attacking with this weapon, you must substract 1 from the hit roll.',
-				points:'12',
+				points:'9',
 			},
 			'Power sword' : {
 				range:'Melee',
@@ -2489,7 +2489,7 @@ var library = {
 				ap:'-2',
 				damage:'3',
 				ability:'Each servo-arm can only be used to make one attack each time this model fights. When a model attacks with this weapon, you must substract 1 from the hit roll.',
-				points:'12',
+				points:'0',
 			},
 			'Taser goad' : {
 				range:'Melee',
@@ -2562,7 +2562,7 @@ var library = {
 				ap:'-2',
 				damage:'2',
 				ability:'-',
-				points:'95',
+				points:'75',
 			},
 			'Cognis heavy stubber' : {
 				range:'36',
@@ -2571,7 +2571,7 @@ var library = {
 				ap:'0',
 				damage:'1',
 				ability:'You may fire this weapon even if the firing model Advanced but you must substract 2 from any hit rolls if you do so.',
-				points:'5',
+				points:'2',
 			},
 			'Eradication beamer' : {
 				range:'36',
@@ -2580,7 +2580,7 @@ var library = {
 				ap:'-2',
 				damage:'D3',
 				ability:'When attacking units within 12", change this weapon\'s Type to Heavy D3, resolve the shots with AP of -4 and Damage of D6. *',
-				points:'25',
+				points:'30',
 			},
 			'Eradication beamer *' : {
 				range:'12',
@@ -2643,7 +2643,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'This weapon automatically hits its target.',
-				points:'17',
+				points:'14',
 			},
 			'Heavy stubber' : {
 				range:'36',
@@ -2652,7 +2652,7 @@ var library = {
 				ap:'0',
 				damage:'1',
 				ability:'-',
-				points:'4',
+				points:'2',
 			},
 			'Heavy phosphor blaster' : {
 				range:'36',
@@ -2706,7 +2706,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'This weapon automatically hits its target.',
-				points:'21',
+				points:'15',
 			},
 			'Ironstorm missile pod' : {
 				range:'72',
@@ -2742,7 +2742,7 @@ var library = {
 				ap:'-4',
 				damage:'D6',
 				ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
-				points:'17',
+				points:'14',
 			},
 			'Neutron laser' : {
 				range:'48',
@@ -2760,7 +2760,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
-				points:'4',
+				points:'3',
 			},
 			'Phosphor serpenta' : {
 				range:'18',
@@ -2778,7 +2778,7 @@ var library = {
 				ap:'-3',
 				damage:'1',
 				ability:'-',
-				points:'14',
+				points:'11',
 			},
 			'Plasma caliver (Supercharge)' : {
 				range:'18',
@@ -2841,7 +2841,7 @@ var library = {
 				ap:'-2',
 				damage:'D3',
 				ability:'This weapon cannot be fired if the firing model moved during the Movement phase. This weapon may target a <b>CHARACTER</b> even if it is not the closest enemy unit. Each time you make a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to its normal damage.',
-				points:'25',
+				points:'15',
 			},
 			'Twin heavy phosphor blaster' : {
 				range:'36',
@@ -2859,7 +2859,7 @@ var library = {
 				ap:'-1',
 				damage:'2',
 				ability:'*',
-				points:'30',
+				points:'20',
 			},
 			'Volkite Blaster' : {
 				range:'24',
@@ -5154,7 +5154,7 @@ var library = {
 					ap:'-1',
 					damage:'1',
 					ability:'This weapon automatically hits its target.',
-					points:'17',
+					points:'14',
 				},
 				'Heavy stubber' : {
 					range:'36',
@@ -5163,7 +5163,7 @@ var library = {
 					ap:'0',
 					damage:'1',
 					ability:'-',
-					points:'4',
+					points:'2',
 				},
 				'Ironstorm missile pod' : {
 					range:'72',
@@ -5199,7 +5199,7 @@ var library = {
 					ap:'-4',
 					damage:'D6',
 					ability:'If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.',
-					points:'17',
+					points:'14',
 				},
 				'Multi-laser' : {
 					range:'36',
@@ -5208,7 +5208,7 @@ var library = {
 					ap:'0',
 					damage:'1',
 					ability:'-',
-					points:'10',
+					points:'5',
 				},
 				'Plasma decimator (Standard)' : {
 					range:'48',
@@ -5289,7 +5289,7 @@ var library = {
 					ap:'-1',
 					damage:'2',
 					ability:'Add 1 to all hit rolls made for this weapon against targets that can <b>FLY</b>. Substract 1 from hit rolls against all other targets.',
-					points:'30',
+					points:'20',
 				},
 				'Twin meltagun' : {
 					range:'12',
@@ -5888,6 +5888,15 @@ var library = {
 					ability:'You can re-roll hit rolls of 1 for this weapon. If the bearer has more than one pair of massive scything talons, it can make 1 additional attack with this weapon each time it fights.',
 					points:'10',
 				},
+				'Massive scything talons (Trygon)' : {
+					range:'Melee',
+					type:'Melee',
+					strength:'user',
+					ap:'-3',
+					damage:'D6',
+					ability:'You can re-roll hit rolls of 1 for this weapon. If the bearer has more than one pair of massive scything talons, it can make 1 additional attack with this weapon each time it fights.',
+					points:'40',
+				},
 				'Massive crushing claws' : {
 					range:'Melee',
 					type:'Melee',
@@ -6021,7 +6030,7 @@ var library = {
 					ap:'-1',
 					damage:'2',
 					ability:'You can add 1 to hit rolls for this weapon when attacking a unit with 10 or more models.',
-					points:'25',
+					points:'15',
 				},
 				'Heavy venom cannon' : {
 					range:'36',
@@ -6123,7 +6132,7 @@ var library = {
 					ap:'-2',
 					damage:'D3',
 					ability:'-',
-					points:'20',
+					points:'12',
 				},
 			//	Melee bio-weapons
 				'Rending claws' : {
@@ -6561,7 +6570,7 @@ var library = {
 					save:'3+',
 					invulsave:'4+',
 					powerpoints:'15',
-					pointspermodel:'300',
+					pointspermodel:'250',
 					weaponbasic : ['Bone sabres','Prehensile pincer tail'],
 					abilities : {
 						'Synapse' : '#',
@@ -6618,7 +6627,7 @@ var library = {
 					save:'3+',
 					invulsave:'-',
 					powerpoints:'13',
-					pointspermodel:'225',
+					pointspermodel:'180',
 					weaponbasic : ['Massive scything talons (Tervigon)','Stinger salvo'],
 					weaponoption : ['Massive crushing claws','Toxin sacs (Tervigon)','Adrenal glands (monster)'],
 					abilities : {
@@ -6647,7 +6656,7 @@ var library = {
 					save:'5+',
 					invulsave:'3+',
 					powerpoints:'4',
-					pointspermodel:'70',
+					pointspermodel:'90',
 					weaponbasic : ['Claws and teeth'],
 					abilities : {
 						'Synapse' : '#',
@@ -7037,6 +7046,34 @@ var library = {
 					keywords:'FLY, SPORE MINES',
 				},
 			//Heavy
+			tyrannofex : {
+				name:'Tyrannofex',
+				role:'Heavy',
+				move:'6',
+				ws:'4+',
+				bs:'[ 4+ ][ 5+ ][ 5+ ]',
+				strength:'[ 7 ][ 6 ][ 5 ]',
+				toughness:'8',
+				wounds:'[ 8-14+ ][ 4-7 ][ 1-3 ]',
+				degradate : ['7','4','3'],
+				attacks:'[ 4 ][ 3 ][ 2 ]',
+				leadership:'7',
+				save:'3+',
+				invulsave:'-',
+				powerpoints:'11',
+				pointspermodel:'151',
+				weaponbasic : ['Powerful limbs','Acid spray','Stinger salvo'],
+				weaponoption : ['Fleshborer hive','Rapture cannon','Toxin sacs (Tervigon)','Adrenal glands (monster)'],
+				abilities : {
+					'Instinctive Behaviour' : '#',
+					'Bio-tank' : 'This model does not suffer the penalty to its hit rolls for moving and firing Heavy weapons.',
+					'Weapon Beast' : 'If this model does not move in your Movement phase, it can shoot all of its weapons twice in your Shooting phase.',
+					'Death Throes' : 'If this model is reduced to 0 wounds, roll a dice before removing the model from the battlefield; on a 6, it lashes out in its death throes, and each unit within 3\" suffers D3 mortal wounds.',
+					'Hive Fleet' :'',
+					},
+				factionkeywords : 'TYRANIDS, HIVE FLEET',
+				keywords:'MONSTER, TYRANNOFEX',
+			},
 			//Flyers
 			//Dedicated Transport
 			//Lord of War
