@@ -3008,7 +3008,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'80',
+					pointspermodel:'70',
 					weaponbasic : ['Omnissian Axe','Macrostubber','Volkite Blaster'],
 					weaponoption : ['Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
@@ -3036,7 +3036,7 @@ var library = {
 					save:'2+',
 					invulsave:'5+',
 					powerpoints:'7',
-					pointspermodel:'80',
+					pointspermodel:'70',
 					weaponoption : ['Macrostubber','Volkite Blaster'],
 					weaponbasic : ['Omnissian Axe','Phosphor serpenta','Eradication ray','Eradication ray *'],
 					abilities : {
@@ -3226,7 +3226,7 @@ var library = {
 					invulsave:'6+',
 					powerpoints:'6',
 					models : [5,10],
-					pointspermodel:'12',
+					pointspermodel:'11',
 					weaponbasic : ['Power sword','Stubcarbine'],
 					weaponoption : ['Taser goad','Flechette blaster'],
 					abilities : {
