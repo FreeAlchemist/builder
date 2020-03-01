@@ -2416,7 +2416,7 @@ var library = {
 					ap:'-3',
 					damage:'1',
 					ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
-					points:'4',
+					points:'2',
 				},
 				'Weapon XCIX' : {
 					range:'24',
@@ -2453,7 +2453,7 @@ var library = {
 				ap:'-3',
 				damage:'3',
 				ability:'-',
-				points:'25',
+				points:'20',
 			},
 			'Omnissian Axe' : {
 				range:'Melee',
@@ -2544,7 +2544,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'When attacking a <b>VEHICLE</b>, this weapon has s Damage of D3',
-				points:'3',
+				points:'1',
 			},
 			'Arc rifle' : {
 				range:'24',
@@ -2553,7 +2553,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'When attacking a <b>VEHICLE</b>, this weapon has Damage of D3',
-				points:'4',
+				points:'2',
 			},
 			'Avenger gatling cannon' : {
 				range:'36',
@@ -2616,7 +2616,7 @@ var library = {
 				ap:'0',
 				damage:'1',
 				ability:'-',
-				points:'2',
+				points:'0',
 			},
 			'Galvanic rifle' : {
 				range:'30',
@@ -2652,7 +2652,7 @@ var library = {
 				ap:'0',
 				damage:'1',
 				ability:'-',
-				points:'2',
+				points:'4',
 			},
 			'Heavy phosphor blaster' : {
 				range:'36',
@@ -2670,7 +2670,7 @@ var library = {
 				ap:'-',
 				damage:'-',
 				ability:'When attacking with this weapon, you can fire all three of the profiles*. Add 1 to all hit rolls made for this weapon against targets that can <b>FLY</b>. Substract 1 from hit rolls against all other targets.',
-				points:'40',
+				points:'30',
 			},
 			'* Daedalus missile launcher' : {
 				range:'48',
@@ -2751,7 +2751,7 @@ var library = {
 				ap:'-4',
 				damage:'D6',
 				ability:'Treat damage rolls of 1 and 2 made by this weapon as 3 instead.',
-				points:'45',
+				points:'35',
 			},
 			'Phosphor blast pistol' : {
 				range:'12',
@@ -2760,7 +2760,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
-				points:'3',
+				points:'1',
 			},
 			'Phosphor serpenta' : {
 				range:'18',
@@ -2769,7 +2769,7 @@ var library = {
 				ap:'-1',
 				damage:'1',
 				ability:'Units attacked by this weapon do not gain any bonus to their saving throws for being in cover.',
-				points:'4',
+				points:'2',
 			},
 			'Plasma caliver (Standard)' : {
 				range:'18',
@@ -2823,7 +2823,7 @@ var library = {
 				ap:'0',
 				damage:'1',
 				ability:'-',
-				points:'2',
+				points:'0',
 			},
 			'Thermal spear' : {
 				range:'30',
@@ -2841,7 +2841,7 @@ var library = {
 				ap:'-2',
 				damage:'D3',
 				ability:'This weapon cannot be fired if the firing model moved during the Movement phase. This weapon may target a <b>CHARACTER</b> even if it is not the closest enemy unit. Each time you make a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to its normal damage.',
-				points:'15',
+				points:'12',
 			},
 			'Twin heavy phosphor blaster' : {
 				range:'36',
@@ -3254,7 +3254,7 @@ var library = {
 					invulsave:'6+',
 					powerpoints:'6',
 					models : [5,10],
-					pointspermodel:'12',
+					pointspermodel:'11',
 					weaponbasic : ['Taser goad','Flechette blaster'],
 					// weaponoption : ['Power sword','Stubcarbine'],
 					abilities : {
@@ -3427,7 +3427,7 @@ var library = {
 					invulsave:'5+ against shooting',
 					powerpoints:'12',
 					models : [1,3],
-					pointspermodel:'223',
+					pointspermodel:'145',
 					weaponbasic : ['Reaper chain-cleaver','Thermal spear','Heavy stubber'],
 					weaponoption : ['Meltagun'],
 					abilities : {
@@ -3454,7 +3454,7 @@ var library = {
 					invulsave:'5+ against shooting',
 					powerpoints:'12',
 					models : [1,3],
-					pointspermodel:'223',
+					pointspermodel:'145',
 					weaponbasic : ['Reaper chain-cleaver','Thermal spear','Meltagun'],
 					abilities : {
 						'Vehicle Squadron' : 'The first time this unit is set up, all of its models must be placed within 6" of at least one other model in their unit. Then, each operates independently and is treated as a separate unit.',
