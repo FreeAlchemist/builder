@@ -6939,7 +6939,7 @@ var library = {
 				// 	factionkeywords : 'TYRANIDS, HIVE FLEET',
 				// 	keywords:'INFANTRY, LICTOR',
 				// },
-							// lictor : {
+				deathleaper : {
 				name:'Deathleaper',
 				role:'Elites',
 				move:'9',
@@ -7135,7 +7135,7 @@ var library = {
 					factionkeywords : 'TYRANIDS, HIVE FLEET',
 					keywords:'MONSTER, SPOROCYST',
 				},
-		}
+		},
 	},
 	necrons : {
 		armyname : 'Necrons',
